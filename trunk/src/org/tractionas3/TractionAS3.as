@@ -1,0 +1,1 @@
+package org.tractionas3 {	public namespace TractionAS3 = "http://api.tractionas3.org";}

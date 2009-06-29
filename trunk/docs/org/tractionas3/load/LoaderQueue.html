@@ -1,0 +1,650 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="LoaderQueue,org.tractionas3.load.LoaderQueue,slots,emptySlots,loaded,loaders,loadersComplete,loadersProgress,loadersQueued,name,numLoaders,progress,running,addLoader,cancel,cancelAndStop,destruct,prefetchBytesTotal,removeAndCancelLoader,removeLoader,start,stop" name="keywords">
+<title>org.tractionas3.load.LoaderQueue</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'LoaderQueue - TractionAS3 Framework Documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">TractionAS3 Framework Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?org/tractionas3/load/LoaderQueue.html&amp;org/tractionas3/load/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;LoaderQueue</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class LoaderQueue"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">org.tractionas3.load</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class LoaderQueue</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">LoaderQueue <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="../events/WeakEventDispatcher.html">WeakEventDispatcher</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implements</td><td><a href="../core/interfaces/Cancelable.html">Cancelable</a>, <a href="../core/interfaces/CoreInterface.html">CoreInterface</a>, <a href="../core/interfaces/Runnable.html">Runnable</a></td>
+</tr>
+</table>
+<p></p>
+  LoaderQueue is used for loading multiple files in a queue.
+  <p />
+  Using the  LoaderQueue class you can load multiple files of various types. All loaders in the org.tractionas3.load package are supported.
+  Many times when creating a web application you have to deal with required external assets for a specific part, or section, of that application.
+  LoaderQueue provides a good way to gather and control the loading of these assets.
+  <p />
+  LoaderQueue will dispatch a range of events allowing you to monitor the progress of both overall and individual load progress. By naming the loaders
+  you can easily monitor what is loading, allowing you to progressively deploy the loaded content.
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#emptySlots">emptySlots</a> : uint<div class="summaryTableDescription">[read-only]
+   Indicates the current number of empty slots.</div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#loaded">loaded</a> : Boolean<div class="summaryTableDescription">[read-only]
+   Indicates whether the queue is loaded.</div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#loaders">loaders</a> : Array<div class="summaryTableDescription">[read-only]
+   Returns an array containing references to all the loaders in the queue.</div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#loadersComplete">loadersComplete</a> : Array<div class="summaryTableDescription">[read-only]
+   Returns an array containing references to loaders completed their loading process.</div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#loadersProgress">loadersProgress</a> : Array<div class="summaryTableDescription">[read-only]
+   Returns an array containing references to loaders currently in load progress.</div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#loadersQueued">loadersQueued</a> : Array<div class="summaryTableDescription">[read-only]
+   Returns an array containing references to loaders currently waiting to be loaded.</div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#name">name</a> : String<div class="summaryTableDescription">[read-only]
+   Indicates the name of the LoaderQueue.</div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#numLoaders">numLoaders</a> : uint<div class="summaryTableDescription">[read-only]
+   Indicates the number of loaders contained by the queue
+   </div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#progress">progress</a> : Number<div class="summaryTableDescription">[read-only]
+   Indicates the average of all loaders current progress.</div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#running">running</a> : Boolean<div class="summaryTableDescription">[read-only]
+   Indicates whether the queue is running.</div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#slots">slots</a> : uint<div class="summaryTableDescription">
+   Total number of loaders allowed to be in progress at any given time.</div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedMethod" id="hideInheritedMethod">
+<a onclick="javascript:setInheritedVisible(false,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Methods</a>
+</div>
+<div class="showInheritedMethod" id="showInheritedMethod">
+<a onclick="javascript:setInheritedVisible(true,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Methods</a>
+</div>
+</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#LoaderQueue()">LoaderQueue</a>(numSlots:uint = 1, name:String = null)</div>
+<div class="summaryTableDescription">
+   Creates a new LoaderQueue object.</div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../events/WeakEventDispatcher.html#addEventListener()">addEventListener</a>(type:String, listener:Function, useCapture:Boolean = false, priority:int = 0, useWeakReference:Boolean = true):void</div>
+<div class="summaryTableDescription">
+   Registers an event listener object with an EventDispatcher object so that the listener receives notification of an event.</div>
+</td><td class="summaryTableOwnerCol"><a href="../events/WeakEventDispatcher.html">WeakEventDispatcher</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addLoader()">addLoader</a>(target:<a href="CoreLoader.html">CoreLoader</a>):<a href="../load/CoreLoader.html">CoreLoader</a>
+</div>
+<div class="summaryTableDescription">
+   Adds a loader to the queue.</div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#cancel()">cancel</a>():void</div>
+<div class="summaryTableDescription">
+   Cancels all loaders currently in progress.</div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#cancelAndStop()">cancelAndStop</a>():void</div>
+<div class="summaryTableDescription">
+   Stops the queue and cancels all cancelable loaders.</div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#destruct()">destruct</a>(deepDestruct:Boolean = false):void</div>
+<div class="summaryTableDescription">
+   Destructs the LoaderQueue
+   </div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../events/WeakEventDispatcher.html#dispatchEvent()">dispatchEvent</a>(e:Event):Boolean</div>
+<div class="summaryTableDescription">
+   Dispatches an event into the event flow, <i>only</i> if event property <code>hasEventListener</code> or <code>bubbles</code> are <code>true</code>.</div>
+</td><td class="summaryTableOwnerCol"><a href="../events/WeakEventDispatcher.html">WeakEventDispatcher</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../events/WeakEventDispatcher.html#listDestructableProperties()">listDestructableProperties</a>():Array</div>
+<div class="summaryTableDescription">
+   
+   Specifies an array of strings representing properties that are to be
+   nullified or reset upon destruction.</div>
+</td><td class="summaryTableOwnerCol"><a href="../events/WeakEventDispatcher.html">WeakEventDispatcher</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#prefetchBytesTotal()">prefetchBytesTotal</a>():void</div>
+<div class="summaryTableDescription">
+   Prefetches the filesize of all contained loaders in the queue.</div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeAndCancelLoader()">removeAndCancelLoader</a>(target:<a href="CoreLoader.html">CoreLoader</a>):void</div>
+<div class="summaryTableDescription">
+   Removes a loader from the queue and cancels its loading progress if able.</div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeLoader()">removeLoader</a>(target:<a href="CoreLoader.html">CoreLoader</a>, cancel:Boolean = false):void</div>
+<div class="summaryTableDescription">
+   Removes a loader from the queue.</div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#start()">start</a>():void</div>
+<div class="summaryTableDescription">
+   Starts the queue.</div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#stop()">stop</a>():void</div>
+<div class="summaryTableDescription">
+   Stops the queue.</div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../events/WeakEventDispatcher.html#toString()">toString</a>():String</div>
+<div class="summaryTableDescription">
+   Returns the string representation of the specified object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../events/WeakEventDispatcher.html">WeakEventDispatcher</a></td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="emptySlots"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">emptySlots</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>emptySlots:uint</code>&nbsp;&nbsp;[read-only]<p>
+   Indicates the current number of empty slots.
+   
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get emptySlots():uint</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../load/LoaderQueue.html#slots" target="">slots</a>
+</div>
+</div>
+<a name="loaded"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loaded</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>loaded:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+   Indicates whether the queue is loaded.
+   A queue is concidered to be loaded when all loaders in the queue are loaded.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get loaded():Boolean</code>
+<br>
+</div>
+<a name="loaders"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loaders</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>loaders:Array</code>&nbsp;&nbsp;[read-only]<p>
+   Returns an array containing references to all the loaders in the queue.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get loaders():Array</code>
+<br>
+</div>
+<a name="loadersComplete"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadersComplete</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>loadersComplete:Array</code>&nbsp;&nbsp;[read-only]<p>
+   Returns an array containing references to loaders completed their loading process.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get loadersComplete():Array</code>
+<br>
+</div>
+<a name="loadersProgress"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadersProgress</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>loadersProgress:Array</code>&nbsp;&nbsp;[read-only]<p>
+   Returns an array containing references to loaders currently in load progress.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get loadersProgress():Array</code>
+<br>
+</div>
+<a name="loadersQueued"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadersQueued</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>loadersQueued:Array</code>&nbsp;&nbsp;[read-only]<p>
+   Returns an array containing references to loaders currently waiting to be loaded.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get loadersQueued():Array</code>
+<br>
+</div>
+<a name="name"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">name</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>name:String</code>&nbsp;&nbsp;[read-only]<p>
+   Indicates the name of the LoaderQueue.
+   A loader queue name can only be set in the LoaderQueue constructor.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get name():String</code>
+<br>
+</div>
+<a name="numLoaders"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">numLoaders</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>numLoaders:uint</code>&nbsp;&nbsp;[read-only]<p>
+   Indicates the number of loaders contained by the queue
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get numLoaders():uint</code>
+<br>
+</div>
+<a name="progress"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">progress</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>progress:Number</code>&nbsp;&nbsp;[read-only]<p>
+   Indicates the average of all loaders current progress.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get progress():Number</code>
+<br>
+</div>
+<a name="running"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">running</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>running:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+   Indicates whether the queue is running.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get running():Boolean</code>
+<br>
+</div>
+<a name="slots"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">slots</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var slots:uint</code><p>
+   Total number of loaders allowed to be in progress at any given time.
+   The number of slots may be changed at any time. Setting the number of slots to zero while the queue is running will
+   prevent the queue from processing loaders further.
+   </p></div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="LoaderQueue()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">LoaderQueue</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function LoaderQueue(numSlots:uint = 1, name:String = null)</code><p>
+   Creates a new LoaderQueue object.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">numSlots</span>:uint</code> (default = <code>1</code>)<code></code> &mdash; Number of open slots in the queue. This may be changed via the <code>LoaderQueue.slots</code> property.
+   
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">name</span>:String</code> (default = <code>null</code>)<code></code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../load/LoaderQueue.html#slots" target="">slots</a>
+</div>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="addLoader()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addLoader</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addLoader(target:<a href="CoreLoader.html">CoreLoader</a>):<a href="../load/CoreLoader.html">CoreLoader</a></code><p>
+   Adds a loader to the queue.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">target</span>:<a href="CoreLoader.html">CoreLoader</a></code> &mdash; Target loader.
+   
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../load/CoreLoader.html">CoreLoader</a></code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../load/LoaderQueue.html#removeLoader()" target="">removeLoader()</a>
+</div>
+</div>
+<a name="cancel()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">cancel</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function cancel():void</code><p>
+   Cancels all loaders currently in progress.
+   Canceled loaders are reenqueued.
+   </p></div>
+<a name="cancelAndStop()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">cancelAndStop</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function cancelAndStop():void</code><p>
+   Stops the queue and cancels all cancelable loaders. Any loaders canceled are reenqueued and will begin loading
+   when the queue is started again.
+   </p></div>
+<a name="destruct()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">destruct</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function destruct(deepDestruct:Boolean = false):void</code><p>
+   Destructs the LoaderQueue
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">deepDestruct</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; If <code>true</code> loaders connected to the LoaderQueue will be destructed also.
+   </td>
+</tr>
+</table>
+</div>
+<a name="prefetchBytesTotal()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">prefetchBytesTotal</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function prefetchBytesTotal():void</code><p>
+   Prefetches the filesize of all contained loaders in the queue. This will make the <code>LoaderQueue.progress</code>
+   indicate a more accurate value if not all loaders in the sequence are loading at any given time.
+   
+   </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../load/CoreLoader.html#prefetchBytesTotal()" target="">org.tractionas3.load.CoreLoader.prefetchBytesTotal()</a>
+</div>
+</div>
+<a name="removeAndCancelLoader()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeAndCancelLoader</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeAndCancelLoader(target:<a href="CoreLoader.html">CoreLoader</a>):void</code><p>
+   Removes a loader from the queue and cancels its loading progress if able.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">target</span>:<a href="CoreLoader.html">CoreLoader</a></code> &mdash; Target loader.
+   </td>
+</tr>
+</table>
+</div>
+<a name="removeLoader()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeLoader</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeLoader(target:<a href="CoreLoader.html">CoreLoader</a>, cancel:Boolean = false):void</code><p>
+   Removes a loader from the queue.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">target</span>:<a href="CoreLoader.html">CoreLoader</a></code> &mdash; Target loader.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">cancel</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; If set to <code>true</code> and if the loader is cancelable the loading process of the target loader will be canceled.
+   
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../load/LoaderQueue.html#addLoader()" target="">addLoader()</a>
+</div>
+</div>
+<a name="start()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">start</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function start():void</code><p>
+   Starts the queue.
+   A running queue will actively process loaders and instruct them to load appropriately.
+   
+   </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../load/LoaderQueue.html#running" target="">running</a>
+<br>
+<a href="../load/LoaderQueue.html#stop()" target="">stop()</a>
+</div>
+</div>
+<a name="stop()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">stop</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function stop():void</code><p>
+   Stops the queue.
+   An inactive queue will not instruct loaders to load and will remain in its current state untill resumed.
+   
+   </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../load/LoaderQueue.html#running" target="">running</a>
+<br>
+<a href="../load/LoaderQueue.html#start()" target="">start()</a>
+</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

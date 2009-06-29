@@ -1,0 +1,1 @@
+package org.tractionas3.data.convertion {	public function radiansToDegrees(radians:Number):Number	{		return radians * (180 / Math.PI);	}}
