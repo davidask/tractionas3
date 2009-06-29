@@ -1,6 +1,21 @@
 #summary Getting started with TractionAS3
 
-== Creating your document class ==
+== Acquiring the source code ==
+Use the repository URL to checkout the source under the _source_ tab.
+
+== Requirements ==
+You can use TractionAS3 with your favourite IDE such as Adobe Flash, FDT or Flash/Flex Builder.
+
+== Core functionality ==
+TractionAS3 is built on a number of core classes and interfaces that you don't have to worry about unless you choose to. You might find the interfaces useful when developing your application - they are located in the `org.tractionas3.core.interfaces` package. Nearly *every* class in the TractionAS3 API implements the `CoreInterface` interface which extends the `Destructable` interface.
+
+Last mentioned interface is key in the TractionAS3 API. Cleaning up after one self is a very important task, and something that requires a great deal of attention when developing large and complex applications. You should extend the `destruct()` method of any class you create (built on a class implementing `Destructable` or `CoreInterface`) and make sure to get rid of any new references your class has added. You may also extend the `listDestructableProperties` method for public properties.
+
+The core display classes are located in the `org.tractionas3.display` package. These classes, specifically the `CoreSprite` adds additional functionality to any display object you may want to create. Any display object you create should extend either `CoreSprite` or `CoreShape`. 
+
+Take a look at the documentation to get a better understanding of the core structure of TractionAS3.
+
+== Creating the document class ==
 When creating the document class for your application you should extend the `org.tractionas3.core.Application` class.
 This class will allow you to reference the stage, root, and loaderInfo of your application via `Application.stage`, `Application.root`and `Application.loaderInfo`.
 
@@ -25,3 +40,43 @@ package
 	}
 }
 }}}
+
+When you have your document class setup, you can go about creating your application in any way you like, using (if any) a framework of your choosing.
+
+== Debugging ==
+TractionAS3 has a solid logging structure which you can use to send log messages to various log consoles. The logging is based on an _output structure_, allowing you to plug in any debug output you want. Already supported log consoles are Firebug, SOSMax, IDE Trace, and Trazzle.
+
+Please review the following example and its comments:
+
+{{{
+package  
+{
+	import org.tractionas3.debug.LogLevel;
+	import org.tractionas3.core.Application;
+	import org.tractionas3.debug.Logger;
+	import org.tractionas3.debug.log;
+	import org.tractionas3.debug.output.SOSMaxOutput;
+	import org.tractionas3.debug.output.TraceOutput;
+	
+	public class MyDocumentClass extends Application 
+	{
+		public function MyDocumentClass()
+		{
+			super();
+			
+			Logger.addOutput(new TraceOutput()); //Add IDE Trace output to the output list. (Default if none is added)
+			
+			Logger.addOutput(new SOSMaxOutput()); //Add SOSMax output to the output list.
+			
+			log("This is a trace type message");
+			
+			log("This is a warning.", LogLevel.WARNING); //You can define the log level of your log message with static constants in the LogLevel class. 
+			
+			log("This is a notice.", LogLevel.NOTICE);
+		}
+	}
+}
+
+}}}
+
+Use the `org.tractionas3.debug.Logger` class and its static methods to add or remove outputs. You can also use it to check whether a specific output is in the output list, or if a specific output _type_ is in the output list. If no output is added, the IDE Trace output will be used. *Use the function `log()` to type out your log messages*, and use the second parameter to define the log level of your message. Please review the import block. You may also create your own outputs. To do so you only need to create a class that implements the `org.tractionas3.debug.output.LoggerOutput` interface.
