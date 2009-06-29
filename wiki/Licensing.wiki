@@ -1,0 +1,10 @@
+#summary TractionAS3 Licensing
+
+== Licensing ==
+TractionAS3 is released under the MIT License.
+
+Please see the following link:
+[http://www.opensource.org/licenses/mit-license.php MIT License]
+
+And this useful post:
+[http://www.gskinner.com/blog/archives/2008/07/source_code_lic_1.html#mit Grant Skinner on source code Licenses]
