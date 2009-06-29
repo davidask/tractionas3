@@ -7,7 +7,7 @@ TractionAS3 Debugger is an application built on Adobe AIR technology (and the Tr
 
 It can be used as an external log console, a performance monitor and a live property editor.
 
-= _The application is still in development_ =
+= _The application is still in development and is NOT available for download yet._ =
 
 
 === Connecting to TractionAS3 Debugger ===
