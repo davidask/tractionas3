@@ -1,0 +1,27 @@
+#summary Getting started with TractionAS3
+
+== Creating your document class ==
+When creating the document class for your application you should extend the `org.tractionas3.core.Application` class.
+This class will allow you to reference the stage, root, and loaderInfo of your application via `Application.stage`, `Application.root`and `Application.loaderInfo`.
+
+The following code is an example of a simple document class.
+{{{
+package  
+{
+	import org.tractionas3.core.Application;
+	
+	public class MyDocumentClass extends Application 
+	{
+		public function MyDocumentClass()
+		{
+			super();
+			
+			trace("Stage: " + Application.stage);
+			
+			trace("Root: " + Application.root);
+			
+			trace("LoaderInfo: " + Application.loaderInfo);
+		}
+	}
+}
+}}}
