@@ -1,0 +1,7 @@
+#summary Join
+
+== Help develop TractionAS3 ==
+
+If you'd like to help out developing TractionAS3 feel free to send an e-mail to mailto:david@tractionas3.org
+
+Thanks!
