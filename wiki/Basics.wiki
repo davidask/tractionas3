@@ -9,7 +9,7 @@ You can use TractionAS3 with your favourite IDE such as Adobe Flash, FDT or Flas
 == Core functionality ==
 TractionAS3 is built on a number of core classes and interfaces that you don't have to worry about unless you choose to. You might find the interfaces useful when developing your application - they are located in the `org.tractionas3.core.interfaces` package. Nearly *every* class in the TractionAS3 API implements the `CoreInterface` interface which extends the `Destructable` interface.
 
-Last mentioned interface is key in the TractionAS3 API. Cleaning up after one self is a very important task, and something that requires a great deal of attention when developing large and complex applications. You should extend the `destruct()` method of any class you create (built on a class implementing `Destructable` or `CoreInterface`) and make sure to get rid of any new references your class has added. You may also extend the `listDestructableProperties` method for public properties.
+Last mentioned interface is key in the TractionAS3 API. Cleaning up after one self is a very important task, and something that requires a great deal of attention when developing large and complex applications. You should extend the `destruct()` method of any class you create (built on a class implementing `Destructable` or `CoreInterface`) and make sure to get rid of any new references your class has added. You may also extend the `listDestructableProperties()` method for public properties.
 
 The core display classes are located in the `org.tractionas3.display` package. These classes, specifically the `CoreSprite` adds additional functionality to any display object you may want to create. Any display object you create should extend either `CoreSprite` or `CoreShape`. 
 
