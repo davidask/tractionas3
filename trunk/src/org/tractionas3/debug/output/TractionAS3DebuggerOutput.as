@@ -22,7 +22,7 @@ package org.tractionas3.debug.output
 
 		public function TractionAS3DebuggerOutput()
 		{
-			TractionAS3Debugger.getInstance();
+			super();
 		}
 
 		
@@ -47,7 +47,7 @@ package org.tractionas3.debug.output
 			
 			var className:String = classNameSplit[classNameSplit.length - 1];
 			
-			TractionAS3Debugger.getInstance().sendLogMessage(message.text, className + "." + stackTrace.methodName, stackTrace.line, message.level);
+			TractionAS3Debugger.sendLogMessage(message.text, className + "." + stackTrace.methodName, stackTrace.line, message.level);
 		}
 	}
 }
