@@ -17,6 +17,13 @@ You may still download the application under the downloads tab. *Please note tha
   * Property updating in the inspector
   * User interface updates (both in functionality and appearance)
   
+=== Navigating the Application ===
+When you first launch the TractionAS3 Debugger, the log console window will open.
+To open other windows, use the application menu in OSX, and the system tray icon menu in windows.
+You can also toggle through windows via ctrl/cmd + 1, 2 and 3.
+ctrl/cmd + W closes an open window in focus.
+
+You can toggle windows to be always in front, using the icon next to the close icon in the window bar or via the window menu. You can also toggle between perspectives using the window menu.
 
 === Connecting to TractionAS3 Debugger ===
 
