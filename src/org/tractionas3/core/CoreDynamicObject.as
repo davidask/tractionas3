@@ -31,13 +31,15 @@ package org.tractionas3.core
 	/**
 	 * CoreDynamicObject is the core dynamic object class of TractionAS3.
 	 */
-	dynamic public class CoreDynamicObject extends CoreObject 
+
+	dynamic public class CoreDynamicObject extends CoreObject 
 	{
-		
+
 		/**
 		 * Creates a new CoreDynamicObject object.
 		 */
-				public function CoreDynamicObject()
+
+		public function CoreDynamicObject()
 		{
 			super();
 		}

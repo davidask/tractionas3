@@ -28,7 +28,6 @@
 package org.tractionas3.events 
 {
 	import flash.events.Event;
-
 	/**
 	 * LocalConnectionDataEvent provides a base event for LocalConnectionInbound and LocalConnectionOutbound classes.
 	 */
@@ -48,22 +47,23 @@ package org.tractionas3.events
 		 * Indicates the data sent/received by the LocalConnectionInbound/LocalConnectionOutbound class.
 		 */
 		public var data:*;
+
 		
 		/**
 		 * Creates a new LocalConnectionDataEvent object,.
 		 */
-		
+
 		public function LocalConnectionDataEvent(type:String, localConnectionData:*, bubbles:Boolean = false, cancelable:Boolean = false)
 		{
 			super(type, bubbles, cancelable);
 			
 			data = localConnectionData;
 		}
-		
+
 		/**
 		 * @inheritDoc
 		 */
-		
+
 		override public function clone():Event
 		{
 			return new LocalConnectionDataEvent(type, data, bubbles, cancelable);

@@ -35,14 +35,14 @@ package org.tractionas3.graphics
 	/**
 	 * The Color class represents a color.
 	 */
-	
+
 	public class Color extends CoreObject
 	{
-		
+
 		/**
 		 * Parses and returns hex color in string format (e.g. "0xFF0000" or "#000000").
 		 */
-			
+
 		public static function parseColor(colorStr:String):uint
 		{
 			if (colorStr.substr(0, 2) == "0x") colorStr = colorStr.substr(2);
@@ -52,29 +52,31 @@ package org.tractionas3.graphics
 			return parseInt(colorStr, 16);
 		}
 
+		
 		private var _red:uint;
-		
+
 		private var _green:uint;
-		
+
 		private var _blue:uint;
-		
+
 		private var _alpha:uint;
+
 		
 		/**
 		 * Creates a new Color object with specified color in hexadecimal format.
 		 */
-		
+
 		public function Color(color:uint = 0)
 		{
 			super();
 			
 			hexColor = color;
 		}
-		
+
 		/**
 		 * Randomizes each channel in the color.
 		 */
-		
+
 		public function randomize():void
 		{
 			alpha = Math.random() * 255;
@@ -85,78 +87,78 @@ package org.tractionas3.graphics
 			
 			blue = Math.random() * 255; 
 		}
-		
+
 		/**
 		 * Specifies the color of the Color object in hexadecimal format.
 		 */
-		
+
 		public function get hexColor():uint
 		{
 			return (alpha << 24 | red << 16 | green << 8 | blue);
 		}
-		
+
 		public function set hexColor(value:uint):void
 		{
 			alpha = (value >> 24) & 0xFF;
 			
-			red = (value >> 16)  &0xFF;
+			red = (value >> 16) & 0xFF;
 			
 			green = (value >> 8) & 0xFF;
 			
 			blue = value & 0xFF;
 		}
-		
+
 		/**
 		 * Specifies the amount of red in the Color object, randing between 0 and 255.
 		 */
-		
+
 		public function get red():uint
 		{
 			return _red;
 		}
-		
+
 		public function set red(value:uint):void
 		{
 			_red = value;
 		}
-		
+
 		/**
 		 * Specifies the amount of green in the Color object, randing between 0 and 255.
 		 */
-		
+
 		public function get green():uint
 		{
 			return _green;
 		}
-		
+
 		public function set green(value:uint):void
 		{
 			_green = value;
 		}
-		
+
 		/**
 		 * Specifies the amount of blue in the Color object, randing between 0 and 255.
 		 */
-		
+
 		public function get blue():uint
 		{
 			return _blue;
 		}
-		
+
 		public function set blue(value:uint):void
 		{
 			_blue = value;
 		}
-		
+
 		/**
 		 * Specifies the alpha in the Color object, randing between 0 and 255.
 		 */
-		
+
 		public function get alpha():uint
 		{
 			return _alpha;
 		}
-		
+
 		public function set alpha(value:uint):void
 		{
 			_alpha = value;

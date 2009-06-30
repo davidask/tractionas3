@@ -186,7 +186,7 @@ package org.tractionas3.net
 				case StatusEvent.STATUS:
 				
 					/* STATUS */
-				
+
 					break;
 			}
 		}

@@ -34,7 +34,8 @@ package org.tractionas3.utils
 		{
 			return Capabilities.isDebugger;
 		}
-		public static function get version():Version
+
+		public static function get version():Version
 		{
 			var vstr:String = Capabilities.version;
 			
@@ -51,37 +52,44 @@ package org.tractionas3.utils
 			var internalBuild:uint = parseInt(varr[3]);
 			
 			return new Version(major, minor, build, internalBuild);		}
-		public static function get pluginPlayer():Boolean
+
+		public static function get pluginPlayer():Boolean
 		{
 			if(Capabilities.playerType == "PlugIn")return true;
 			return false;
 		}
-		public static function get activeX():Boolean
+
+		public static function get activeX():Boolean
 		{
 			if(Capabilities.playerType == "ActiveX")return true;
 			return false;
 		}
-		public static function get standAlone():Boolean
+
+		public static function get standAlone():Boolean
 		{
 			if(Capabilities.playerType == "StandAlone") return true;
 			return false;
 		}
-		public static function get IDE():Boolean
+
+		public static function get IDE():Boolean
 		{
 			if(Capabilities.playerType == "External") return true;
 			return false;
 		}
-		public static function get runningOnPC():Boolean
+
+		public static function get runningOnPC():Boolean
 		{
 			var v:String = String(Capabilities.version).toLowerCase();
 			return (v.indexOf("win") > -1);
 		}
-		public static function get runninOnMac():Boolean
+
+		public static function get runninOnMac():Boolean
 		{
 			var v:String = String(Capabilities.version).toLowerCase();
 			return (v.indexOf("mac") > -1);
 		}       
-		public static function get runningOnLinux():Boolean
+
+		public static function get runningOnLinux():Boolean
 		{
 			var v:String = String(Capabilities.version).toLowerCase();
 			return (v.indexOf("linux") > -1);

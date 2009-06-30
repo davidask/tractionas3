@@ -48,11 +48,10 @@ package org.tractionas3.debug
 	import flash.utils.Timer;
 	import flash.utils.clearTimeout;
 	import flash.utils.setTimeout;
-	
 	/**
 	 * TractionAS3Debugger is used to communicate with the TractionAS3 Debugger application.
 	 */	
-		
+
 	public class TractionAS3Debugger extends WeakEventDispatcher implements Connectable
 	{
 
@@ -119,17 +118,17 @@ package org.tractionas3.debug
 		 */
 
 		public static var CONNECTION_TIMEOUT:uint = 5;
-		
+
 		/**
 		 * Specifies the number of connection attempts to to be made to the debugger.
 		 */
-		
+
 		public static var CONNECTION_ATTEMPTS:uint = 3;
-		
+
 		/**
 		 * Specifies allowed domain.
 		 */
-		
+
 		public static const ALLOWED_DOMAIN:String = "*";
 
 		
@@ -191,31 +190,31 @@ package org.tractionas3.debug
 		{
 			getInstance().connect();
 		}
-		
+
 		/**
 		 * Disconnects from TractionAS3 Debugger.
 		 */
-		
+
 		public static function disconnect():void
 		{
 			getInstance().disconnect();
 		}
-		
+
 		/**
 		 * Indicates whether a connection has been established with the TractionAS3 Debugger.
 		 */
-		
+
 		public static function get connected():Boolean
 		{
 			return getInstance().connected;
 		}
-		
+
 		/**
 		 * Starts profiling of the application.
 		 * 
 		 * @param stage Specified stage accociated with the profiling.
 		 */
-		
+
 		public static function startProfiler(stage:Stage):void
 		{
 			getInstance()._profilerTargetStage = stage;
@@ -224,25 +223,25 @@ package org.tractionas3.debug
 			
 			getInstance()._fpsProfiler.start();
 		}
-		
+
 		/**
 		 * Stops profiling of the application.
 		 */
-		
+
 		public static function stopProfiler():void
 		{
 			getInstance()._profilerTimer.stop();
 			
 			getInstance()._fpsProfiler.stop();
 		}
-		
+
 		/**
 		 * Sends the specified object to TractionAS3 Debugger and allows for live modifying of its properties.
 		 * 
 		 * @param target Object to be inspected
 		 * @param label Label of the inspected object (shown in the TractionAS3 Debugger inspector window).
 		 */
-		
+
 		public static function inspect(target:Object, label:String):void
 		{
 			getInstance().sendInspectMessage(target, label);
@@ -271,11 +270,11 @@ package org.tractionas3.debug
 			
 			registerClassAliases();
 		}
-		
+
 		/**
 		 * @private
 		 */
-		
+
 		public function connect():void
 		{
 			if(connected == true || _connecting == true) return;
@@ -302,11 +301,11 @@ package org.tractionas3.debug
 				sendConnectMessage();
 			}
 		}
-		
+
 		/**
 		 * @private
 		 */
-		
+
 		public function disconnect():void
 		{
 			try
@@ -318,16 +317,16 @@ package org.tractionas3.debug
 				/* Do nothing */
 			}
 		}
-		
+
 		/**
 		 * @private
 		 */
-		
+
 		public function get connected():Boolean
 		{
 			return _connected;
 		}
-		
+
 		private function connectFailure():void
 		{
 			var message:String;
@@ -360,11 +359,11 @@ package org.tractionas3.debug
 				setTimeout(connect, 5000);
 			}
 		}
-		
+
 		/**
 		 * @private
 		 */
-		
+
 		public function sendLogMessage(message:String, origin:String, line:int, level:uint):Boolean
 		{
 			return send({ command: COMMAND_LOG, timestamp: new Date(), message: { text: message, origin: origin, line: line, level: level, time: new Date() } });

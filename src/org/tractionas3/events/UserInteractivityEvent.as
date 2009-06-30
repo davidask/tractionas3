@@ -27,34 +27,37 @@
 
 package org.tractionas3.events 
 {	import flash.events.Event;
-	
 	/**
 	 * UserInteractivityEvent provides a base event for UserActivityManager class.
 	 */
-	
+
 	public class UserInteractivityEvent extends Event 
 	{
 		/**
 		 * Defines the value of the type property of a userIdle event object.
 		 */
-		
+
 		public static const USER_IDLE:String = "userIdle";
-		
+
 		/**
 		 * Defines the value of the type property of a userActive event object.
 		 */
-				public static const USER_PRESENT:String = "userActive";
+
+		public static const USER_PRESENT:String = "userActive";
+
 		
 		/**
 		 * Creates a new UserInteractivityEvent object.
 		 */
-				public function UserInteractivityEvent(type:String, bubbles:Boolean = false, cancelable:Boolean = false)
+
+		public function UserInteractivityEvent(type:String, bubbles:Boolean = false, cancelable:Boolean = false)
 		{			super(type, bubbles, cancelable);		}
-		
+
 		/**
 		 * @inheritDoc
 		 */
-				override public function clone():Event
+
+		override public function clone():Event
 		{
 			return new UserInteractivityEvent(type, bubbles, cancelable);
 		}
