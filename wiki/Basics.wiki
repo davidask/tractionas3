@@ -1,7 +1,7 @@
 #summary Getting started with TractionAS3
 
 == Acquiring the source code ==
-Use the repository URL to checkout the source under the _source_ tab.
+Use the repository URL to checkout the source under the _source_ tab. This is the best way to get the source and stay updated with the most recent changes. Eventually TractionAS3 will be downloadable as SWC and zipped source.
 
 == Requirements ==
 You can use TractionAS3 with your favourite IDE such as Adobe Flash, FDT or Flash/Flex Builder.
