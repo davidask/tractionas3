@@ -25,48 +25,13 @@
  *
  */
 
-package org.tractionas3.graphics 
-{	import org.tractionas3.core.CoreObject;
-	import org.tractionas3.core.interfaces.CoreInterface;
-	/**
-	 * GradientColor represents a single color used in a gradient.
-	 */
-
-	public class GradientColor extends CoreObject implements CoreInterface 
+package org.tractionas3.load 
+{
+	public interface Unloadable 
 	{
 		/**
-		 * Specifies the color of the gradient color.
+		 * Unloads the loaded data of a loader.
 		 */
-
-		public var color:uint;
-
-		/**
-		 * Specifies the alpha of the gradient color.
-		 */
-
-		public var alpha:Number;
-
-		/**
-		 * Specifies the ratio of the gradient color.
-		 */
-
-		public var ratio:Number;
-
-		
-		/**
-		 * Creates a new GradientColor object.
-		 * 
-		 * @param gradientColor Color of the gradient.
-		 * @param gradientAlpha Alpha of the gradient.
-		 * @param gradientRatio Ratio of the gradient.
-		 */
-
-		public function GradientColor(gradientColor:uint, gradientAlpha:Number, gradientRatio:Number)
-		{
-			color = gradientColor;
-			
-			alpha = gradientAlpha;
-			
-			ratio = gradientRatio;
-		}
-	}}
+		function unload():void;
+	}
+}

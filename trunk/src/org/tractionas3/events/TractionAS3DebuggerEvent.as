@@ -28,38 +28,38 @@
 package org.tractionas3.events 
 {
 	import flash.events.Event;
-
 	/**
 	 * TractionAS3DebuggerEvent provides a base event for TractionAS3Debugger class.
 	 */
-	
+
 	public class TractionAS3DebuggerEvent extends Event 
 	{	
 		/**
 		 * Defines the value of the type property of a tractionAS3DebuggerConnect event object.
 		 */
-		
+
 		public static const CONNECT:String = "tractionAS3DebuggerConnect";
-		
+
 		/**
 		 * Defines the value of the type property of a tractionAS3DebuggerDisconnect event object.
 		 */
-		
+
 		public static const DISCONNECT:String = "tractionAS3DebuggerDisconnect";
+
 		
 		/**
 		 * Creates a new TractionAS3DebuggerEvent object.
 		 */
-		
+
 		public function TractionAS3DebuggerEvent(type:String, bubbles:Boolean = false, cancelable:Boolean = false)
 		{
 			super(type, bubbles, cancelable);
 		}
-		
+
 		/**
 		 * @inheritDoc
 		 */
-		
+
 		override public function clone():Event
 		{
 			return new TractionAS3DebuggerEvent(type, bubbles, cancelable);

@@ -33,10 +33,15 @@ package org.tractionas3.utils
 	public class Version extends CoreObject implements CoreInterface, Cloneable 
 	{
 		public var major:uint;
-		public var minor:uint;
-		public var build:uint;
-		public var internalBuild:uint;
-		public function Version(mav:uint = 0, miv:uint = 0, b:uint = 0, ib:uint = 0)
+
+		public var minor:uint;
+
+		public var build:uint;
+
+		public var internalBuild:uint;
+
+		
+		public function Version(mav:uint = 0, miv:uint = 0, b:uint = 0, ib:uint = 0)
 		{
 			major = mav;
 			
@@ -46,7 +51,7 @@ package org.tractionas3.utils
 			
 			internalBuild = ib;
 		}
-		
+
 		public function isLaterThan(version:Version):Boolean
 		{
 			if(version.major > major) return true;
@@ -60,13 +65,16 @@ package org.tractionas3.utils
 			
 			return false;
 		}
-		override public function toString():String
+
+		override public function toString():String
 		{			return stringify(this) + "[major=" + major + ", minor=" + minor + ", build=" + build + ", internal build=" + internalBuild + "]";
 		}
-		override public function destruct(deepDestruct:Boolean = false):void
+
+		override public function destruct(deepDestruct:Boolean = false):void
 		{	
 			super.destruct(deepDestruct);		}
-		public function clone():Object
+
+		public function clone():Object
 		{			return new Version(major, minor, build, internalBuild);
 		}
 	}}

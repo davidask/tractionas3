@@ -4,7 +4,6 @@ package org.tractionas3.debug.output
 	import org.tractionas3.debug.LogMessage;
 	import org.tractionas3.debug.StackTraceEntry;
 	import org.tractionas3.debug.TractionAS3Debugger;
-	
 	/**
 	 * TractionAS3DebuggerOutput allows you to relay debug messages to the TractionAS3 Debugger log console.
 	 * 
@@ -13,29 +12,29 @@ package org.tractionas3.debug.output
 	 * @see org.tractionas3.debug.Logger
 	 * @see org.tractionas3.debug.Logger#addOutput()
 	 */
-	
+
 	public class TractionAS3DebuggerOutput extends CoreObject implements LoggerOutput 
 	{
-		
+
 		/**
 		 * Creates a new TractionAS3DebuggerOutput object.
 		 */
-		
+
 		public function TractionAS3DebuggerOutput()
 		{
 			TractionAS3Debugger.getInstance();
 		}
-		
+
 		
 		/**
 		 * @inheritDoc
 		 */
-		 
+
 		override public function destruct(deepDestruct:Boolean = false):void
 		{
 			super.destruct(deepDestruct);
 		}
-		
+
 		/**
 		 * @inheritDoc
 		 */

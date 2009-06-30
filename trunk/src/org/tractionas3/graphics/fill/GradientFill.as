@@ -33,14 +33,13 @@ package org.tractionas3.graphics.fill
 
 	import flash.display.Graphics;
 	import flash.geom.Matrix;
-	
 	/**
 	 * GradientFill fills a Graphics object with a gradient fill.
 	 */
-	
+
 	public class GradientFill extends Gradient implements CoreInterface, Fill 
 	{	
-		
+
 		/**
 		 * Specifies the type of the gradient fill.
 		 */
@@ -51,30 +50,31 @@ package org.tractionas3.graphics.fill
 		 */
 
 		public var angle:int;
-		
+
 		/**
 		 * Specifies the focal point ratio of the gradient fill.
 		 */
 		public var focalPointRatio:Number;
-		
+
 		/**
 		 * Specifies the spread method of the gradient fill.
 		 */
-		
+
 		public var spreadMethod:String;
-		
+
 		/**
 		 * Specifies the interpolation method of the gradient fill.
 		 */
-		
+
 		public var interPolationMethod:String;
 
 		private var _matrix:Matrix;
+
 		
 		/**
 		 * Creates a new GradientFill object.
 		 */
-		 
+
 		public function GradientFill(gradientType:String = "linear")
 		{
 			type = gradientType;
@@ -87,7 +87,7 @@ package org.tractionas3.graphics.fill
 			
 			interPolationMethod = "rgb";
 		}
-		
+
 		/**
 		 * @inheritDoc
 		 */
@@ -105,7 +105,7 @@ package org.tractionas3.graphics.fill
 				
 			graphics.beginGradientFill(type, colors, alphas, ratios, _matrix, spreadMethod, interPolationMethod, focalPointRatio);
 		}
-		
+
 		/**
 		 * @inheritDoc
 		 */

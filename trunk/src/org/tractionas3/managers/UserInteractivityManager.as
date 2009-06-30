@@ -41,23 +41,28 @@ package org.tractionas3.managers
 	import flash.events.MouseEvent;
 	import flash.utils.clearTimeout;
 	import flash.utils.setTimeout;
-	
 	/**
 	 * UserInteractivityManager is used to monitor user interactivity.
 	 */
-	
+
 	public class UserInteractivityManager extends WeakEventDispatcher implements CoreInterface, Resetable, Cloneable, Runnable
 	{	
 		/**
 		 * The default timeout of user interactivity.
 		 */
-		
+
 		public static var DEFAULT_TIMEOUT:uint = 15;
-		public var scope:DisplayObject;
-		private var _timeout:uint;
-		private var _timeoutID:uint;
-		private var _running:Boolean;
-		private var _userActive:Boolean = false;		
+
+		public var scope:DisplayObject;
+
+		private var _timeout:uint;
+
+		private var _timeoutID:uint;
+
+		private var _running:Boolean;
+
+		private var _userActive:Boolean = false;		
+
 		
 		/**
 		 * Creates a new UserInteractivityManager object.
@@ -65,31 +70,35 @@ package org.tractionas3.managers
 		 * @param targetScope Scope in wich the user activity is to be monitored.
 		 * @param interactivityTimeout Timeout of user interactivity.
 		 */
-				public function UserInteractivityManager(targetScope:DisplayObject, interactivityTimeout:Number = NaN):void
+
+		public function UserInteractivityManager(targetScope:DisplayObject, interactivityTimeout:Number = NaN):void
 		{
 			scope = targetScope;
 			
 			timeout = isNaN(interactivityTimeout) ? DEFAULT_TIMEOUT : interactivityTimeout;
 		}
-		
+
 		/**
 		 * Specifies the timeout of user interactivity.
 		 */
-				public function get timeout():uint
+
+		public function get timeout():uint
 		{
 			return _timeout;
 		}
-		public function set timeout(value:uint):void
+
+		public function set timeout(value:uint):void
 		{
 			_timeout = value * 1000;
 			
 			if(running) resetTimeout();
 		}
-		
+
 		/**
 		 * Starts the UserInteractivityManager.
 		 */
-		public function start():void
+
+		public function start():void
 		{
 			setEventListeners(true);
 			
@@ -97,28 +106,31 @@ package org.tractionas3.managers
 			
 			_running = true;
 		}
-		
+
 		/**
 		 * Stops the UserInteractivityManager.
 		 */
-				public function stop():void
+
+		public function stop():void
 		{
 			_running = false;
 		}
-		
+
 		/**
 		 * Indicates whether the UserInteractivityManager is running.
 		 */
-				public function get running():Boolean
+
+		public function get running():Boolean
 		{
 			setEventListeners(false);
 			return _running;
 		}
-		
+
 		/**
 		 * @inheritDoc
 		 */
-				public function reset():void
+
+		public function reset():void
 		{
 			scope = null;
 			
@@ -126,19 +138,21 @@ package org.tractionas3.managers
 			
 			setEventListeners(false);
 		}
-		
+
 		/**
 		 * @inheritDoc
 		 */
-		public function clone():Object
+
+		public function clone():Object
 		{
 			return new UserInteractivityManager(scope, timeout);
 		}
-		
+
 		/**
 		 * @inheritDoc
 		 */
-				override public function destruct(deepDestruct:Boolean = false):void
+
+		override public function destruct(deepDestruct:Boolean = false):void
 		{
 			setEventListeners(false);
 			
@@ -154,7 +168,8 @@ package org.tractionas3.managers
 			
 			Destructor.destruct(this, deepDestruct);
 		}
-		private function setEventListeners(add:Boolean):void
+
+		private function setEventListeners(add:Boolean):void
 		{
 			var method:String = add ? "addEventListener" : "removeEventListener";
 			
@@ -162,7 +177,8 @@ package org.tractionas3.managers
 			
 			scope[method](KeyboardEvent.KEY_DOWN, handleEvents);
 		}
-		private function handleEvents(e:Event):void
+
+		private function handleEvents(e:Event):void
 		{
 			switch(e.type)
 			{
@@ -175,7 +191,8 @@ package org.tractionas3.managers
 					break;
 			}
 		}
-		private function userIsActive():void
+
+		private function userIsActive():void
 		{
 			if(!_userActive) dispatchEvent(new UserInteractivityEvent(UserInteractivityEvent.USER_PRESENT));
 						
@@ -183,13 +200,15 @@ package org.tractionas3.managers
 			
 			_userActive = true;
 		}
-		private function userIsIdle():void
+
+		private function userIsIdle():void
 		{
 			if(_userActive) dispatchEvent(new UserInteractivityEvent(UserInteractivityEvent.USER_IDLE));
 			
 			_userActive = false;
 		}
-		private function resetTimeout():void
+
+		private function resetTimeout():void
 		{
 			if(_timeoutID) clearTimeout(_timeoutID);
 			

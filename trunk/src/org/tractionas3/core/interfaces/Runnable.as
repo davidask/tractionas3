@@ -27,7 +27,7 @@
 
 package org.tractionas3.core.interfaces 
 {
-	/**
+	/**
 	 * Core interface for runnable classes
 	 */
 	public interface Runnable 
@@ -36,11 +36,13 @@ package org.tractionas3.core.interfaces
 		 * Starts the runnable instance.
 		 */
 		function start():void;
-		/**
+
+		/**
 		 * Stops the runnable instance.
 		 */
 		function stop():void;
-		/**
+
+		/**
 		 * Indicates whether the runnable instance is currently running.
 		 */
 		function get running():Boolean;	}}
