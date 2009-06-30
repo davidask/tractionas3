@@ -71,6 +71,9 @@ package org.tractionas3.debug
 		/** @private */
 		public static const COMMAND_INSPECT:String = "command_inspect";
 
+		/** @private */
+		public static const COMMAND_HELLO:String = "command_hello";
+
 		/*
 		 * Responses
 		 */
@@ -82,7 +85,10 @@ package org.tractionas3.debug
 		public static const RESPONSE_DISCONNECT:String = "response_disconnect";
 
 		/** @private */
-		public static const RESPONSE_CHANGE_PROPERTY:String = "responde_change_property";
+		public static const RESPONSE_CHANGE_PROPERTY:String = "response_change_property";
+
+		/** @private */
+		public static const RESPONSE_HELLO_REQUEST:String = "response_hello";
 
 		/*
 		 * Aliases
@@ -170,6 +176,7 @@ package org.tractionas3.debug
 
 		private var _numConnectionAttempts:uint;
 
+		
 		/**
 		 * Attempts to connect to TractionAS3 Debugger.
 		 */
@@ -234,23 +241,23 @@ package org.tractionas3.debug
 		{
 			getInstance().sendInspectMessage(target, label);
 		}
-		
+
 		/**
 		 * Sends a log message to TractionAS3 Debugger.
 		 */
-		
+
 		public static function sendLogMessage(message:String, origin:String, line:int, level:uint):Boolean
 		{
 			return getInstance().sendLogMessage(message, origin, line, level);
 		}
-		
+
 		private static function getInstance():TractionAS3Debugger
 		{
 			if(!_instance) _instance = new TractionAS3Debugger(new SingletonEnforcer());
 			
 			return _instance;
 		}
-		
+
 		/**
 		 * @private
 		 */
@@ -381,6 +388,11 @@ package org.tractionas3.debug
 		private function sendProfilingData():void
 		{
 			send({ command: COMMAND_PROFILE, stage: _profilerTargetStage, fpsCurrent: _fpsProfiler.currentFPS, fpsAverage: _fpsProfiler.averageFPS, currentMemory: _memoryProfiler.currentMemory, peakMemory: _memoryProfiler.peakMemory, bandwidthCurrent: _bandwidthProfiler.bytesPerSecond, timestamp: new Date() });
+		}
+		
+		private function sendHelloMessage():void
+		{
+			send({ command: COMMAND_HELLO, message: "Still here!", timestamp: new Date() });
 		}
 
 		private function sendInspectMessage(target:Object, label:String):void
@@ -572,6 +584,12 @@ package org.tractionas3.debug
 				case RESPONSE_CHANGE_PROPERTY:
 					
 					setPropertyValue(e.data["target"], e.data["property"], e.data["value"]);
+					
+					break;
+					
+				case RESPONSE_HELLO_REQUEST:
+					
+					sendHelloMessage();
 					
 					break;
 			}
