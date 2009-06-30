@@ -80,3 +80,6 @@ package
 }}}
 
 Use the `org.tractionas3.debug.Logger` class and its static methods to add or remove outputs. You can also use it to check whether a specific output is in the output list, or if a specific output _type_ is in the output list. If no output is added, the IDE Trace output will be used. *Use the function `log()` to type out your log messages*, and use the second parameter to define the log level of your message. Please review the import block. You may also create your own outputs. To do so you only need to create a class that implements the `org.tractionas3.debug.output.LoggerOutput` interface.
+
+
+_More info coming soon_
