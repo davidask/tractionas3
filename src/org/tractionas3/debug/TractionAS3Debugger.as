@@ -170,18 +170,6 @@ package org.tractionas3.debug
 
 		private var _numConnectionAttempts:uint;
 
-		
-		/**
-		 * TractionAS3Debugger accessor.
-		 */
-
-		public static function getInstance():TractionAS3Debugger
-		{
-			if(!_instance) _instance = new TractionAS3Debugger(new SingletonEnforcer());
-			
-			return _instance;
-		}
-
 		/**
 		 * Attempts to connect to TractionAS3 Debugger.
 		 */
@@ -246,7 +234,23 @@ package org.tractionas3.debug
 		{
 			getInstance().sendInspectMessage(target, label);
 		}
-
+		
+		/**
+		 * Sends a log message to TractionAS3 Debugger.
+		 */
+		
+		public static function sendLogMessage(message:String, origin:String, line:int, level:uint):Boolean
+		{
+			return getInstance().sendLogMessage(message, origin, line, level);
+		}
+		
+		private static function getInstance():TractionAS3Debugger
+		{
+			if(!_instance) _instance = new TractionAS3Debugger(new SingletonEnforcer());
+			
+			return _instance;
+		}
+		
 		/**
 		 * @private
 		 */
@@ -364,7 +368,7 @@ package org.tractionas3.debug
 		 * @private
 		 */
 
-		public function sendLogMessage(message:String, origin:String, line:int, level:uint):Boolean
+		private function sendLogMessage(message:String, origin:String, line:int, level:uint):Boolean
 		{
 			return send({ command: COMMAND_LOG, timestamp: new Date(), message: { text: message, origin: origin, line: line, level: level, time: new Date() } });
 		}
