@@ -1,0 +1,617 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="CoreSprite,org.tractionas3.display.CoreSprite,filters,hasStage,interactive,scale,addChildren,addEventListener,addFilter,destruct,destructChildren,dispatchEvent,hasFilter,listDestructableProperties,onAddedToStage,onRemovedFromStage,removeChildren,removeFilter,toString,updateFilters" name="keywords">
+<title>org.tractionas3.display.CoreSprite</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'CoreSprite - TractionAS3 Framework Documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">TractionAS3 Framework Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?org/tractionas3/display/CoreSprite.html&amp;org/tractionas3/display/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;CoreSprite</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class CoreSprite"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">org.tractionas3.display</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class CoreSprite</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">CoreSprite <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.display.Sprite</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implements</td><td><a href="../core/interfaces/CoreInterface.html">CoreInterface</a>, flash.events.IEventDispatcher</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Subclasses</td><td><a href="../core/Application.html">Application</a>, <a href="../display/RenderableSprite.html">RenderableSprite</a>, <a href="../ui/VirtualCursor.html">VirtualCursor</a></td>
+</tr>
+</table>
+<p></p>
+  CoreSprite is the core DisplayObject class of the TractionAS3 API.
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#filters">filters</a> : Array<div class="summaryTableDescription">
+   An indexed array that contains each filter object currently associated with the CoreSprite.</div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#hasStage">hasStage</a> : Boolean<div class="summaryTableDescription">[read-only]
+   Indicates whether the CoreSprite is a child to application stage.</div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#interactive">interactive</a> : Boolean<div class="summaryTableDescription">
+   Defines whether the CoreSprite instance reacts to mouse.</div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#scale">scale</a> : Number<div class="summaryTableDescription">
+   Defines the scale of the CoreSprite instance in aspect ratio 1:1.</div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#CoreSprite()">CoreSprite</a>()</div>
+<div class="summaryTableDescription">
+   Creates a new CoreSprite object.</div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addChildren()">addChildren</a>(... children):void</div>
+<div class="summaryTableDescription">
+   Adds multiple chidren to the CoreSprite instance.</div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addEventListener()">addEventListener</a>(type:String, listener:Function, useCapture:Boolean = false, priority:int = 0, useWeakReference:Boolean = true):void</div>
+<div class="summaryTableDescription">
+   Registers an event listener object with an EventDispatcher object so that the listener receives notification of an event.</div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addFilter()">addFilter</a>(filter:BitmapFilter):BitmapFilter</div>
+<div class="summaryTableDescription">
+   Adds a new filter to the CoreSprite.</div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#destruct()">destruct</a>(deepDestruct:Boolean = false):void</div>
+<div class="summaryTableDescription">
+   
+   Destructs implementing instance of specified properties.</div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#destructChildren()">destructChildren</a>(deepDestruct:Boolean = false):void</div>
+<div class="summaryTableDescription">
+   Iterates through all the children in the displaylist and calls the <code>destruct()</code> method on them, them removes them from the display list.</div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#dispatchEvent()">dispatchEvent</a>(evt:Event):Boolean</div>
+<div class="summaryTableDescription">
+   Dispatches an event into the event flow, <i>only</i> if event property <code>hasEventListener</code> or <code>bubbles</code> are <code>true</code>.</div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#hasFilter()">hasFilter</a>(filter:BitmapFilter):Boolean</div>
+<div class="summaryTableDescription">
+   Indicates whether specified filter is applied to CoreSprite.</div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#listDestructableProperties()">listDestructableProperties</a>():Array</div>
+<div class="summaryTableDescription">
+   
+   Specifies an array of strings representing properties that are to be
+   nullified or reset upon destruction.</div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeChildren()">removeChildren</a>(... children):void</div>
+<div class="summaryTableDescription">
+   Removes multiple children to the CoreSprite instance.</div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeFilter()">removeFilter</a>(filter:BitmapFilter):void</div>
+<div class="summaryTableDescription">
+   Removes specified filter from CoreSprite
+   </div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#toString()">toString</a>():String</div>
+<div class="summaryTableDescription">
+   Returns a string representation of the CoreSprite instance.</div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#updateFilters()">updateFilters</a>():void</div>
+<div class="summaryTableDescription">
+   Reapplies the filters to the CoreSprite.</div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#onAddedToStage()">onAddedToStage</a>():void</div>
+<div class="summaryTableDescription">
+   Called when the CoreSprite instance is added to stage.</div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#onRemovedFromStage()">onRemovedFromStage</a>():void</div>
+<div class="summaryTableDescription">
+   Called when the CoreSprite instance is removed from stage.</div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="filters"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">filters</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>filters:Array</code>&nbsp;&nbsp;[read-write]<p>
+   An indexed array that contains each filter object currently associated with the CoreSprite.
+   <p />
+   CoreSprite implements a modified filter structure allowing you to add and remove any specified filter.
+   You can explicitly add or remove filters using the <code>adddFilter()</code> or <code>removeFilter()</code> methods.
+   Changing property of a filter requires an <code>updateFilters()</code> method call, however adding or removing a filter does not.
+   
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get filters():Array</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set filters(value:Array):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../display/CoreSprite.html#addFilter()" target="">addFilter()</a>
+<br>
+<a href="../display/CoreSprite.html#removeFilter()" target="">removeFilter()</a>
+<br>
+<a href="../display/CoreSprite.html#updateFilters()" target="">updateFilters()</a>
+<br>
+<a href="../display/CoreSprite.html#hasFilter()" target="">hasFilter()</a>
+</div>
+</div>
+<a name="hasStage"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">hasStage</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>hasStage:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+   Indicates whether the CoreSprite is a child to application stage. 
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get hasStage():Boolean</code>
+<br>
+</div>
+<a name="interactive"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">interactive</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>interactive:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   Defines whether the CoreSprite instance reacts to mouse.
+   Setting the this property is equal to setting <code>mouseEnabled</code> and <code>mouseChildren</code> to the same value.
+   
+   Use <code>mouseEnabled</code> or <code>mouseChildren</code> to specifically disable mouse interaction on a
+   CoreSprite instance or CoreSprite instance children.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get interactive():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set interactive(value:Boolean):void</code>
+<br>
+</div>
+<a name="scale"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">scale</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>scale:Number</code>&nbsp;&nbsp;[read-write]<p>
+   Defines the scale of the CoreSprite instance in aspect ratio 1:1.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get scale():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set scale(value:Number):void</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="CoreSprite()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">CoreSprite</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function CoreSprite()</code><p>
+   Creates a new CoreSprite object.
+   </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="addChildren()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addChildren</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addChildren(... children):void</code><p>
+   Adds multiple chidren to the CoreSprite instance.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code>... <span class="label">children</span></code> &mdash; DisplayObject instances added to CoreSprite display list.
+   </td>
+</tr>
+</table>
+</div>
+<a name="addEventListener()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addEventListener</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function addEventListener(type:String, listener:Function, useCapture:Boolean = false, priority:int = 0, useWeakReference:Boolean = true):void</code><p>
+   Registers an event listener object with an EventDispatcher object so that the listener receives notification of an event.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code> &mdash; In CoreSprite class this parameter is set to <code>true</code> by default.
+   This is to more easily mark the CoreSprite instance for garbage collection.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">listener</span>:Function</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">useCapture</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">priority</span>:int</code> (default = <code>0</code>)<code></code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">useWeakReference</span>:Boolean</code> (default = <code>true</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<a name="addFilter()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addFilter</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addFilter(filter:BitmapFilter):BitmapFilter</code><p>
+   Adds a new filter to the CoreSprite.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">filter</span>:BitmapFilter</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>BitmapFilter</code></td>
+</tr>
+</table>
+</div>
+<a name="destruct()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">destruct</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function destruct(deepDestruct:Boolean = false):void</code><p>
+   
+   Destructs implementing instance of specified properties.
+   <p />
+   <b>Note:</b> You can override this method to remove unused references in your custom class.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">deepDestruct</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<a name="destructChildren()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">destructChildren</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function destructChildren(deepDestruct:Boolean = false):void</code><p>
+   Iterates through all the children in the displaylist and calls the <code>destruct()</code> method on them, them removes them from the display list.
+   Only applies to children implementing the <code>org.tractionas3.core.Destructable</code> interface.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">deepDestruct</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">org.tractionas3.core.Destructable</div>
+</div>
+<a name="dispatchEvent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">dispatchEvent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function dispatchEvent(evt:Event):Boolean</code><p>
+   Dispatches an event into the event flow, <i>only</i> if event property <code>hasEventListener</code> or <code>bubbles</code> are <code>true</code>. 
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">evt</span>:Event</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code></td>
+</tr>
+</table>
+</div>
+<a name="hasFilter()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">hasFilter</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function hasFilter(filter:BitmapFilter):Boolean</code><p>
+   Indicates whether specified filter is applied to CoreSprite.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">filter</span>:BitmapFilter</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code></td>
+</tr>
+</table>
+</div>
+<a name="listDestructableProperties()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">listDestructableProperties</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function listDestructableProperties():Array</code><p>
+   
+   Specifies an array of strings representing properties that are to be
+   nullified or reset upon destruction. Applies to public properties <b>only</b>
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Array</code></td>
+</tr>
+</table>
+</div>
+<a name="onAddedToStage()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onAddedToStage</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function onAddedToStage():void</code><p>
+   Called when the CoreSprite instance is added to stage.
+   When extending CoreSprite, overriding this method will implement custom functionality.
+   </p></div>
+<a name="onRemovedFromStage()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onRemovedFromStage</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function onRemovedFromStage():void</code><p>
+   Called when the CoreSprite instance is removed from stage.
+   When extending CoreSprite, overriding this method will implement custom functionality.
+   </p></div>
+<a name="removeChildren()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeChildren</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeChildren(... children):void</code><p>
+   Removes multiple children to the CoreSprite instance.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code>... <span class="label">children</span></code> &mdash; DisplayObject instances removed to CoreSprite display list.
+   If no arguments are passed all children are removed.
+   </td>
+</tr>
+</table>
+</div>
+<a name="removeFilter()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeFilter</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeFilter(filter:BitmapFilter):void</code><p>
+   Removes specified filter from CoreSprite
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">filter</span>:BitmapFilter</code></td>
+</tr>
+</table>
+</div>
+<a name="toString()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">toString</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function toString():String</code><p>
+   Returns a string representation of the CoreSprite instance.
+   Part of the string returned is a display display hierarchy indication.
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>String</code></td>
+</tr>
+</table>
+</div>
+<a name="updateFilters()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">updateFilters</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function updateFilters():void</code><p>
+   Reapplies the filters to the CoreSprite. After changing properties in filters applied to CoreSprite, call this method to update their display.
+   </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->
