@@ -18,7 +18,7 @@ You may still download the application under the downloads tab. *Please note tha
   * User interface updates (both in functionality and appearance)
   
 === Requirements ===
-To use the TractionAS3 Debugger you need to use the TractionAS3 API.
+To use the TractionAS3 Debugger you need to use the TractionAS3 API. To retrieve the TractionAS3 API source code please check out using the SVN repository link under the Source tab.
 
 === Downloading the application ===
 Please see the Downloads tab.
