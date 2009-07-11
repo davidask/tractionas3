@@ -20,6 +20,9 @@ You may still download the application under the downloads tab. *Please note tha
 === Requirements ===
 To use the TractionAS3 Debugger you need to use the TractionAS3 API.
 
+=== Downloading the application ===
+Please see the Downloads tab.
+
 === Navigating the Application ===
 When you first launch the TractionAS3 Debugger, the log console window will open.
 To open other windows, use the application menu in OSX, and the system tray icon menu in windows.
