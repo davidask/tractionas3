@@ -48,13 +48,12 @@ package org.tractionas3.debug
 	import flash.utils.Timer;
 	import flash.utils.clearTimeout;
 	import flash.utils.setTimeout;
+
 	/**
 	 * TractionAS3Debugger is used to communicate with the TractionAS3 Debugger application.
 	 */	
-
 	public class TractionAS3Debugger extends WeakEventDispatcher implements Connectable
 	{
-
 		/*
 		 * Commands
 		 */
@@ -73,6 +72,9 @@ package org.tractionas3.debug
 
 		/** @private */
 		public static const COMMAND_HELLO:String = "command_hello";
+
+		/** @private */
+		public static const COMMAND_ASSIGN_SLIDER:String = "command_asign_slider";
 
 		/*
 		 * Responses
@@ -122,29 +124,25 @@ package org.tractionas3.debug
 		/**
 		 * Specifies, in seconds, the connection timeout
 		 */
-
 		public static var CONNECTION_TIMEOUT:uint = 5;
 
 		/**
 		 * Specifies the number of connection attempts to to be made to the debugger.
 		 */
-
 		public static var CONNECTION_ATTEMPTS:uint = 3;
 
 		/**
 		 * Specifies allowed domain.
 		 */
-
 		public static const ALLOWED_DOMAIN:String = "*";
 
-		
 		private static var _instance:TractionAS3Debugger;
 
 		/**
 		 * Specifies whether the debugger connector is enabled
 		 */
-
 		public var enabled:Boolean = true;
+
 
 		private var _objectInspectMap:Dictionary;
 
@@ -152,11 +150,21 @@ package org.tractionas3.debug
 
 		private var _objectInspectMapKeyPrefix:String = "objectReference_";
 
+
+		private var _propertySliderReferenceMap:Dictionary;
+		
+		private var _propertySliderReferenceMapKeyNum:uint;
+		
+		private var _propertySliderReferenceMapPrefix:String = "propertySlider_";
+		
+
 		private var _buffer:Array;
+
 
 		private var _inbound:LocalConnectionInbound;
 
 		private var _outbound:LocalConnectionOutbound;
+
 
 		private var _fpsProfiler:FPSProfiler;
 
@@ -168,6 +176,7 @@ package org.tractionas3.debug
 
 		private var _profilerTargetStage:Stage;
 
+
 		private var _connected:Boolean;
 
 		private var _connecting:Boolean;
@@ -176,11 +185,9 @@ package org.tractionas3.debug
 
 		private var _numConnectionAttempts:uint;
 
-		
 		/**
 		 * Attempts to connect to TractionAS3 Debugger.
 		 */
-
 		public static function connect():void
 		{
 			getInstance().connect();
@@ -189,7 +196,6 @@ package org.tractionas3.debug
 		/**
 		 * Disconnects from TractionAS3 Debugger.
 		 */
-
 		public static function disconnect():void
 		{
 			getInstance().disconnect();
@@ -198,7 +204,6 @@ package org.tractionas3.debug
 		/**
 		 * Indicates whether a connection has been established with the TractionAS3 Debugger.
 		 */
-
 		public static function get connected():Boolean
 		{
 			return getInstance().connected;
@@ -209,7 +214,6 @@ package org.tractionas3.debug
 		 * 
 		 * @param stage Specified stage accociated with the profiling.
 		 */
-
 		public static function startProfiler(stage:Stage):void
 		{
 			getInstance()._profilerTargetStage = stage;
@@ -222,7 +226,6 @@ package org.tractionas3.debug
 		/**
 		 * Stops profiling of the application.
 		 */
-
 		public static function stopProfiler():void
 		{
 			getInstance()._profilerTimer.stop();
@@ -236,16 +239,19 @@ package org.tractionas3.debug
 		 * @param target Object to be inspected
 		 * @param label Label of the inspected object (shown in the TractionAS3 Debugger inspector window).
 		 */
-
 		public static function inspect(target:Object, label:String):void
 		{
 			getInstance().sendInspectMessage(target, label);
 		}
 
+		public static function assignPropertySlider(target:Object, label:String, minValue:Number, maxValue:Number):void
+		{
+			getInstance().sendPropertySliderMessage(target, label, minValue, maxValue);
+		}
+
 		/**
 		 * Sends a log message to TractionAS3 Debugger.
 		 */
-
 		public static function sendLogMessage(message:String, origin:String, line:int, level:uint):Boolean
 		{
 			return getInstance().sendLogMessage(message, origin, line, level);
@@ -261,7 +267,6 @@ package org.tractionas3.debug
 		/**
 		 * @private
 		 */
-
 		public function TractionAS3Debugger(singletonEnforcer:SingletonEnforcer)
 		{
 			super(this);
@@ -285,7 +290,6 @@ package org.tractionas3.debug
 		/**
 		 * @private
 		 */
-
 		public function connect():void
 		{
 			if(connected == true || _connecting == true) return;
@@ -316,7 +320,6 @@ package org.tractionas3.debug
 		/**
 		 * @private
 		 */
-
 		public function disconnect():void
 		{
 			try
@@ -332,7 +335,6 @@ package org.tractionas3.debug
 		/**
 		 * @private
 		 */
-
 		public function get connected():Boolean
 		{
 			return _connected;
@@ -374,7 +376,6 @@ package org.tractionas3.debug
 		/**
 		 * @private
 		 */
-
 		private function sendLogMessage(message:String, origin:String, line:int, level:uint):Boolean
 		{
 			return send({ command: COMMAND_LOG, timestamp: new Date(), message: { text: message, origin: origin, line: line, level: level, time: new Date() } });
@@ -389,7 +390,7 @@ package org.tractionas3.debug
 		{
 			send({ command: COMMAND_PROFILE, stage: _profilerTargetStage, fpsCurrent: _fpsProfiler.currentFPS, fpsAverage: _fpsProfiler.averageFPS, currentMemory: _memoryProfiler.currentMemory, peakMemory: _memoryProfiler.peakMemory, bandwidthCurrent: _bandwidthProfiler.bytesPerSecond, timestamp: new Date() });
 		}
-		
+
 		private function sendHelloMessage():void
 		{
 			send({ command: COMMAND_HELLO, message: "Still here!", timestamp: new Date() });
@@ -417,7 +418,6 @@ package org.tractionas3.debug
 				 * Try to read the property.
 				 * If an error is thrown, the property isn't really readable and should not be passed.
 				 */
-
 				try
 				{
 					(target[propertyDescriptor.name] != null);
@@ -432,7 +432,6 @@ package org.tractionas3.debug
 				/*
 				 * Pass the property as valid.
 				 */
-
 				if(propertyReadSuccess)
 				{
 					validProperties.push(propertyDescriptor);
@@ -442,6 +441,48 @@ package org.tractionas3.debug
 			}
 			
 			send({ command: COMMAND_INSPECT, label: label, target: getObjectInspectReference(target), methods: ClassDescriptor.getMethods(target), properties: validProperties, propertyValues: propertyValues });
+		}
+
+		private function sendPropertySliderMessage(target:Object, label:String, minValue:Number, maxValue:Number):void
+		{
+			var type:Class;
+			
+			switch(true)
+			{
+				case target is Number:
+					
+					type = Number;
+					
+					break;
+				
+				case target is int:
+				
+					minValue = int(minValue);
+					
+					maxValue = int(maxValue);
+					
+					type = int;
+					
+					break;
+					
+				case target is uint:
+						
+					minValue = uint(Math.max(0, minValue));
+						
+					maxValue = uint(maxValue);
+					
+					type = uint;
+					
+					break;
+					
+				default:
+				
+					return;
+				
+					break;
+					
+				send({ command: COMMAND_ASSIGN_SLIDER, label: label, target: getPropertySliderReference(target), type: type });
+			}
 		}
 
 		private function send(dataObject:Object):Boolean
@@ -506,6 +547,13 @@ package org.tractionas3.debug
 			
 			_objectInspectMapKeyNum = 0;
 		}
+		
+		private function createPropetySliderReferenceMap():void
+		{
+			_propertySliderReferenceMap = new Dictionary(true);
+			
+			_propertySliderReferenceMapKeyNum = 0;
+		}
 
 		private function getObjectInspectReference(target:Object):String
 		{
@@ -519,6 +567,22 @@ package org.tractionas3.debug
 			var key:String = (_objectInspectMapKeyPrefix + _objectInspectMapKeyNum++).toString();
 			
 			_objectInspectMap[key] = target;
+			
+			return key;
+		}
+		
+		private function getPropertySliderReference(target:Object):String
+		{
+			if(!_propertySliderReferenceMap) createPropetySliderReferenceMap();
+			
+			for(var existingKey:String in _propertySliderReferenceMap)
+			{
+				if(_propertySliderReferenceMap[existingKey] == target) return existingKey;
+			}
+			
+			var key:String = (_propertySliderReferenceMapPrefix + _propertySliderReferenceMapKeyNum++).toString();
+			
+			_propertySliderReferenceMapPrefix[key] = target;
 			
 			return key;
 		}
