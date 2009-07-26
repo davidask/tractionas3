@@ -73,9 +73,6 @@ package org.tractionas3.debug
 		/** @private */
 		public static const COMMAND_HELLO:String = "command_hello";
 
-		/** @private */
-		public static const COMMAND_ASSIGN_SLIDER:String = "command_asign_slider";
-
 		/*
 		 * Responses
 		 */
@@ -143,28 +140,17 @@ package org.tractionas3.debug
 		 */
 		public var enabled:Boolean = true;
 
-
 		private var _objectInspectMap:Dictionary;
 
 		private var _objectInspectMapKeyNum:uint;
 
 		private var _objectInspectMapKeyPrefix:String = "objectReference_";
 
-
-		private var _propertySliderReferenceMap:Dictionary;
-		
-		private var _propertySliderReferenceMapKeyNum:uint;
-		
-		private var _propertySliderReferenceMapPrefix:String = "propertySlider_";
-		
-
 		private var _buffer:Array;
-
 
 		private var _inbound:LocalConnectionInbound;
 
 		private var _outbound:LocalConnectionOutbound;
-
 
 		private var _fpsProfiler:FPSProfiler;
 
@@ -175,7 +161,6 @@ package org.tractionas3.debug
 		private var _profilerTimer:Timer;
 
 		private var _profilerTargetStage:Stage;
-
 
 		private var _connected:Boolean;
 
@@ -242,11 +227,6 @@ package org.tractionas3.debug
 		public static function inspect(target:Object, label:String):void
 		{
 			getInstance().sendInspectMessage(target, label);
-		}
-
-		public static function assignPropertySlider(target:Object, label:String, minValue:Number, maxValue:Number):void
-		{
-			getInstance().sendPropertySliderMessage(target, label, minValue, maxValue);
 		}
 
 		/**
@@ -443,48 +423,6 @@ package org.tractionas3.debug
 			send({ command: COMMAND_INSPECT, label: label, target: getObjectInspectReference(target), methods: ClassDescriptor.getMethods(target), properties: validProperties, propertyValues: propertyValues });
 		}
 
-		private function sendPropertySliderMessage(target:Object, label:String, minValue:Number, maxValue:Number):void
-		{
-			var type:Class;
-			
-			switch(true)
-			{
-				case target is Number:
-					
-					type = Number;
-					
-					break;
-				
-				case target is int:
-				
-					minValue = int(minValue);
-					
-					maxValue = int(maxValue);
-					
-					type = int;
-					
-					break;
-					
-				case target is uint:
-						
-					minValue = uint(Math.max(0, minValue));
-						
-					maxValue = uint(maxValue);
-					
-					type = uint;
-					
-					break;
-					
-				default:
-				
-					return;
-				
-					break;
-					
-				send({ command: COMMAND_ASSIGN_SLIDER, label: label, target: getPropertySliderReference(target), type: type });
-			}
-		}
-
 		private function send(dataObject:Object):Boolean
 		{
 			if(!_connected)
@@ -547,13 +485,6 @@ package org.tractionas3.debug
 			
 			_objectInspectMapKeyNum = 0;
 		}
-		
-		private function createPropetySliderReferenceMap():void
-		{
-			_propertySliderReferenceMap = new Dictionary(true);
-			
-			_propertySliderReferenceMapKeyNum = 0;
-		}
 
 		private function getObjectInspectReference(target:Object):String
 		{
@@ -567,22 +498,6 @@ package org.tractionas3.debug
 			var key:String = (_objectInspectMapKeyPrefix + _objectInspectMapKeyNum++).toString();
 			
 			_objectInspectMap[key] = target;
-			
-			return key;
-		}
-		
-		private function getPropertySliderReference(target:Object):String
-		{
-			if(!_propertySliderReferenceMap) createPropetySliderReferenceMap();
-			
-			for(var existingKey:String in _propertySliderReferenceMap)
-			{
-				if(_propertySliderReferenceMap[existingKey] == target) return existingKey;
-			}
-			
-			var key:String = (_propertySliderReferenceMapPrefix + _propertySliderReferenceMapKeyNum++).toString();
-			
-			_propertySliderReferenceMapPrefix[key] = target;
 			
 			return key;
 		}
