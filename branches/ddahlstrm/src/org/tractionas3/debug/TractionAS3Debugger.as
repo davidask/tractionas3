@@ -58,7 +58,7 @@ package org.tractionas3.debug
 		 * Indicates the version of the TractionAS3Debugger class
 		 */
 		public static const VERSION:String = "1.16";
-		
+
 		/**
 		 * Specifies, in seconds, the connection timeout
 		 */
@@ -73,43 +73,43 @@ package org.tractionas3.debug
 		 * Specifies allowed domain.
 		 */
 		public static const ALLOWED_DOMAIN:String = "*";
-		
 
+		
 		private static var _instance:TractionAS3Debugger;
 
 		/**
 		 * Specifies whether the debugger connector is enabled
 		 */
 		public var enabled:Boolean = true;
-		
 
-		private var _objectInspectMap:Dictionary;
 		
+		private var _objectInspectMap:Dictionary;
+
 		private var _objectInspectMapKeyNum:uint;
 
 		private var _objectInspectMapKeyPrefix:String = "objectReference_";
-		
 
+		
 		private var _buffer:Array;
-		
 
+		
 		private var _inbound:LocalConnectionInbound;
 
 		private var _outbound:LocalConnectionOutbound;
-		
 
+		
 		private var _fpsProfiler:FPSProfiler;
 
 		private var _memoryProfiler:MemoryProfiler;
 
 		private var _bandwidthProfiler:BandwidthProfiler;
-		
 
+		
 		private var _profilerTimer:Timer;
 
 		private var _profilerTargetStage:Stage;
-		
 
+		
 		private var _connected:Boolean;
 
 		private var _connecting:Boolean;
@@ -118,6 +118,7 @@ package org.tractionas3.debug
 
 		private var _numConnectionAttempts:uint;
 
+		
 		/**
 		 * Attempts to connect to TractionAS3 Debugger.
 		 */
@@ -184,7 +185,7 @@ package org.tractionas3.debug
 		{
 			return getInstance().sendLogMessage(message, origin, line, level);
 		}
-		
+
 		public static function manageLayout(target:DisplayObjectContainer, label:String):void
 		{
 			getInstance().sendLayoutManagerMessage(target, label);
@@ -228,23 +229,10 @@ package org.tractionas3.debug
 			if(connected == true || _connecting == true) return;
 			
 			_connectTimeout = setTimeout(connectFailure, CONNECTION_TIMEOUT * 1000);
-			
-			var success:Boolean = false;
-			
+
 			log("Attempting to connect to TractionAS3 Debugger...", LogLevel.TRACTIONAS3);
 			
-			try
-			{
-				_inbound.connect();
-				
-				success = true;
-			}
-			catch(e:Error)
-			{
-				log(e.toString(), LogLevel.TRACTIONAS3);
-			}
-			
-			if(success)
+			if(_inbound.connect())
 			{
 				sendConnectMessage();
 			}
@@ -255,14 +243,7 @@ package org.tractionas3.debug
 		 */
 		public function disconnect():void
 		{
-			try
-			{
-				_inbound.disconnect();	
-			}
-			catch(e:Error)
-			{
-				/* Do nothing */
-			}
+			_inbound.disconnect();	
 		}
 
 		/**
@@ -279,7 +260,7 @@ package org.tractionas3.debug
 			
 			if(_numConnectionAttempts < CONNECTION_ATTEMPTS - 1)
 			{
-				message = "Unable to connect to TractionAS3 Debugger. The application may not be running. Retrying(" + (_numConnectionAttempts + 1) + ") in 5 seconds...";
+				message = "Unable to connect to TractionAS3 Debugger. The application may not be running, or another application is allready connected. Retrying(" + (_numConnectionAttempts + 1) + ") in 5 seconds...";
 			}
 			else
 			{
@@ -359,7 +340,7 @@ package org.tractionas3.debug
 				{
 					propertyReadSuccess = false;
 					
-					log("Could not pass property " + "\"" + propertyDescriptor.name + "\" to TractionAS3 Debugger. Error: " + e.toString(), LogLevel.TRACTIONAS3);
+					log("Could not pass property " + "\"" + propertyDescriptor.name + "\" to TractionAS3 Debugger (" + e.toString() + ")", LogLevel.TRACTIONAS3);
 				}
 				
 				/*
@@ -375,7 +356,7 @@ package org.tractionas3.debug
 			
 			send({ command: TractionAS3DebuggerConstants.COMMAND_INSPECT, label: label, target: getObjectInspectReference(target), methods: ClassDescriptor.getMethods(target), properties: validProperties, propertyValues: propertyValues });
 		}
-		
+
 		private function sendLayoutManagerMessage(target:DisplayObjectContainer, label:String):void
 		{
 			send({ command: TractionAS3DebuggerConstants.COMMAND_LAYOUT, label: label, container: target });
@@ -441,7 +422,7 @@ package org.tractionas3.debug
 			
 			_objectInspectMapKeyNum = 0;
 		}
-		
+
 		private function getObjectInspectReference(target:Object):String
 		{
 			if(!_objectInspectMap) createObjectInspectMap();
@@ -457,7 +438,7 @@ package org.tractionas3.debug
 			
 			return key;
 		}
-		
+
 		private function setPropertyValue(target:String, property:String, value:*):void
 		{
 			var propertyChangeTarget:Object;
