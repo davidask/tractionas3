@@ -69,7 +69,7 @@ package org.tractionas3.net
 			_localConnection.allowDomain.apply(null, args);
 		}
 
-		public function connect():void
+		public function connect():Boolean
 		{
 			try
 			{
@@ -77,11 +77,13 @@ package org.tractionas3.net
 			}
 			catch(e:Error)
 			{
-				log(e.toString(), LogLevel.TRACTIONAS3);
+				return false;
 			}
+			
+			return true;
 		}
 
-		public function disconnect():void
+		public function disconnect():Boolean
 		{
 			try
 			{
@@ -89,8 +91,10 @@ package org.tractionas3.net
 			}
 			catch(e:Error)
 			{
-				log(e.toString(), LogLevel.TRACTIONAS3);
+				return false;
 			}
+			
+			return true;
 		}
 
 		override public function destruct(deepDestruct:Boolean = false):void
