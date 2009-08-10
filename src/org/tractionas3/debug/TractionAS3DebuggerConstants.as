@@ -45,6 +45,8 @@ package org.tractionas3.debug
 		public static const COMMAND_PROFILE:String = "command_profile";
 
 		public static const COMMAND_INSPECT:String = "command_inspect";
+		
+		public static const COMMAND_INSPECT_UPDATE:String = "command_inspect_update"; //Yet to be implemented
 
 		public static const COMMAND_HELLO:String = "command_hello";
 		
@@ -56,6 +58,8 @@ package org.tractionas3.debug
 		public static const RESPONSE_DISCONNECT:String = "response_disconnect";
 
 		public static const RESPONSE_CHANGE_PROPERTY:String = "response_change_property";
+		
+		public static const RESPONSE_REQUEST_INSPECT_UPDATE:String = "response_request_inspect_update"; //Yet to be implemented
 
 		public static const RESPONSE_HELLO_REQUEST:String = "response_hello";
 		
