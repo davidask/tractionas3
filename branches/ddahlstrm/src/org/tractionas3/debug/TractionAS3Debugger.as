@@ -356,7 +356,7 @@ package org.tractionas3.debug
 			
 			send({ command: TractionAS3DebuggerConstants.COMMAND_INSPECT, label: label, target: getObjectInspectReference(target), methods: ClassDescriptor.getMethods(target), properties: validProperties, propertyValues: propertyValues });
 		}
-
+		
 		private function sendLayoutManagerMessage(target:DisplayObjectContainer, label:String):void
 		{
 			send({ command: TractionAS3DebuggerConstants.COMMAND_LAYOUT, label: label, container: target });
@@ -429,7 +429,7 @@ package org.tractionas3.debug
 			
 			for(var existingKey:String in _objectInspectMap)
 			{
-				if(_objectInspectMap[existingKey] == target) return existingKey;
+				if(_objectInspectMap[existingKey] == target) return existingKey;	
 			}
 			
 			var key:String = (_objectInspectMapKeyPrefix + _objectInspectMapKeyNum++).toString();
