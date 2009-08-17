@@ -41,7 +41,6 @@ package org.tractionas3.debug
 	import org.tractionas3.reflection.ParameterDescriptor;
 	import org.tractionas3.reflection.PropertyDescriptor;
 
-	import flash.display.DisplayObjectContainer;
 	import flash.display.Stage;
 	import flash.events.TimerEvent;
 	import flash.net.registerClassAlias;
@@ -184,11 +183,6 @@ package org.tractionas3.debug
 		public static function sendLogMessage(message:String, origin:String, line:int, level:uint):Boolean
 		{
 			return getInstance().sendLogMessage(message, origin, line, level);
-		}
-
-		public static function manageLayout(target:DisplayObjectContainer, label:String):void
-		{
-			getInstance().sendLayoutManagerMessage(target, label);
 		}
 
 		private static function getInstance():TractionAS3Debugger
@@ -355,11 +349,6 @@ package org.tractionas3.debug
 			}
 			
 			send({ command: TractionAS3DebuggerConstants.COMMAND_INSPECT, label: label, target: getObjectInspectReference(target), methods: ClassDescriptor.getMethods(target), properties: validProperties, propertyValues: propertyValues });
-		}
-		
-		private function sendLayoutManagerMessage(target:DisplayObjectContainer, label:String):void
-		{
-			send({ command: TractionAS3DebuggerConstants.COMMAND_LAYOUT, label: label, container: target });
 		}
 
 		private function send(dataObject:Object):Boolean
