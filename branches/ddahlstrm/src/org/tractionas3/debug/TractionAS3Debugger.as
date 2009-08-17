@@ -302,7 +302,7 @@ package org.tractionas3.debug
 
 		private function sendProfilingData():void
 		{
-			send({ command: TractionAS3DebuggerConstants.COMMAND_PROFILE, fpsCurrent: _fpsProfiler.currentFPS, fpsAverage: _fpsProfiler.averageFPS, currentMemory: _memoryProfiler.currentMemory, peakMemory: _memoryProfiler.peakMemory, bandwidthCurrent: _bandwidthProfiler.bytesPerSecond, timestamp: new Date() });
+			send({ command: TractionAS3DebuggerConstants.COMMAND_PROFILE, fpsCurrent: _fpsProfiler.currentFPS, fpsAverage: _fpsProfiler.averageFPS, currentMemory: _memoryProfiler.currentMemory, peakMemory: _memoryProfiler.peakMemory, bandwidthCurrent: _bandwidthProfiler.bytesPerSecond, totalBytesLoaded: _bandwidthProfiler.totalBytesLoaded, timestamp: new Date() });
 		}
 
 		private function sendHelloMessage():void
