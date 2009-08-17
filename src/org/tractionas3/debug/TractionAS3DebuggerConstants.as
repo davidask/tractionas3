@@ -50,8 +50,6 @@ package org.tractionas3.debug
 
 		public static const COMMAND_HELLO:String = "command_hello";
 		
-		public static const COMMAND_LAYOUT:String = "command_layout";
-
 
 		public static const RESPONSE_CONNECT:String = "response_connect";
 
@@ -62,8 +60,6 @@ package org.tractionas3.debug
 		public static const RESPONSE_REQUEST_INSPECT_UPDATE:String = "response_request_inspect_update"; //Yet to be implemented
 
 		public static const RESPONSE_HELLO_REQUEST:String = "response_hello";
-		
-		public static const RESPONSE_LAYOUT_OBJECT_EDIT:String = "response_layout";
 
 
 		public static const ALIAS_PROPERTY_DESCRIPTOR:String = "org.tractionas3.reflection.PropertyDescriptor";
