@@ -27,10 +27,10 @@
 
 package org.tractionas3.utils 
 {	import org.tractionas3.core.CoreObject;
-	import org.tractionas3.core.interfaces.Cloneable;
-	import org.tractionas3.core.interfaces.CoreInterface;
+	import org.tractionas3.core.interfaces.ICloneable;
+	import org.tractionas3.core.interfaces.ICoreInterface;
 	import org.tractionas3.reflection.stringify;
-	public class Version extends CoreObject implements CoreInterface, Cloneable 
+	public class Version extends CoreObject implements ICoreInterface, ICloneable 
 	{
 		public var major:uint;
 

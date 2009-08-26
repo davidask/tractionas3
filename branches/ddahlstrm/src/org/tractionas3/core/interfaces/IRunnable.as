@@ -30,7 +30,7 @@ package org.tractionas3.core.interfaces
 	/**
 	 * Core interface for runnable classes
 	 */
-	public interface Runnable 
+	public interface IRunnable 
 	{
 		/**
 		 * Starts the runnable instance.
