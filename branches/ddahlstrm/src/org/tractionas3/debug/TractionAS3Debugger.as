@@ -29,7 +29,6 @@ package org.tractionas3.debug
 {
 	import org.tractionas3.core.interfaces.Connectable;
 	import org.tractionas3.events.LocalConnectionDataEvent;
-	import org.tractionas3.events.TractionAS3DebuggerEvent;
 	import org.tractionas3.events.WeakEventDispatcher;
 	import org.tractionas3.net.LocalConnectionInbound;
 	import org.tractionas3.net.LocalConnectionOutbound;
@@ -48,6 +47,7 @@ package org.tractionas3.debug
 	import flash.utils.Timer;
 	import flash.utils.clearTimeout;
 	import flash.utils.setTimeout;
+
 	/**
 	 * TractionAS3Debugger is used to communicate with the TractionAS3 Debugger application.
 	 */	
@@ -462,8 +462,6 @@ package org.tractionas3.debug
 					_connecting = false;
 					
 					clearTimeout(_connectTimeout);
-						
-					dispatchEvent(new TractionAS3DebuggerEvent(TractionAS3DebuggerEvent.CONNECT));
 					
 					for(var i:int = 0;i < _buffer.length; ++i)
 					{
@@ -479,8 +477,6 @@ package org.tractionas3.debug
 				case TractionAS3DebuggerConstants.RESPONSE_DISCONNECT:
 				
 					_connected = false;
-					
-					dispatchEvent(new TractionAS3DebuggerEvent(TractionAS3DebuggerEvent.DISCONNECT));
 					
 					log("TractionAS3Debugger debugger disconnected. Response message: " + message, LogLevel.TRACTIONAS3);
 					
