@@ -27,7 +27,7 @@
  
 package org.tractionas3.debug 
 {
-	import org.tractionas3.core.interfaces.Connectable;
+	import org.tractionas3.core.interfaces.IConnectable;
 	import org.tractionas3.events.LocalConnectionDataEvent;
 	import org.tractionas3.events.WeakEventDispatcher;
 	import org.tractionas3.net.LocalConnectionInbound;
@@ -51,7 +51,7 @@ package org.tractionas3.debug
 	/**
 	 * TractionAS3Debugger is used to communicate with the TractionAS3 Debugger application.
 	 */	
-	public class TractionAS3Debugger extends WeakEventDispatcher implements Connectable
+	public class TractionAS3Debugger extends WeakEventDispatcher implements IConnectable
 	{
 		/**
 		 * Indicates the version of the TractionAS3Debugger class

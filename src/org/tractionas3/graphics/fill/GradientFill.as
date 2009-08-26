@@ -26,7 +26,7 @@
  */
 
 package org.tractionas3.graphics.fill
-{	import org.tractionas3.core.interfaces.CoreInterface;
+{	import org.tractionas3.core.interfaces.ICoreInterface;
 	import org.tractionas3.data.convertion.degreesToRadians;
 	import org.tractionas3.geom.Dimension;
 	import org.tractionas3.graphics.Gradient;
@@ -37,7 +37,7 @@ package org.tractionas3.graphics.fill
 	 * GradientFill fills a Graphics object with a gradient fill.
 	 */
 
-	public class GradientFill extends Gradient implements CoreInterface, Fill 
+	public class GradientFill extends Gradient implements ICoreInterface, Fill 
 	{	
 
 		/**

@@ -27,7 +27,7 @@
 
 package org.tractionas3.net 
 {
-	import org.tractionas3.core.interfaces.Destructable;
+	import org.tractionas3.core.interfaces.IDestructable;
 	import org.tractionas3.debug.LogLevel;
 	import org.tractionas3.debug.log;
 	import org.tractionas3.events.LocalConnectionDataEvent;
@@ -39,7 +39,7 @@ package org.tractionas3.net
 	import flash.events.StatusEvent;
 	import flash.net.LocalConnection;
 	import flash.utils.ByteArray;
-	public class LocalConnectionInbound extends WeakEventDispatcher implements Destructable
+	public class LocalConnectionInbound extends WeakEventDispatcher implements IDestructable
 	{
 		internal static const RECEIVE_METHOD:String = "receiveData";
 

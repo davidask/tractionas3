@@ -28,10 +28,10 @@
 package org.tractionas3.managers
 {
 	import org.tractionas3.core.Destructor;
-	import org.tractionas3.core.interfaces.Cloneable;
-	import org.tractionas3.core.interfaces.CoreInterface;
-	import org.tractionas3.core.interfaces.Resetable;
-	import org.tractionas3.core.interfaces.Runnable;
+	import org.tractionas3.core.interfaces.ICloneable;
+	import org.tractionas3.core.interfaces.ICoreInterface;
+	import org.tractionas3.core.interfaces.IResetable;
+	import org.tractionas3.core.interfaces.IRunnable;
 	import org.tractionas3.events.UserInteractivityEvent;
 	import org.tractionas3.events.WeakEventDispatcher;
 
@@ -45,7 +45,7 @@ package org.tractionas3.managers
 	 * UserInteractivityManager is used to monitor user interactivity.
 	 */
 
-	public class UserInteractivityManager extends WeakEventDispatcher implements CoreInterface, Resetable, Cloneable, Runnable
+	public class UserInteractivityManager extends WeakEventDispatcher implements ICoreInterface, IResetable, ICloneable, IRunnable
 	{	
 		/**
 		 * The default timeout of user interactivity.

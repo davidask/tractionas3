@@ -27,7 +27,7 @@
  
 package org.tractionas3.display 
 {
-	import org.tractionas3.core.interfaces.CoreInterface;
+	import org.tractionas3.core.interfaces.ICoreInterface;
 	import org.tractionas3.reflection.stringify;
 
 	import flash.display.Bitmap;
@@ -37,7 +37,7 @@ package org.tractionas3.display
 	 * CoreBitmap is the core Bitmap class of the TractionAS3 API.
 	 */
 	
-	public class CoreBitmap extends Bitmap implements CoreInterface 
+	public class CoreBitmap extends Bitmap implements ICoreInterface 
 	{
 		public function CoreBitmap(bitmapData:BitmapData = null, pixelSnapping:String = "auto", smoothing:Boolean = false)
 		{

@@ -27,7 +27,7 @@
  
 package org.tractionas3.display.effects 
 {
-	import org.tractionas3.core.interfaces.Drawable;
+	import org.tractionas3.core.interfaces.IDrawable;
 	import org.tractionas3.display.CoreBitmap;
 
 	import flash.display.BitmapData;
@@ -41,7 +41,7 @@ package org.tractionas3.display.effects
 	 * DisplayObjectReflection creates a reflection of a DisplayObject
 	 */
 
-	public class Reflection extends CoreBitmap implements Drawable 
+	public class Reflection extends CoreBitmap implements IDrawable 
 	{
 		/**
 		 * Specifies the target to be reflected.
