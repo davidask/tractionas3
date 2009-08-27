@@ -32,40 +32,39 @@ package org.tractionas3.display
 
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
-	
 	/**
 	 * CoreBitmap is the core Bitmap class of the TractionAS3 API.
 	 */
-	
+
 	public class CoreBitmap extends Bitmap implements ICoreInterface 
 	{
 		public function CoreBitmap(bitmapData:BitmapData = null, pixelSnapping:String = "auto", smoothing:Boolean = false)
 		{
 			super(bitmapData, pixelSnapping, smoothing);
 		}
-		
+
 		/**
 		 * Returns a string representation of the CoreSprite instance.
 		 */
-		
+
 		override public function toString():String
 		{
 			return stringify(this);
 		}
-		
+
 		/**
 		 * @inheritDoc
 		 */
-		
+
 		public function destruct(deepDestruct:Boolean = false):void
 		{
 			if(bitmapData) bitmapData.dispose();
 		}
-		
+
 		/**
 		 * @inheritDoc
 		 */
-		
+
 		public function listDestructableProperties():Array
 		{
 			return ["bitmapData"];
