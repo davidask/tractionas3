@@ -105,11 +105,18 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("RÂ
    Specifies the amount of red in the Color object, randing between 0 and 255.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/Drawable.html#redraw()">redraw</a>() &mdash; Method in interface org.tractionas3.core.interfaces.<a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/Drawable.html">Drawable</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/IDrawable.html#redraw()">redraw</a>() &mdash; Method in interface org.tractionas3.core.interfaces.<a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/IDrawable.html">IDrawable</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
    Clears and redraws the instance.</td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/display/effects/class-list.html');" href="org/tractionas3/display/effects/Reflection.html#redraw()">redraw</a>() &mdash; Method in class org.tractionas3.display.effects.<a onclick="javascript:loadClassListFrame('org/tractionas3/display/effects/class-list.html');" href="org/tractionas3/display/effects/Reflection.html">Reflection</a></td>
+</tr>
+<tr>
+<td width="20"></td><td>
+   Redraws the reflection.</td>
 </tr>
 <tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/utils/class-list.html');" href="org/tractionas3/utils/BandwidthTest.html#referenceFileURL">referenceFileURL</a> &mdash; Property in class org.tractionas3.utils.<a onclick="javascript:loadClassListFrame('org/tractionas3/utils/class-list.html');" href="org/tractionas3/utils/BandwidthTest.html">BandwidthTest</a></td>
@@ -117,6 +124,22 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("RÂ
 <tr>
 <td width="20"></td><td>
    Indicates the URL of the test reference file.</td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/display/effects/class-list.html');" href="org/tractionas3/display/effects/Reflection.html">Reflection</a> &mdash; Class in package <a onclick="javascript:loadClassListFrame('org/tractionas3/display/effects/class-list.html');" href="org/tractionas3/display/effects/package-detail.html">org.tractionas3.display.effects</a></td>
+</tr>
+<tr>
+<td width="20"></td><td>
+  DisplayObjectReflection creates a reflection of a DisplayObject
+  </td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/display/effects/class-list.html');" href="org/tractionas3/display/effects/Reflection.html#Reflection()">Reflection</a>(drawTarget) &mdash; Constructor in class org.tractionas3.display.effects.<a onclick="javascript:loadClassListFrame('org/tractionas3/display/effects/class-list.html');" href="org/tractionas3/display/effects/Reflection.html">Reflection</a></td>
+</tr>
+<tr>
+<td width="20"></td><td>
+   Creates a new DisplayObjectReflection
+   </td>
 </tr>
 <tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/profiler/class-list.html');" href="org/tractionas3/profiler/BandwidthProfiler.html#registerBytesLoaded()">registerBytesLoaded</a>(numBytes) &mdash; Method in class org.tractionas3.profiler.<a onclick="javascript:loadClassListFrame('org/tractionas3/profiler/class-list.html');" href="org/tractionas3/profiler/BandwidthProfiler.html">BandwidthProfiler</a></td>
@@ -322,7 +345,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("RÂ
    Removes a value from the data table column at specified index.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/Renderable.html#render()">render</a>() &mdash; Method in interface org.tractionas3.core.interfaces.<a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/Renderable.html">Renderable</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/IRenderable.html#render()">render</a>() &mdash; Method in interface org.tractionas3.core.interfaces.<a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/IRenderable.html">IRenderable</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
@@ -334,7 +357,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("RÂ
 <tr>
 <td width="20"></td><td>
    
-   Renders the RenderableSprite.</td>
+   Renders the renderable instance.</td>
 </tr>
 <tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/display/class-list.html');" href="org/tractionas3/display/RenderableSprite.html#render()">render</a>() &mdash; Method in class org.tractionas3.display.<a onclick="javascript:loadClassListFrame('org/tractionas3/display/class-list.html');" href="org/tractionas3/display/RenderableSprite.html">RenderableSprite</a></td>
@@ -350,14 +373,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("RÂ
 <td width="20"></td><td>
    
    
-   Renders the RenderableSprite.</td>
-</tr>
-<tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/Renderable.html"><i>Renderable</i></a> &mdash; Interface in package <a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/package-detail.html">org.tractionas3.core.interfaces</a></td>
-</tr>
-<tr>
-<td width="20"></td><td>
-  Core interface for renderable classes.</td>
+   Renders the renderable instance.</td>
 </tr>
 <tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/display/class-list.html');" href="org/tractionas3/display/RenderableSprite.html">RenderableSprite</a> &mdash; Class in package <a onclick="javascript:loadClassListFrame('org/tractionas3/display/class-list.html');" href="org/tractionas3/display/package-detail.html">org.tractionas3.display</a></td>
@@ -382,7 +398,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("RÂ
    </td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/Resetable.html#reset()">reset</a>() &mdash; Method in interface org.tractionas3.core.interfaces.<a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/Resetable.html">Resetable</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/IResetable.html#reset()">reset</a>() &mdash; Method in interface org.tractionas3.core.interfaces.<a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/IResetable.html">IResetable</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
@@ -498,15 +514,37 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("RÂ
    Resets the test and cancels any current loading.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/Resetable.html"><i>Resetable</i></a> &mdash; Interface in package <a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/package-detail.html">org.tractionas3.core.interfaces</a></td>
-</tr>
-<tr>
-<td width="20"></td><td>
-  Core interface for resetable classes
-  </td>
-</tr>
-<tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/utils/class-list.html');" href="org/tractionas3/utils/DisplayObjectUtil.html#resizeAndMaintainAspectRatio()">resizeAndMaintainAspectRatio</a>(target, width, height, aspectRatio) &mdash; Static method in class org.tractionas3.utils.<a onclick="javascript:loadClassListFrame('org/tractionas3/utils/class-list.html');" href="org/tractionas3/utils/DisplayObjectUtil.html">DisplayObjectUtil</a></td>
+</tr>
+<tr>
+<td width="20"></td><td></td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/debug/class-list.html');" href="org/tractionas3/debug/TractionAS3DebuggerConstants.html#RESPONSE_CHANGE_PROPERTY">RESPONSE_CHANGE_PROPERTY</a> &mdash; Constant static property in class org.tractionas3.debug.<a onclick="javascript:loadClassListFrame('org/tractionas3/debug/class-list.html');" href="org/tractionas3/debug/TractionAS3DebuggerConstants.html">TractionAS3DebuggerConstants</a></td>
+</tr>
+<tr>
+<td width="20"></td><td></td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/debug/class-list.html');" href="org/tractionas3/debug/TractionAS3DebuggerConstants.html#RESPONSE_CONNECT">RESPONSE_CONNECT</a> &mdash; Constant static property in class org.tractionas3.debug.<a onclick="javascript:loadClassListFrame('org/tractionas3/debug/class-list.html');" href="org/tractionas3/debug/TractionAS3DebuggerConstants.html">TractionAS3DebuggerConstants</a></td>
+</tr>
+<tr>
+<td width="20"></td><td></td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/debug/class-list.html');" href="org/tractionas3/debug/TractionAS3DebuggerConstants.html#RESPONSE_DISCONNECT">RESPONSE_DISCONNECT</a> &mdash; Constant static property in class org.tractionas3.debug.<a onclick="javascript:loadClassListFrame('org/tractionas3/debug/class-list.html');" href="org/tractionas3/debug/TractionAS3DebuggerConstants.html">TractionAS3DebuggerConstants</a></td>
+</tr>
+<tr>
+<td width="20"></td><td></td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/debug/class-list.html');" href="org/tractionas3/debug/TractionAS3DebuggerConstants.html#RESPONSE_HELLO_REQUEST">RESPONSE_HELLO_REQUEST</a> &mdash; Constant static property in class org.tractionas3.debug.<a onclick="javascript:loadClassListFrame('org/tractionas3/debug/class-list.html');" href="org/tractionas3/debug/TractionAS3DebuggerConstants.html">TractionAS3DebuggerConstants</a></td>
+</tr>
+<tr>
+<td width="20"></td><td></td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/debug/class-list.html');" href="org/tractionas3/debug/TractionAS3DebuggerConstants.html#RESPONSE_REQUEST_INSPECT_UPDATE">RESPONSE_REQUEST_INSPECT_UPDATE</a> &mdash; Constant static property in class org.tractionas3.debug.<a onclick="javascript:loadClassListFrame('org/tractionas3/debug/class-list.html');" href="org/tractionas3/debug/TractionAS3DebuggerConstants.html">TractionAS3DebuggerConstants</a></td>
 </tr>
 <tr>
 <td width="20"></td><td></td>
@@ -553,6 +591,14 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("RÂ
 </tr>
 <tr>
 <td width="20"></td><td></td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/geom/class-list.html');" href="org/tractionas3/geom/Align.html#RIGHT">RIGHT</a> &mdash; Constant static property in class org.tractionas3.geom.<a onclick="javascript:loadClassListFrame('org/tractionas3/geom/class-list.html');" href="org/tractionas3/geom/Align.html">Align</a></td>
+</tr>
+<tr>
+<td width="20"></td><td>
+   String reprensentation of a right alignment
+   </td>
 </tr>
 <tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/core/class-list.html');" href="org/tractionas3/core/Application.html#root">root</a> &mdash; Static property in class org.tractionas3.core.<a onclick="javascript:loadClassListFrame('org/tractionas3/core/class-list.html');" href="org/tractionas3/core/Application.html">Application</a></td>
@@ -605,15 +651,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("RÂ
    Specifies the margin of each row.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/Runnable.html"><i>Runnable</i></a> &mdash; Interface in package <a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/package-detail.html">org.tractionas3.core.interfaces</a></td>
-</tr>
-<tr>
-<td width="20"></td><td>
-  Core interface for runnable classes
-  </td>
-</tr>
-<tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/Runnable.html#running">running</a> &mdash; Property in interface org.tractionas3.core.interfaces.<a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/Runnable.html">Runnable</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/IRunnable.html#running">running</a> &mdash; Property in interface org.tractionas3.core.interfaces.<a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/IRunnable.html">IRunnable</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>

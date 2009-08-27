@@ -207,9 +207,6 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <div class="summaryTableDescription">
    
    
-   
-   
-   
    Destructs implementing instance of specified properties.</div>
 </td><td class="summaryTableOwnerCol">ThrowableSprite</td>
 </tr>
@@ -287,7 +284,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <div class="summaryTableDescription">
    
    
-   Renders the RenderableSprite.</div>
+   Renders the renderable instance.</div>
 </td><td class="summaryTableOwnerCol">ThrowableSprite</td>
 </tr>
 <tr class="hideInheritedMethod">
@@ -448,9 +445,6 @@ showHideInherited();
 <code>public override function destruct(deepDestruct:Boolean = false):void</code><p>
    
    
-   
-   
-   
    Destructs implementing instance of specified properties.
    <p />
    <b>Note:</b> You can override this method to remove unused references in your custom class.
@@ -500,11 +494,7 @@ showHideInherited();
 <code>public final override function render():void</code><p>
    
    
-   Renders the RenderableSprite.
-   <p />
-   By default this method is executed every frame if the MotionSprite is currently in the
-   display list. However, if manually stopped using <code>stopRender()</code>, it will not start
-   rendering automatically when added to the display list after being previously removed.
+   Renders the renderable instance.
    </p></div>
 <br>
 <br>
