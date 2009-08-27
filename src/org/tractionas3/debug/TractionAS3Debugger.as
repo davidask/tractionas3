@@ -27,9 +27,8 @@
  
 package org.tractionas3.debug 
 {
-	import org.tractionas3.core.interfaces.Connectable;
+	import org.tractionas3.core.interfaces.IConnectable;
 	import org.tractionas3.events.LocalConnectionDataEvent;
-	import org.tractionas3.events.TractionAS3DebuggerEvent;
 	import org.tractionas3.events.WeakEventDispatcher;
 	import org.tractionas3.net.LocalConnectionInbound;
 	import org.tractionas3.net.LocalConnectionOutbound;
@@ -52,71 +51,12 @@ package org.tractionas3.debug
 	/**
 	 * TractionAS3Debugger is used to communicate with the TractionAS3 Debugger application.
 	 */	
-	public class TractionAS3Debugger extends WeakEventDispatcher implements Connectable
+	public class TractionAS3Debugger extends WeakEventDispatcher implements IConnectable
 	{
-		/*
-		 * Commands
+		/**
+		 * Indicates the version of the TractionAS3Debugger class
 		 */
-		
-		/** @private */
-		public static const COMMAND_LOG:String = "command_log";
-
-		/** @private */
-		public static const COMMAND_CONNECT:String = "command_connect";
-
-		/** @private */
-		public static const COMMAND_PROFILE:String = "command_profile";
-
-		/** @private */
-		public static const COMMAND_INSPECT:String = "command_inspect";
-
-		/** @private */
-		public static const COMMAND_HELLO:String = "command_hello";
-
-		/*
-		 * Responses
-		 */
-		
-		/** @private */
-		public static const RESPONSE_CONNECT:String = "response_connect";
-
-		/** @private */
-		public static const RESPONSE_DISCONNECT:String = "response_disconnect";
-
-		/** @private */
-		public static const RESPONSE_CHANGE_PROPERTY:String = "response_change_property";
-
-		/** @private */
-		public static const RESPONSE_HELLO_REQUEST:String = "response_hello";
-
-		/*
-		 * Aliases
-		 */
-		 
-		/** @private */
-		public static const ALIAS_PROPERTY_DESCRIPTOR:String = "org.tractionas3.reflection.PropertyDescriptor";
-
-		/** @private */
-		public static const ALIAS_METHOD_DESCRIPTOR:String = "org.tractionas3.reflection.MethodDescriptor";
-
-		/** @private */
-		public static const ALIAS_PARAMETER_DESCRIPTOR:String = "org.tractionas3.reflection.ParameterDescriptor";
-
-		/** @private */
-		public static const ALIAS_CLASS:String = "topLevel.Class"; 
-
-		/*
-		 * General
-		 */
-
-		/** @private */
-		public static const VERSION:String = "1.08";
-
-		/** @private */
-		public static const INBOUND:String = "_tractionAS3InboundConnection";
-
-		/** @private */
-		public static const OUTBOUND:String = "_tractionAS3OutboundConnection";
+		public static const VERSION:String = "1.16";
 
 		/**
 		 * Specifies, in seconds, the connection timeout
@@ -133,6 +73,7 @@ package org.tractionas3.debug
 		 */
 		public static const ALLOWED_DOMAIN:String = "*";
 
+		
 		private static var _instance:TractionAS3Debugger;
 
 		/**
@@ -140,28 +81,34 @@ package org.tractionas3.debug
 		 */
 		public var enabled:Boolean = true;
 
+		
 		private var _objectInspectMap:Dictionary;
 
 		private var _objectInspectMapKeyNum:uint;
 
 		private var _objectInspectMapKeyPrefix:String = "objectReference_";
 
+		
 		private var _buffer:Array;
 
+		
 		private var _inbound:LocalConnectionInbound;
 
 		private var _outbound:LocalConnectionOutbound;
 
+		
 		private var _fpsProfiler:FPSProfiler;
 
 		private var _memoryProfiler:MemoryProfiler;
 
 		private var _bandwidthProfiler:BandwidthProfiler;
 
+		
 		private var _profilerTimer:Timer;
 
 		private var _profilerTargetStage:Stage;
 
+		
 		private var _connected:Boolean;
 
 		private var _connecting:Boolean;
@@ -170,6 +117,7 @@ package org.tractionas3.debug
 
 		private var _numConnectionAttempts:uint;
 
+		
 		/**
 		 * Attempts to connect to TractionAS3 Debugger.
 		 */
@@ -275,23 +223,10 @@ package org.tractionas3.debug
 			if(connected == true || _connecting == true) return;
 			
 			_connectTimeout = setTimeout(connectFailure, CONNECTION_TIMEOUT * 1000);
-			
-			var success:Boolean = false;
-			
+
 			log("Attempting to connect to TractionAS3 Debugger...", LogLevel.TRACTIONAS3);
 			
-			try
-			{
-				_inbound.connect();
-				
-				success = true;
-			}
-			catch(e:Error)
-			{
-				log(e.toString(), LogLevel.TRACTIONAS3);
-			}
-			
-			if(success)
+			if(_inbound.connect())
 			{
 				sendConnectMessage();
 			}
@@ -302,14 +237,7 @@ package org.tractionas3.debug
 		 */
 		public function disconnect():void
 		{
-			try
-			{
-				_inbound.disconnect();	
-			}
-			catch(e:Error)
-			{
-				/* Do nothing */
-			}
+			_inbound.disconnect();	
 		}
 
 		/**
@@ -326,7 +254,7 @@ package org.tractionas3.debug
 			
 			if(_numConnectionAttempts < CONNECTION_ATTEMPTS - 1)
 			{
-				message = "Unable to connect to TractionAS3 Debugger. The application may not be running. Retrying(" + (_numConnectionAttempts + 1) + ") in 5 seconds...";
+				message = "Unable to connect to TractionAS3 Debugger. The application may not be running, or another application is allready connected. Retrying(" + (_numConnectionAttempts + 1) + ") in 5 seconds...";
 			}
 			else
 			{
@@ -358,22 +286,22 @@ package org.tractionas3.debug
 		 */
 		private function sendLogMessage(message:String, origin:String, line:int, level:uint):Boolean
 		{
-			return send({ command: COMMAND_LOG, timestamp: new Date(), message: { text: message, origin: origin, line: line, level: level, time: new Date() } });
+			return send({ command: TractionAS3DebuggerConstants.COMMAND_LOG, timestamp: new Date(), message: { text: message, origin: origin, line: line, level: level, time: new Date() } });
 		}
 
 		private function sendConnectMessage():void
 		{
-			_outbound.send({ command: COMMAND_CONNECT, version: VERSION, timestamp: new Date() });
+			_outbound.send({ command: TractionAS3DebuggerConstants.COMMAND_CONNECT, version: VERSION, timestamp: new Date() });
 		}
 
 		private function sendProfilingData():void
 		{
-			send({ command: COMMAND_PROFILE, stage: _profilerTargetStage, fpsCurrent: _fpsProfiler.currentFPS, fpsAverage: _fpsProfiler.averageFPS, currentMemory: _memoryProfiler.currentMemory, peakMemory: _memoryProfiler.peakMemory, bandwidthCurrent: _bandwidthProfiler.bytesPerSecond, timestamp: new Date() });
+			send({ command: TractionAS3DebuggerConstants.COMMAND_PROFILE, fpsCurrent: _fpsProfiler.currentFPS, fpsAverage: _fpsProfiler.averageFPS, currentMemory: _memoryProfiler.currentMemory, peakMemory: _memoryProfiler.peakMemory, bandwidthCurrent: _bandwidthProfiler.bytesPerSecond, totalBytesLoaded: _bandwidthProfiler.totalBytesLoaded, timestamp: new Date() });
 		}
 
 		private function sendHelloMessage():void
 		{
-			send({ command: COMMAND_HELLO, message: "Still here!", timestamp: new Date() });
+			send({ command: TractionAS3DebuggerConstants.COMMAND_HELLO, message: "Still here!", timestamp: new Date() });
 		}
 
 		private function sendInspectMessage(target:Object, label:String):void
@@ -406,7 +334,7 @@ package org.tractionas3.debug
 				{
 					propertyReadSuccess = false;
 					
-					log("Could not pass property " + "\"" + propertyDescriptor.name + "\" to TractionAS3 Debugger. Error: " + e.toString(), LogLevel.TRACTIONAS3);
+					log("Could not pass property " + "\"" + propertyDescriptor.name + "\" to TractionAS3 Debugger (" + e.toString() + ")", LogLevel.TRACTIONAS3);
 				}
 				
 				/*
@@ -420,7 +348,7 @@ package org.tractionas3.debug
 				}
 			}
 			
-			send({ command: COMMAND_INSPECT, label: label, target: getObjectInspectReference(target), methods: ClassDescriptor.getMethods(target), properties: validProperties, propertyValues: propertyValues });
+			send({ command: TractionAS3DebuggerConstants.COMMAND_INSPECT, label: label, target: getObjectInspectReference(target), methods: ClassDescriptor.getMethods(target), properties: validProperties, propertyValues: propertyValues });
 		}
 
 		private function send(dataObject:Object):Boolean
@@ -437,13 +365,13 @@ package org.tractionas3.debug
 
 		private function setupLocalConnections():void
 		{	
-			_inbound = new LocalConnectionInbound(INBOUND);
+			_inbound = new LocalConnectionInbound(TractionAS3DebuggerConstants.INBOUND);
 			
 			_inbound.allowDomain(ALLOWED_DOMAIN);
 			
 			_inbound.addEventListener(LocalConnectionDataEvent.DATA_RECEIVE, onReceiveData);
 			
-			_outbound = new LocalConnectionOutbound(OUTBOUND);
+			_outbound = new LocalConnectionOutbound(TractionAS3DebuggerConstants.OUTBOUND);
 			
 			_connected = false;
 			
@@ -465,13 +393,11 @@ package org.tractionas3.debug
 
 		private function registerClassAliases():void
 		{
-			registerClassAlias(ALIAS_PROPERTY_DESCRIPTOR, PropertyDescriptor);
+			registerClassAlias(TractionAS3DebuggerConstants.ALIAS_PROPERTY_DESCRIPTOR, PropertyDescriptor);
 			
-			registerClassAlias(ALIAS_METHOD_DESCRIPTOR, MethodDescriptor);
+			registerClassAlias(TractionAS3DebuggerConstants.ALIAS_METHOD_DESCRIPTOR, MethodDescriptor);
 			
-			registerClassAlias(ALIAS_PARAMETER_DESCRIPTOR, ParameterDescriptor);
-			
-			registerClassAlias(ALIAS_CLASS, Class);
+			registerClassAlias(TractionAS3DebuggerConstants.ALIAS_PARAMETER_DESCRIPTOR, ParameterDescriptor);
 		}
 
 		private function onProfilerTick(e:TimerEvent):void
@@ -492,7 +418,7 @@ package org.tractionas3.debug
 			
 			for(var existingKey:String in _objectInspectMap)
 			{
-				if(_objectInspectMap[existingKey] == target) return existingKey;
+				if(_objectInspectMap[existingKey] == target) return existingKey;	
 			}
 			
 			var key:String = (_objectInspectMapKeyPrefix + _objectInspectMapKeyNum++).toString();
@@ -529,15 +455,13 @@ package org.tractionas3.debug
 			
 			switch(command)
 			{
-				case RESPONSE_CONNECT:
+				case TractionAS3DebuggerConstants.RESPONSE_CONNECT:
 					
 					_connected = true;
 					
 					_connecting = false;
 					
 					clearTimeout(_connectTimeout);
-						
-					dispatchEvent(new TractionAS3DebuggerEvent(TractionAS3DebuggerEvent.CONNECT));
 					
 					for(var i:int = 0;i < _buffer.length; ++i)
 					{
@@ -550,23 +474,21 @@ package org.tractionas3.debug
 					
 					break;
 				
-				case RESPONSE_DISCONNECT:
+				case TractionAS3DebuggerConstants.RESPONSE_DISCONNECT:
 				
 					_connected = false;
-					
-					dispatchEvent(new TractionAS3DebuggerEvent(TractionAS3DebuggerEvent.DISCONNECT));
 					
 					log("TractionAS3Debugger debugger disconnected. Response message: " + message, LogLevel.TRACTIONAS3);
 					
 					break;
 					
-				case RESPONSE_CHANGE_PROPERTY:
+				case TractionAS3DebuggerConstants.RESPONSE_CHANGE_PROPERTY:
 					
 					setPropertyValue(e.data["target"], e.data["property"], e.data["value"]);
 					
 					break;
 					
-				case RESPONSE_HELLO_REQUEST:
+				case TractionAS3DebuggerConstants.RESPONSE_HELLO_REQUEST:
 					
 					sendHelloMessage();
 					

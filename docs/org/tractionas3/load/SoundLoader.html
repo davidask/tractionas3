@@ -41,7 +41,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">SoundLoader <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="CoreLoader.html">CoreLoader</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="../events/WeakEventDispatcher.html">WeakEventDispatcher</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
 </tr>
 <tr>
-<td class="classHeaderTableLabel">Implements</td><td><a href="../core/interfaces/Cancelable.html">Cancelable</a>, <a href="Loadable.html">Loadable</a></td>
+<td class="classHeaderTableLabel">Implements</td><td><a href="../core/interfaces/ICancelable.html">ICancelable</a>, <a href="Loadable.html">Loadable</a></td>
 </tr>
 </table>
 <p></p>
@@ -158,7 +158,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#SoundLoader()">SoundLoader</a>(url:String, loaderName:String = null)</div>
+<a class="signatureLink" href="#SoundLoader()">SoundLoader</a>(url:String = null, loaderName:String = null)</div>
 <div class="summaryTableDescription">
    Creates a new SoundLoader object.</div>
 </td><td class="summaryTableOwnerCol">SoundLoader</td>
@@ -227,7 +227,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#load()">load</a>():void</div>
+<a class="signatureLink" href="#load()">load</a>(newURL:String = null):void</div>
 <div class="summaryTableDescription">
    
    Initiates the loading process of the loader.</div>
@@ -308,13 +308,13 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function SoundLoader(url:String, loaderName:String = null)</code><p>
+<code>public function SoundLoader(url:String = null, loaderName:String = null)</code><p>
    Creates a new SoundLoader object.
    
    </p><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td width="20px"></td><td><code><span class="label">url</span>:String</code> &mdash; The URL from wich the data should be loaded.
+<td width="20px"></td><td><code><span class="label">url</span>:String</code> (default = <code>null</code>)<code></code> &mdash; The URL from wich the data should be loaded.
    </td>
 </tr>
 <tr>
@@ -384,10 +384,16 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public override function load():void</code><p>
+<code>public override function load(newURL:String = null):void</code><p>
    
    Initiates the loading process of the loader. A new URLRequest cannot be defined through this method. 
-   </p></div>
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">newURL</span>:String</code> (default = <code>null</code>)<code></code></td>
+</tr>
+</table>
+</div>
 <a name="reset()"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>
