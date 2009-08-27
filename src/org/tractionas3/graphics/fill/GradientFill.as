@@ -37,7 +37,7 @@ package org.tractionas3.graphics.fill
 	 * GradientFill fills a Graphics object with a gradient fill.
 	 */
 
-	public class GradientFill extends Gradient implements ICoreInterface, Fill 
+	public class GradientFill extends Gradient implements ICoreInterface, IFill 
 	{	
 
 		/**
