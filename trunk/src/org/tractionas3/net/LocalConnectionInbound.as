@@ -27,7 +27,7 @@
 
 package org.tractionas3.net 
 {
-	import org.tractionas3.core.interfaces.Destructable;
+	import org.tractionas3.core.interfaces.IDestructable;
 	import org.tractionas3.debug.LogLevel;
 	import org.tractionas3.debug.log;
 	import org.tractionas3.events.LocalConnectionDataEvent;
@@ -39,7 +39,7 @@ package org.tractionas3.net
 	import flash.events.StatusEvent;
 	import flash.net.LocalConnection;
 	import flash.utils.ByteArray;
-	public class LocalConnectionInbound extends WeakEventDispatcher implements Destructable
+	public class LocalConnectionInbound extends WeakEventDispatcher implements IDestructable
 	{
 		internal static const RECEIVE_METHOD:String = "receiveData";
 
@@ -69,7 +69,7 @@ package org.tractionas3.net
 			_localConnection.allowDomain.apply(null, args);
 		}
 
-		public function connect():void
+		public function connect():Boolean
 		{
 			try
 			{
@@ -77,11 +77,13 @@ package org.tractionas3.net
 			}
 			catch(e:Error)
 			{
-				log(e.toString(), LogLevel.TRACTIONAS3);
+				return false;
 			}
+			
+			return true;
 		}
 
-		public function disconnect():void
+		public function disconnect():Boolean
 		{
 			try
 			{
@@ -89,8 +91,10 @@ package org.tractionas3.net
 			}
 			catch(e:Error)
 			{
-				log(e.toString(), LogLevel.TRACTIONAS3);
+				return false;
 			}
+			
+			return true;
 		}
 
 		override public function destruct(deepDestruct:Boolean = false):void

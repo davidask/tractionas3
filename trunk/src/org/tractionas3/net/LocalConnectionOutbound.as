@@ -27,7 +27,7 @@
  
 package org.tractionas3.net 
 {
-	import org.tractionas3.core.interfaces.Destructable;
+	import org.tractionas3.core.interfaces.IDestructable;
 	import org.tractionas3.debug.LogLevel;
 	import org.tractionas3.debug.log;
 	import org.tractionas3.events.WeakEventDispatcher;
@@ -38,7 +38,7 @@ package org.tractionas3.net
 	import flash.events.StatusEvent;
 	import flash.net.LocalConnection;
 	import flash.utils.ByteArray;
-	public class LocalConnectionOutbound extends WeakEventDispatcher implements Destructable
+	public class LocalConnectionOutbound extends WeakEventDispatcher implements IDestructable
 	{
 		public static var MAX_PACKAGE_SIZE:uint = 40000;
 

@@ -27,12 +27,12 @@
 
 package org.tractionas3.graphics 
 {	import org.tractionas3.core.CoreObject;
-	import org.tractionas3.core.interfaces.CoreInterface;
+	import org.tractionas3.core.interfaces.ICoreInterface;
 	/**
 	 * GradientColor represents a single color used in a gradient.
 	 */
 
-	public class GradientColor extends CoreObject implements CoreInterface 
+	public class GradientColor extends CoreObject implements ICoreInterface 
 	{
 		/**
 		 * Specifies the color of the gradient color.
