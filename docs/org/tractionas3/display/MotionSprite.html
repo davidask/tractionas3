@@ -41,7 +41,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">MotionSprite <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="RenderableSprite.html">RenderableSprite</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="CoreSprite.html">CoreSprite</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.display.Sprite</td>
 </tr>
 <tr>
-<td class="classHeaderTableLabel">Implements</td><td><a href="../core/interfaces/CoreInterface.html">CoreInterface</a>, <a href="../core/interfaces/Renderable.html">Renderable</a></td>
+<td class="classHeaderTableLabel">Implements</td><td><a href="../core/interfaces/ICoreInterface.html">ICoreInterface</a>, <a href="../core/interfaces/IRenderable.html">IRenderable</a></td>
 </tr>
 <tr>
 <td class="classHeaderTableLabel">Subclasses</td><td><a href="../display/DraggableSprite.html">DraggableSprite</a></td>
@@ -184,8 +184,6 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <a class="signatureLink" href="#destruct()">destruct</a>(deepDestruct:Boolean = false):void</div>
 <div class="summaryTableDescription">
    
-   
-   
    Destructs implementing instance of specified properties.</div>
 </td><td class="summaryTableOwnerCol">MotionSprite</td>
 </tr>
@@ -262,7 +260,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <a class="signatureLink" href="#render()">render</a>():void</div>
 <div class="summaryTableDescription">
    
-   Renders the RenderableSprite.</div>
+   Renders the renderable instance.</div>
 </td><td class="summaryTableOwnerCol">MotionSprite</td>
 </tr>
 <tr class="">
@@ -481,8 +479,6 @@ showHideInherited();
 <div class="detailBody">
 <code>public override function destruct(deepDestruct:Boolean = false):void</code><p>
    
-   
-   
    Destructs implementing instance of specified properties.
    <p />
    <b>Note:</b> You can override this method to remove unused references in your custom class.
@@ -535,11 +531,7 @@ showHideInherited();
 <div class="detailBody">
 <code>public override function render():void</code><p>
    
-   Renders the RenderableSprite.
-   <p />
-   By default this method is executed every frame if the MotionSprite is currently in the
-   display list. However, if manually stopped using <code>stopRender()</code>, it will not start
-   rendering automatically when added to the display list after being previously removed.
+   Renders the renderable instance.
    </p></div>
 <a name="startRender()"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">

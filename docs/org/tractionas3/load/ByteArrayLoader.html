@@ -158,7 +158,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#ByteArrayLoader()">ByteArrayLoader</a>(url:String, loaderName:String = null)</div>
+<a class="signatureLink" href="#ByteArrayLoader()">ByteArrayLoader</a>(url:String = null, loaderName:String = null)</div>
 <div class="summaryTableDescription">
    Creates a new ByteArrayLoader object.</div>
 </td><td class="summaryTableOwnerCol">ByteArrayLoader</td>
@@ -227,7 +227,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="hideInheritedMethod">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="URLDataLoader.html#load()">load</a>():void</div>
+<a class="signatureLink" href="URLDataLoader.html#load()">load</a>(newURL:String = null):void</div>
 <div class="summaryTableDescription">
    
    Initiates the loading process of the loader.</div>
@@ -259,6 +259,13 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
    
    Returns the string representation of the instance.</div>
 </td><td class="summaryTableOwnerCol"><a href="CoreLoader.html">CoreLoader</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="URLDataLoader.html#unload()">unload</a>():void</div>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="URLDataLoader.html">URLDataLoader</a></td>
 </tr>
 </table>
 </div>
@@ -292,13 +299,13 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function ByteArrayLoader(url:String, loaderName:String = null)</code><p>
+<code>public function ByteArrayLoader(url:String = null, loaderName:String = null)</code><p>
    Creates a new ByteArrayLoader object.
    
    </p><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td width="20px"></td><td><code><span class="label">url</span>:String</code> &mdash; The URL from wich the data should be loaded.
+<td width="20px"></td><td><code><span class="label">url</span>:String</code> (default = <code>null</code>)<code></code> &mdash; The URL from wich the data should be loaded.
    </td>
 </tr>
 <tr>
