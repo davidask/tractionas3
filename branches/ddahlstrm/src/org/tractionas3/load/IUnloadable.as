@@ -27,7 +27,7 @@
 
 package org.tractionas3.load 
 {
-	public interface Unloadable 
+	public interface IUnloadable 
 	{
 		/**
 		 * Unloads the loaded data of a loader.

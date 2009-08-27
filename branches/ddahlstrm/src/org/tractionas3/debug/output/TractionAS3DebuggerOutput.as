@@ -13,7 +13,7 @@ package org.tractionas3.debug.output
 	 * @see org.tractionas3.debug.Logger#addOutput()
 	 */
 
-	public class TractionAS3DebuggerOutput extends CoreObject implements LoggerOutput 
+	public class TractionAS3DebuggerOutput extends CoreObject implements ILoggerOutput 
 	{
 
 		/**
