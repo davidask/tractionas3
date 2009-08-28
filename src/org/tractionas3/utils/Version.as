@@ -74,7 +74,7 @@ package org.tractionas3.utils
 		{	
 			super.destruct(deepDestruct);		}
 
-		public function clone():Object
+		public function clone():ICloneable
 		{			return new Version(major, minor, build, internalBuild);
 		}
 	}}

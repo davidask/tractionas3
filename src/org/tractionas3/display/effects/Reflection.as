@@ -133,7 +133,6 @@ package org.tractionas3.display.effects
 			
 			_sourceBitmapData = null;
 			
-			
 			bitmapData.dispose();
 			
 			bitmapData = null;

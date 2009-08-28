@@ -143,7 +143,7 @@ package org.tractionas3.managers
 		 * @inheritDoc
 		 */
 
-		public function clone():Object
+		public function clone():ICloneable
 		{
 			return new UserInteractivityManager(scope, timeout);
 		}
