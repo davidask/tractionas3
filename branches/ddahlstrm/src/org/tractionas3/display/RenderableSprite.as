@@ -2,7 +2,7 @@
 	public class RenderableSprite extends CoreSprite implements IRenderable, ICoreInterface 	{		/**		 * Creates a new RenderableSprite object.		 */
 		public function RenderableSprite()		{			super();		}
 		/**		 * Starts rendering of the RenderableSprite every frame.		 */
-		public function startRender():void		{			EnterFrame.addEnterFrameHandler(render);		}
+		public function startRender():void		{			if(!EnterFrame.hasEnterFrameHandler(render)) EnterFrame.addEnterFrameHandler(render);		}
 		/**		 * Stops rendering of the RenderableSprite.		 */
 		public function stopRender():void		{			EnterFrame.removeEnterFrameHandler(render);			}
 		/**		 * Renders the RenderableSprite.		 * <p />		 * By default this method is executed every frame if the MotionSprite is currently in the		 * display list. However, if manually stopped using <code>stopRender()</code>, it will not start		 * rendering automatically when added to the display list after being previously removed.		 */		public function render():void		{			return;		}
