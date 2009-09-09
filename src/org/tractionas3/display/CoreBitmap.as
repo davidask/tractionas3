@@ -27,6 +27,7 @@
  
 package org.tractionas3.display 
 {
+	import org.tractionas3.core.Destructor;
 	import org.tractionas3.core.interfaces.ICoreInterface;
 	import org.tractionas3.reflection.stringify;
 
@@ -58,6 +59,8 @@ package org.tractionas3.display
 
 		public function destruct(deepDestruct:Boolean = false):void
 		{
+			Destructor.destruct(this, deepDestruct);
+			
 			if(bitmapData) bitmapData.dispose();
 		}
 
