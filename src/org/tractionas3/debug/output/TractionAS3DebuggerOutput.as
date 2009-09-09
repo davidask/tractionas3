@@ -12,24 +12,20 @@ package org.tractionas3.debug.output
 	 * @see org.tractionas3.debug.Logger
 	 * @see org.tractionas3.debug.Logger#addOutput()
 	 */
-
 	public class TractionAS3DebuggerOutput extends CoreObject implements ILoggerOutput 
 	{
 
 		/**
 		 * Creates a new TractionAS3DebuggerOutput object.
 		 */
-
 		public function TractionAS3DebuggerOutput()
 		{
 			super();
 		}
 
-		
 		/**
 		 * @inheritDoc
 		 */
-
 		override public function destruct(deepDestruct:Boolean = false):void
 		{
 			super.destruct(deepDestruct);
@@ -38,7 +34,6 @@ package org.tractionas3.debug.output
 		/**
 		 * @inheritDoc
 		 */
-
 		public function send(message:LogMessage):void
 		{
 			var stackTrace:StackTraceEntry = message.stackTrace.entries[message.stackTrace.entries.length - 1];

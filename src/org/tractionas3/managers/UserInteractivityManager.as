@@ -44,13 +44,12 @@ package org.tractionas3.managers
 	/**
 	 * UserInteractivityManager is used to monitor user interactivity.
 	 */
-
 	public class UserInteractivityManager extends WeakEventDispatcher implements ICoreInterface, IResetable, ICloneable, IRunnable
 	{	
+
 		/**
 		 * The default timeout of user interactivity.
 		 */
-
 		public static var DEFAULT_TIMEOUT:uint = 15;
 
 		public var scope:DisplayObject;
@@ -70,7 +69,6 @@ package org.tractionas3.managers
 		 * @param targetScope Scope in wich the user activity is to be monitored.
 		 * @param interactivityTimeout Timeout of user interactivity.
 		 */
-
 		public function UserInteractivityManager(targetScope:DisplayObject, interactivityTimeout:Number = NaN):void
 		{
 			scope = targetScope;
@@ -81,7 +79,6 @@ package org.tractionas3.managers
 		/**
 		 * Specifies the timeout of user interactivity.
 		 */
-
 		public function get timeout():uint
 		{
 			return _timeout;
@@ -97,7 +94,6 @@ package org.tractionas3.managers
 		/**
 		 * Starts the UserInteractivityManager.
 		 */
-
 		public function start():void
 		{
 			setEventListeners(true);
@@ -110,7 +106,6 @@ package org.tractionas3.managers
 		/**
 		 * Stops the UserInteractivityManager.
 		 */
-
 		public function stop():void
 		{
 			_running = false;
@@ -119,7 +114,6 @@ package org.tractionas3.managers
 		/**
 		 * Indicates whether the UserInteractivityManager is running.
 		 */
-
 		public function get running():Boolean
 		{
 			setEventListeners(false);
@@ -129,7 +123,6 @@ package org.tractionas3.managers
 		/**
 		 * @inheritDoc
 		 */
-
 		public function reset():void
 		{
 			scope = null;
@@ -142,7 +135,6 @@ package org.tractionas3.managers
 		/**
 		 * @inheritDoc
 		 */
-
 		public function clone():ICloneable
 		{
 			return new UserInteractivityManager(scope, timeout);
@@ -151,7 +143,6 @@ package org.tractionas3.managers
 		/**
 		 * @inheritDoc
 		 */
-
 		override public function destruct(deepDestruct:Boolean = false):void
 		{
 			setEventListeners(false);

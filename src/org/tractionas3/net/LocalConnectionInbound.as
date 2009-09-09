@@ -41,6 +41,7 @@ package org.tractionas3.net
 	import flash.utils.ByteArray;
 	public class LocalConnectionInbound extends WeakEventDispatcher implements IDestructable
 	{
+
 		internal static const RECEIVE_METHOD:String = "receiveData";
 
 		private var _connectionName:String;
@@ -190,7 +191,6 @@ package org.tractionas3.net
 				case StatusEvent.STATUS:
 				
 					/* STATUS */
-
 					break;
 			}
 		}

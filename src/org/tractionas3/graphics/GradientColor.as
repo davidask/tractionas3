@@ -31,25 +31,22 @@ package org.tractionas3.graphics
 	/**
 	 * GradientColor represents a single color used in a gradient.
 	 */
-
 	public class GradientColor extends CoreObject implements ICoreInterface 
 	{
+
 		/**
 		 * Specifies the color of the gradient color.
 		 */
-
 		public var color:uint;
 
 		/**
 		 * Specifies the alpha of the gradient color.
 		 */
-
 		public var alpha:Number;
 
 		/**
 		 * Specifies the ratio of the gradient color.
 		 */
-
 		public var ratio:Number;
 
 		
@@ -60,7 +57,6 @@ package org.tractionas3.graphics
 		 * @param gradientAlpha Alpha of the gradient.
 		 * @param gradientRatio Ratio of the gradient.
 		 */
-
 		public function GradientColor(gradientColor:uint, gradientAlpha:Number, gradientRatio:Number)
 		{
 			color = gradientColor;
