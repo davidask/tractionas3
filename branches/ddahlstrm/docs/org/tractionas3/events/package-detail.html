@@ -18,7 +18,7 @@
 <td align="left" class="titleTableTitle">TractionAS3 Framework Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?org/tractionas3/events/package-detail.html&amp;org/tractionas3/events/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
 </tr>
 <tr class="titleTableRow2">
-<td align="left" id="subTitle" class="titleTableSubTitle">Package&nbsp;org.tractionas3.events</td><td align="right" id="subNav" class="titleTableSubNav"><a href="package-detail.html#classSummary">Classes</a></td>
+<td align="left" id="subTitle" class="titleTableSubTitle">Package&nbsp;org.tractionas3.events</td><td align="right" id="subNav" class="titleTableSubNav"><a href="package-detail.html#interfaceSummary">Interfaces</a>&nbsp;| <a href="package-detail.html#classSummary">Classes</a></td>
 </tr>
 <tr class="titleTableRow3">
 <td colspan="2">&nbsp;</td>
@@ -26,13 +26,23 @@
 </table>
 <script type="text/javascript" language="javascript">
 <!--
-if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Package org.tractionas3.events"); titleBar_setSubNav(false,false,false,false,false,false,false,false,false,false,false,false,true,false);}
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Package org.tractionas3.events"); titleBar_setSubNav(false,false,false,false,false,false,false,false,false,false,false,true,true,false);}
 --></script>
 <div class="MainContent">
 <br>
 <p>The org.tractionas3.events package supports the new DOM event model extended with custom events used in the TractionAS3 API. </p>
 <br>
 <hr>
+<a name="interfaceSummary"></a>
+<div class="summaryTableTitle">Interfaces</div>
+<table class="summaryTable" cellspacing="0" cellpadding="3">
+<tr>
+<th>&nbsp;</th><th width="30%">Interface</th><th width="70%">Description</th>
+</tr>
+<tr class="prow1">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="IClearableEventDispatcher.html">IClearableEventDispatcher</a></i></td><td class="summaryTableLastCol">&nbsp;</td>
+</tr>
+</table>
 <a name="classSummary"></a>
 <div class="summaryTableTitle">Classes</div>
 <table class="summaryTable" cellspacing="0" cellpadding="3">
@@ -44,8 +54,16 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Pa
   BandwidthTestEvent provides events for BandwidthTest class.</td>
 </tr>
 <tr class="prow0">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="ClearableEventDispatcher.html">ClearableEventDispatcher</a></td><td class="summaryTableLastCol">
+  ClearableEventDispatcher keeps track of what events have been added, giving the posibility to remove all added event listeners via
+  <i>removeEventListeners()</i> method defined in IClearableEventDispatcher interface.</td>
+</tr>
+<tr class="prow1">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="EnterFrame.html">EnterFrame</a></td><td class="summaryTableLastCol">
   EnterFrame allows you to call functions every frame, without adding a new event listener to objects.</td>
+</tr>
+<tr class="prow0">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="EventReference.html">EventReference</a></td><td class="summaryTableLastCol">&nbsp;</td>
 </tr>
 <tr class="prow1">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="Interval.html">Interval</a></td><td class="summaryTableLastCol">
@@ -60,32 +78,36 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Pa
   LoaderQueueEvent provides a base event for loader queues.</td>
 </tr>
 <tr class="prow0">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="LoadObjectiveEvent.html">LoadObjectiveEvent</a></td><td class="summaryTableLastCol">
-  LoaderQueueEvent provides a base event for loade objectives.</td>
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="LoadMonitorEvent.html">LoadMonitorEvent</a></td><td class="summaryTableLastCol">
+  LoadMonitorEvent is the event type for the LoadMonitor class.</td>
 </tr>
 <tr class="prow1">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="LoadProgressObjectiveEvent.html">LoadProgressObjectiveEvent</a></td><td class="summaryTableLastCol">
+  LoadProgressObjectiveEvent is the event class used for LoadProgressObjective instances.</td>
+</tr>
+<tr class="prow0">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="LocalConnectionDataEvent.html">LocalConnectionDataEvent</a></td><td class="summaryTableLastCol">
   LocalConnectionDataEvent provides a base event for LocalConnectionInbound and LocalConnectionOutbound classes.</td>
 </tr>
-<tr class="prow0">
+<tr class="prow1">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="ServiceEvent.html">ServiceEvent</a></td><td class="summaryTableLastCol">
   ServiceEvent provides a base event for org.tractionas3.net.Service classes.</td>
 </tr>
-<tr class="prow1">
+<tr class="prow0">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="SoundPlaybackEvent.html">SoundPlaybackEvent</a></td><td class="summaryTableLastCol">
   SoundPlaybackEvent provides a base event for SoundPlayback class.</td>
 </tr>
-<tr class="prow0">
+<tr class="prow1">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="TweenEvent.html">TweenEvent</a></td><td class="summaryTableLastCol">
   TweenEvent provides a base event for Tween class.</td>
 </tr>
-<tr class="prow1">
+<tr class="prow0">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="UserInteractivityEvent.html">UserInteractivityEvent</a></td><td class="summaryTableLastCol">
   UserInteractivityEvent provides a base event for UserActivityManager class.</td>
 </tr>
-<tr class="prow0">
+<tr class="prow1">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="WeakEventDispatcher.html">WeakEventDispatcher</a></td><td class="summaryTableLastCol">
-  WeakEventDispatcher is the TractionAS3 core event dispatcher, using weak references by default.</td>
+  WeakEventDispatcher uses weak references by default.</td>
 </tr>
 </table>
 <p></p>

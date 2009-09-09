@@ -4,7 +4,7 @@
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
 <link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
-<meta content="CoreSprite,org.tractionas3.display.CoreSprite,filters,hasStage,interactive,scale,addChildren,addEventListener,addFilter,destruct,destructChildren,dispatchEvent,hasFilter,listDestructableProperties,onAddedToStage,onRemovedFromStage,removeChildren,removeFilter,toString,updateFilters" name="keywords">
+<meta content="CoreSprite,org.tractionas3.display.CoreSprite,filters,hasStage,interactive,scale,addChildren,addEventListener,addFilter,destruct,destructChildren,dispatchEvent,hasFilter,listDestructableProperties,onAddedToStage,onRemovedFromStage,removeAllEventListeners,removeChildren,removeEventListener,removeFilter,toString,updateFilters" name="keywords">
 <title>org.tractionas3.display.CoreSprite</title>
 </head>
 <body>
@@ -41,7 +41,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">CoreSprite <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.display.Sprite</td>
 </tr>
 <tr>
-<td class="classHeaderTableLabel">Implements</td><td>flash.events.IEventDispatcher, <a href="../core/interfaces/ICoreInterface.html">ICoreInterface</a></td>
+<td class="classHeaderTableLabel">Implements</td><td><a href="../events/IClearableEventDispatcher.html">IClearableEventDispatcher</a>, <a href="../core/interfaces/ICoreInterface.html">ICoreInterface</a></td>
 </tr>
 <tr>
 <td class="classHeaderTableLabel">Subclasses</td><td><a href="../core/Application.html">Application</a>, <a href="../ui/FakeCursor.html">FakeCursor</a>, <a href="../display/RenderableSprite.html">RenderableSprite</a></td>
@@ -167,9 +167,26 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
+<a class="signatureLink" href="#removeAllEventListeners()">removeAllEventListeners</a>():void</div>
+<div class="summaryTableDescription">
+   
+   Removes all event listeners from the IClearableEventDispatcher object.</div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
 <a class="signatureLink" href="#removeChildren()">removeChildren</a>(... children):void</div>
 <div class="summaryTableDescription">
    Removes multiple children to the CoreSprite instance.</div>
+</td><td class="summaryTableOwnerCol">CoreSprite</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeEventListener()">removeEventListener</a>(type:String, listener:Function, useCapture:Boolean = false):void</div>
+<div class="summaryTableDescription">
+   Removes a listener from the EventDispatcher object.</div>
 </td><td class="summaryTableOwnerCol">CoreSprite</td>
 </tr>
 <tr class="">
@@ -541,6 +558,17 @@ showHideInherited();
    Called when the CoreSprite instance is removed from stage.
    When extending CoreSprite, overriding this method will implement custom functionality.
    </p></div>
+<a name="removeAllEventListeners()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeAllEventListeners</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function removeAllEventListeners():void</code><p>
+   
+   Removes all event listeners from the IClearableEventDispatcher object.
+   </p></div>
 <a name="removeChildren()"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>
@@ -557,6 +585,34 @@ showHideInherited();
 <td width="20px"></td><td><code>... <span class="label">children</span></code> &mdash; DisplayObject instances removed to CoreSprite display list.
    If no arguments are passed all children are removed.
    </td>
+</tr>
+</table>
+</div>
+<a name="removeEventListener()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeEventListener</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function removeEventListener(type:String, listener:Function, useCapture:Boolean = false):void</code><p>
+   Removes a listener from the EventDispatcher object. If there is no matching listener registered with the EventDispatcher object, a call to this method has no effect.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">listener</span>:Function</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">useCapture</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
 </tr>
 </table>
 </div>
