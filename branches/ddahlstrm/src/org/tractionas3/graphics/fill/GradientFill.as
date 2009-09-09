@@ -36,7 +36,6 @@ package org.tractionas3.graphics.fill
 	/**
 	 * GradientFill fills a Graphics object with a gradient fill.
 	 */
-
 	public class GradientFill extends Gradient implements ICoreInterface, IFill 
 	{	
 
@@ -48,7 +47,6 @@ package org.tractionas3.graphics.fill
 		/**
 		 * Specifies the angle of the gradient fill.
 		 */
-
 		public var angle:int;
 
 		/**
@@ -59,13 +57,11 @@ package org.tractionas3.graphics.fill
 		/**
 		 * Specifies the spread method of the gradient fill.
 		 */
-
 		public var spreadMethod:String;
 
 		/**
 		 * Specifies the interpolation method of the gradient fill.
 		 */
-
 		public var interPolationMethod:String;
 
 		private var _matrix:Matrix;
@@ -74,7 +70,6 @@ package org.tractionas3.graphics.fill
 		/**
 		 * Creates a new GradientFill object.
 		 */
-
 		public function GradientFill(gradientType:String = "linear")
 		{
 			type = gradientType;
@@ -91,7 +86,6 @@ package org.tractionas3.graphics.fill
 		/**
 		 * @inheritDoc
 		 */
-
 		public function begin(graphics:Graphics, gradientDimension:Dimension = null, clearGraphics:Boolean = false):void
 		{
 			_matrix = new Matrix();
@@ -109,7 +103,6 @@ package org.tractionas3.graphics.fill
 		/**
 		 * @inheritDoc
 		 */
-
 		public function end(graphics:Graphics):void
 		{
 			graphics.endFill();

@@ -33,6 +33,7 @@ package org.tractionas3.events
 	 */
 	public class LocalConnectionDataEvent extends Event 
 	{	
+
 		/**
 		 * Defines the value of the type property of a localConnectionDataReceive event object.
 		 */
@@ -52,7 +53,6 @@ package org.tractionas3.events
 		/**
 		 * Creates a new LocalConnectionDataEvent object,.
 		 */
-
 		public function LocalConnectionDataEvent(type:String, localConnectionData:*, bubbles:Boolean = false, cancelable:Boolean = false)
 		{
 			super(type, bubbles, cancelable);
@@ -63,7 +63,6 @@ package org.tractionas3.events
 		/**
 		 * @inheritDoc
 		 */
-
 		override public function clone():Event
 		{
 			return new LocalConnectionDataEvent(type, data, bubbles, cancelable);

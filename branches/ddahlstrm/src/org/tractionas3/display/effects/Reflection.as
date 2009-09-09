@@ -40,19 +40,17 @@ package org.tractionas3.display.effects
 	/**
 	 * DisplayObjectReflection creates a reflection of a DisplayObject
 	 */
-
 	public class Reflection extends CoreBitmap implements IDrawable 
 	{
+
 		/**
 		 * Specifies the target to be reflected.
 		 */
-
 		public var target:DisplayObject;
 
 		/**
 		 * Specifies the falloff of the reflection gradient. 
 		 */
-
 		public var fallOff:Number;
 
 		private var _sourceBitmapData:BitmapData;
@@ -63,7 +61,6 @@ package org.tractionas3.display.effects
 		/**
 		 * Creates a new DisplayObjectReflection
 		 */
-
 		public function Reflection(drawTarget:DisplayObject)
 		{
 			super();
@@ -78,7 +75,6 @@ package org.tractionas3.display.effects
 		/**
 		 * Draws the reflection.
 		 */
-
 		public function draw():void
 		{
 			var rect:Rectangle = new Rectangle(0, 0, target.width, target.height);
@@ -102,7 +98,6 @@ package org.tractionas3.display.effects
 		/**
 		 * Redraws the reflection.
 		 */
-
 		public function redraw():void
 		{
 			clear();
@@ -113,7 +108,6 @@ package org.tractionas3.display.effects
 		/**
 		 * Clears the reflection.
 		 */
-
 		public function clear():void
 		{
 			bitmapData.fillRect(bitmapData.rect, 0x00000000);
@@ -126,7 +120,6 @@ package org.tractionas3.display.effects
 		/**
 		 * Clears the bitmap data caches.
 		 */
-
 		public function clearBitmapDataCache():void
 		{
 			_sourceBitmapData.dispose();

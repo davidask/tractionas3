@@ -27,17 +27,15 @@
 
 package org.tractionas3.core.interfaces 
 {
-		
 	/**
 	 * Core interface for updatable classes
 	 */
-	
 	public interface IUpdatable 
 	{
+
 		/**
 		 * Updates the updatable instance.
 		 */
-		
 		function update():Boolean;
 	}
 }
