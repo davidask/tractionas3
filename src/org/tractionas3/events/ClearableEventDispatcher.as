@@ -7,11 +7,20 @@ package org.tractionas3.events
 
 	import flash.events.EventDispatcher;
 	import flash.events.IEventDispatcher;
+	
+	/**
+	 * ClearableEventDispatcher keeps track of what events have been added, giving the posibility to remove all added event listeners via
+	 * <i>removeEventListeners()</i> method defined in IClearableEventDispatcher interface.
+	 */
 	public class ClearableEventDispatcher extends EventDispatcher implements IClearableEventDispatcher, ICoreInterface
 	{
 
 		private var _eventReferences:Array;
 
+		
+		/**
+		 * Creates a new ClearableEventDispatcher object.
+		 */
 		
 		public function ClearableEventDispatcher(target:IEventDispatcher = null)
 		{
