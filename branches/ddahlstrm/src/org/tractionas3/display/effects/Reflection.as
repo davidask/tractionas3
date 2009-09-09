@@ -28,8 +28,8 @@
 package org.tractionas3.display.effects 
 {
 	import org.tractionas3.core.interfaces.IDrawable;
-	import org.tractionas3.display.CoreBitmap;
 
+	import flash.display.Bitmap;
 	import flash.display.BitmapData;
 	import flash.display.DisplayObject;
 	import flash.display.GradientType;
@@ -40,7 +40,7 @@ package org.tractionas3.display.effects
 	/**
 	 * DisplayObjectReflection creates a reflection of a DisplayObject
 	 */
-	public class Reflection extends CoreBitmap implements IDrawable 
+	public class Reflection extends Bitmap implements IDrawable 
 	{
 
 		/**

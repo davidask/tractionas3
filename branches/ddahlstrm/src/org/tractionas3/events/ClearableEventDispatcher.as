@@ -2,18 +2,18 @@ package org.tractionas3.events
 {
 	import org.tractionas3.core.Destructor;
 	import org.tractionas3.core.interfaces.ICoreInterface;
-	import org.tractionas3.events.IEnhancedEventDispatcher;
+	import org.tractionas3.events.IClearableEventDispatcher;
 	import org.tractionas3.reflection.stringify;
 
 	import flash.events.EventDispatcher;
 	import flash.events.IEventDispatcher;
-	public class EnhancedEventDispatcher extends EventDispatcher implements IEnhancedEventDispatcher, ICoreInterface
+	public class ClearableEventDispatcher extends EventDispatcher implements IClearableEventDispatcher, ICoreInterface
 	{
 
 		private var _eventReferences:Array;
 
 		
-		public function EnhancedEventDispatcher(target:IEventDispatcher = null)
+		public function ClearableEventDispatcher(target:IEventDispatcher = null)
 		{
 			super(target || this);
 			
@@ -39,7 +39,11 @@ package org.tractionas3.events
 			
 			super.removeEventListener(type, listener, useCapture);
 		}
-
+		
+		/**
+		 * @inheritDoc
+		 */
+		
 		public function removeAllEventListeners():void
 		{
 			var eventReference:EventReference;
