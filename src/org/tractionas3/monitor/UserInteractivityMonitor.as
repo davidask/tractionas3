@@ -25,9 +25,8 @@
  *
  */
 
-package org.tractionas3.managers
+package org.tractionas3.monitor
 {
-	import org.tractionas3.core.Destructor;
 	import org.tractionas3.core.interfaces.ICloneable;
 	import org.tractionas3.core.interfaces.ICoreInterface;
 	import org.tractionas3.core.interfaces.IResetable;
@@ -42,9 +41,9 @@ package org.tractionas3.managers
 	import flash.utils.clearTimeout;
 	import flash.utils.setTimeout;
 	/**
-	 * UserInteractivityManager is used to monitor user interactivity.
+	 * UserInteractivityMonitor is used to monitor user interactivity.
 	 */
-	public class UserInteractivityManager extends WeakEventDispatcher implements ICoreInterface, IResetable, ICloneable, IRunnable
+	public class UserInteractivityMonitor extends WeakEventDispatcher implements ICoreInterface, IResetable, ICloneable, IRunnable
 	{	
 
 		/**
@@ -64,12 +63,12 @@ package org.tractionas3.managers
 
 		
 		/**
-		 * Creates a new UserInteractivityManager object.
+		 * Creates a new UserInteractivityMonitor object.
 		 * 
 		 * @param targetScope Scope in wich the user activity is to be monitored.
 		 * @param interactivityTimeout Timeout of user interactivity.
 		 */
-		public function UserInteractivityManager(targetScope:DisplayObject, interactivityTimeout:Number = NaN):void
+		public function UserInteractivityMonitor(targetScope:DisplayObject, interactivityTimeout:Number = NaN):void
 		{
 			scope = targetScope;
 			
@@ -92,7 +91,7 @@ package org.tractionas3.managers
 		}
 
 		/**
-		 * Starts the UserInteractivityManager.
+		 * Starts the UserInteractivityMonitor.
 		 */
 		public function start():void
 		{
@@ -104,7 +103,7 @@ package org.tractionas3.managers
 		}
 
 		/**
-		 * Stops the UserInteractivityManager.
+		 * Stops the UserInteractivityMonitor.
 		 */
 		public function stop():void
 		{
@@ -112,7 +111,7 @@ package org.tractionas3.managers
 		}
 
 		/**
-		 * Indicates whether the UserInteractivityManager is running.
+		 * Indicates whether the UserInteractivityMonitor is running.
 		 */
 		public function get running():Boolean
 		{
@@ -137,7 +136,7 @@ package org.tractionas3.managers
 		 */
 		public function clone():ICloneable
 		{
-			return new UserInteractivityManager(scope, timeout);
+			return new UserInteractivityMonitor(scope, timeout);
 		}
 
 		/**
@@ -157,7 +156,7 @@ package org.tractionas3.managers
 			
 			_userActive = false;
 			
-			Destructor.destruct(this, deepDestruct);
+			super.destruct(deepDestruct);
 		}
 
 		private function setEventListeners(add:Boolean):void

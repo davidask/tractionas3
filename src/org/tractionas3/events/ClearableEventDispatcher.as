@@ -76,9 +76,9 @@ package org.tractionas3.events
 		 */
 		public function destruct(deepDestruct:Boolean = false):void
 		{
-			Destructor.destruct(this, deepDestruct);
-			
 			removeAllEventListeners();
+			
+			Destructor.destruct(this, deepDestruct);
 		}
 
 		/**
