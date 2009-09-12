@@ -10,13 +10,12 @@ package org.tractionas3.display
 	 * 
 	 * @see org.tractionas3.display.DraggableSprite;
 	 */
-
 	public class ThrowableSprite extends DraggableSprite 
 	{
+
 		/**
 		 * Specifies the friction multiplier adding resistance to the ThrowableSprite motion.
 		 */
-
 		public var frictionMultiplier:Number = 0.9;
 
 		private var _currentPosition:Point;
@@ -27,7 +26,6 @@ package org.tractionas3.display
 		/**
 		 * Creates a new ThrowableSprite object.
 		 */
-
 		public function ThrowableSprite(bounds:Rectangle = null)
 		{
 			super(bounds);
@@ -40,7 +38,6 @@ package org.tractionas3.display
 		/**
 		 * @inheritDoc
 		 */
-
 		final override public function render():void
 		{	
 			if(dragging)
@@ -70,7 +67,6 @@ package org.tractionas3.display
 		/**
 		 * @private
 		 */
-
 		override public function invertVelocityX(multiplier:Number = 1):void
 		{
 			super.invertVelocityX();
@@ -82,7 +78,6 @@ package org.tractionas3.display
 		/**
 		 * @private
 		 */
-
 		override public function invertVelocityY(multiplier:Number = 1):void
 		{
 			super.invertVelocityY();
@@ -94,7 +89,6 @@ package org.tractionas3.display
 		/**
 		 * @inheritDoc
 		 */
-
 		override public function get velocityX():Number
 		{
 			return super.velocityX + _throwVelocity.x;
@@ -103,7 +97,6 @@ package org.tractionas3.display
 		/**
 		 * @inheritDoc
 		 */
-
 		override public function get velocityY():Number
 		{
 			return super.velocityY + _throwVelocity.y;
@@ -112,7 +105,6 @@ package org.tractionas3.display
 		/**
 		 * @inheritDoc
 		 */
-
 		override public function destruct(deepDestruct:Boolean = false):void
 		{
 			dragEnabled = false;

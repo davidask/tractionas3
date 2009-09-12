@@ -27,66 +27,60 @@
  
 package org.tractionas3.geom 
 {
+	/**
+	 * Align contains constant for representing alignment.
+	 */
 	public class Align 
 	{
+
 		/**
 		 * String reprensentation of a top left alignment
 		 */
-		
 		public static const TOP_LEFT:String = "TL";
-		
+
 		/**
 		 * String reprensentation of a top alignment
 		 */
-		
 		public static const TOP:String = "T";
-		
+
 		/**
 		 * String reprensentation of a top right alignment
 		 */
-		
 		public static const TOP_RIGHT:String = "TR";
-		
+
 		/**
 		 * String reprensentation of a left alignment
 		 */
-		
 		public static const LEFT:String = "L";
-		
+
 		/**
 		 * String reprensentation of a middle alignment
 		 */
-		
 		public static const MIDDLE:String = "C";
-		
+
 		/**
 		 * String reprensentation of a center alignment
 		 */
-		
 		public static const CENTER:String = "C";
-		
+
 		/**
 		 * String reprensentation of a right alignment
 		 */
-		
 		public static const RIGHT:String = "R";
-		
+
 		/**
 		 * String reprensentation of a bottom left alignment
 		 */
-		
 		public static const BOTTOM_LEFT:String = "BL";
-		
+
 		/**
 		 * String reprensentation of a bottom alignment
 		 */
-		
 		public static const BOTTOM:String = "B";
-		
+
 		/**
 		 * String reprensentation of a bottom right alignment
 		 */
-		
 		public static const BOTTOM_RIGHT:String = "BR";
 	}
 }

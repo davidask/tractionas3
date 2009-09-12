@@ -38,10 +38,10 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <td class="classHeaderTableLabel">Class</td><td class="classSignature">public class BitmapDataLoader</td>
 </tr>
 <tr>
-<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">BitmapDataLoader <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="DisplayLoader.html">DisplayLoader</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="CoreLoader.html">CoreLoader</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="../events/WeakEventDispatcher.html">WeakEventDispatcher</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">BitmapDataLoader <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="DisplayLoader.html">DisplayLoader</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="CoreLoader.html">CoreLoader</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="../events/WeakEventDispatcher.html">WeakEventDispatcher</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="../events/ClearableEventDispatcher.html">ClearableEventDispatcher</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
 </tr>
 <tr>
-<td class="classHeaderTableLabel">Implements</td><td><a href="Loadable.html">Loadable</a></td>
+<td class="classHeaderTableLabel">Implements</td><td><a href="ILoadable.html">ILoadable</a></td>
 </tr>
 <tr>
 <td class="classHeaderTableLabel">Subclasses</td><td><a href="../load/BitmapLoader.html">BitmapLoader</a></td>
@@ -195,9 +195,9 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#clone()">clone</a>():Object</div>
+<a class="signatureLink" href="#clone()">clone</a>():<a href="../core/interfaces/ICloneable.html">ICloneable</a>
+</div>
 <div class="summaryTableDescription">
-   
    
    Creates a duplicate of the instance.</div>
 </td><td class="summaryTableOwnerCol">BitmapDataLoader</td>
@@ -256,12 +256,28 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
    Instructs the loader to prefech the total file size of target file without having to start the actual loading progress.</div>
 </td><td class="summaryTableOwnerCol"><a href="CoreLoader.html">CoreLoader</a></td>
 </tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../events/ClearableEventDispatcher.html#removeAllEventListeners()">removeAllEventListeners</a>():void</div>
+<div class="summaryTableDescription">
+   
+   Removes all event listeners from the IClearableEventDispatcher object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../events/ClearableEventDispatcher.html">ClearableEventDispatcher</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../events/ClearableEventDispatcher.html#removeEventListener()">removeEventListener</a>(type:String, listener:Function, useCapture:Boolean = false):void</div>
+<div class="summaryTableDescription">
+   Removes a listener from the EventDispatcher object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../events/ClearableEventDispatcher.html">ClearableEventDispatcher</a></td>
+</tr>
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
 <a class="signatureLink" href="#reset()">reset</a>():void</div>
 <div class="summaryTableDescription">
-   
    
    Resets the resetable instance to its construct state.</div>
 </td><td class="summaryTableOwnerCol">BitmapDataLoader</td>
@@ -310,8 +326,6 @@ showHideInherited();
 <div class="detailBody">
 <code>data:*</code>&nbsp;&nbsp;[read-only]<p>
    Returns the loaded data as a new BitmapData object created from the loaded image.
-   
-   Returns the root display object of the SWF file or image (JPG, PNG, or GIF) file that was loaded.
    
    </p><span class="label">Implementation</span>
 <br>
@@ -364,15 +378,14 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public override function clone():Object</code><p>
-   
+<code>public override function clone():<a href="../core/interfaces/ICloneable.html">ICloneable</a></code><p>
    
    Creates a duplicate of the instance.
    </p><p></p>
 <span class="label">Returns</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td width="20"></td><td><code>Object</code></td>
+<td width="20"></td><td><code><a href="../core/interfaces/ICloneable.html">ICloneable</a></code></td>
 </tr>
 </table>
 </div>
@@ -384,7 +397,6 @@ showHideInherited();
 </table>
 <div class="detailBody">
 <code>public override function reset():void</code><p>
-   
    
    Resets the resetable instance to its construct state.
    </p></div>

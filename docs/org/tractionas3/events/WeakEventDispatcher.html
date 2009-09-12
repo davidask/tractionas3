@@ -4,7 +4,7 @@
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
 <link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
-<meta content="WeakEventDispatcher,org.tractionas3.events.WeakEventDispatcher,addEventListener,destruct,dispatchEvent,listDestructableProperties,toString" name="keywords">
+<meta content="WeakEventDispatcher,org.tractionas3.events.WeakEventDispatcher,addEventListener,dispatchEvent" name="keywords">
 <title>org.tractionas3.events.WeakEventDispatcher</title>
 </head>
 <body>
@@ -38,17 +38,17 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <td class="classHeaderTableLabel">Class</td><td class="classSignature">public class WeakEventDispatcher</td>
 </tr>
 <tr>
-<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">WeakEventDispatcher <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">WeakEventDispatcher <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="ClearableEventDispatcher.html">ClearableEventDispatcher</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
 </tr>
 <tr>
-<td class="classHeaderTableLabel">Implements</td><td>flash.events.IEventDispatcher, <a href="../core/interfaces/ICoreInterface.html">ICoreInterface</a></td>
+<td class="classHeaderTableLabel">Implements</td><td><a href="IClearableEventDispatcher.html">IClearableEventDispatcher</a></td>
 </tr>
 <tr>
-<td class="classHeaderTableLabel">Subclasses</td><td><a href="../profiler/BandwidthProfiler.html">BandwidthProfiler</a>, <a href="../utils/BandwidthTest.html">BandwidthTest</a>, <a href="../load/BytesTotalPrefetcher.html">BytesTotalPrefetcher</a>, <a href="../managers/ContextMenuManager.html">ContextMenuManager</a>, <a href="../load/CoreLoader.html">CoreLoader</a>, <a href="../load/LoaderQueue.html">LoaderQueue</a>, <a href="../load/LoadObjective.html">LoadObjective</a>, <a href="../net/LocalConnectionInbound.html">LocalConnectionInbound</a>, <a href="../net/LocalConnectionOutbound.html">LocalConnectionOutbound</a>, <a href="../net/Service.html">Service</a>, <a href="../media/SoundPlayback.html">SoundPlayback</a>, <a href="../debug/TractionAS3Debugger.html">TractionAS3Debugger</a>, <a href="../transitions/Tween.html">Tween</a>, <a href="../managers/UserInteractivityManager.html">UserInteractivityManager</a></td>
+<td class="classHeaderTableLabel">Subclasses</td><td><a href="../profiler/BandwidthProfiler.html">BandwidthProfiler</a>, <a href="../utils/BandwidthTest.html">BandwidthTest</a>, <a href="../load/loaders/BytesTotalPrefetcher.html">BytesTotalPrefetcher</a>, <a href="../managers/ContextMenuManager.html">ContextMenuManager</a>, <a href="../load/loaders/LoaderCore.html">LoaderCore</a>, <a href="../load/LoaderQueue.html">LoaderQueue</a>, <a href="../load/LoadProgressObjective.html">LoadProgressObjective</a>, <a href="../net/LocalConnectionInbound.html">LocalConnectionInbound</a>, <a href="../net/LocalConnectionOutbound.html">LocalConnectionOutbound</a>, <a href="../net/Service.html">Service</a>, <a href="../media/SoundLevelResponder.html">SoundLevelResponder</a>, <a href="../media/SoundPlayback.html">SoundPlayback</a>, <a href="../debug/TractionAS3Debugger.html">TractionAS3Debugger</a>, <a href="../transitions/Tween.html">Tween</a>, <a href="../monitor/UserInteractivityMonitor.html">UserInteractivityMonitor</a></td>
 </tr>
 </table>
 <p></p>
-  WeakEventDispatcher is the TractionAS3 core event dispatcher, using weak references by default.
+  WeakEventDispatcher uses weak references by default.
   <p></p>
 <br>
 <hr>
@@ -56,6 +56,14 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <a name="methodSummary"></a>
 <div class="summarySection">
 <div class="summaryTableTitle">Public Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedMethod" id="hideInheritedMethod">
+<a onclick="javascript:setInheritedVisible(false,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Methods</a>
+</div>
+<div class="showInheritedMethod" id="showInheritedMethod">
+<a onclick="javascript:setInheritedVisible(true,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Methods</a>
+</div>
+</div>
 <table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
 <tr>
 <th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
@@ -77,14 +85,14 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
    Registers an event listener object with an EventDispatcher object so that the listener receives notification of an event.</div>
 </td><td class="summaryTableOwnerCol">WeakEventDispatcher</td>
 </tr>
-<tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#destruct()">destruct</a>(deepDestruct:Boolean = false):void</div>
+<a class="signatureLink" href="ClearableEventDispatcher.html#destruct()">destruct</a>(deepDestruct:Boolean = false):void</div>
 <div class="summaryTableDescription">
    
    Destructs implementing instance of specified properties.</div>
-</td><td class="summaryTableOwnerCol">WeakEventDispatcher</td>
+</td><td class="summaryTableOwnerCol"><a href="ClearableEventDispatcher.html">ClearableEventDispatcher</a></td>
 </tr>
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
@@ -94,23 +102,40 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
    Dispatches an event into the event flow, <i>only</i> if event property <code>hasEventListener</code> or <code>bubbles</code> are <code>true</code>.</div>
 </td><td class="summaryTableOwnerCol">WeakEventDispatcher</td>
 </tr>
-<tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#listDestructableProperties()">listDestructableProperties</a>():Array</div>
+<a class="signatureLink" href="ClearableEventDispatcher.html#listDestructableProperties()">listDestructableProperties</a>():Array</div>
 <div class="summaryTableDescription">
    
    Specifies an array of strings representing properties that are to be
    nullified or reset upon destruction.</div>
-</td><td class="summaryTableOwnerCol">WeakEventDispatcher</td>
+</td><td class="summaryTableOwnerCol"><a href="ClearableEventDispatcher.html">ClearableEventDispatcher</a></td>
 </tr>
-<tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#toString()">toString</a>():String</div>
+<a class="signatureLink" href="ClearableEventDispatcher.html#removeAllEventListeners()">removeAllEventListeners</a>():void</div>
+<div class="summaryTableDescription">
+   
+   Removes all event listeners from the IClearableEventDispatcher object.</div>
+</td><td class="summaryTableOwnerCol"><a href="ClearableEventDispatcher.html">ClearableEventDispatcher</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ClearableEventDispatcher.html#removeEventListener()">removeEventListener</a>(type:String, listener:Function, useCapture:Boolean = false):void</div>
+<div class="summaryTableDescription">
+   Removes a listener from the EventDispatcher object.</div>
+</td><td class="summaryTableOwnerCol"><a href="ClearableEventDispatcher.html">ClearableEventDispatcher</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ClearableEventDispatcher.html#toString()">toString</a>():String</div>
 <div class="summaryTableDescription">
    Returns the string representation of the specified object.</div>
-</td><td class="summaryTableOwnerCol">WeakEventDispatcher</td>
+</td><td class="summaryTableOwnerCol"><a href="ClearableEventDispatcher.html">ClearableEventDispatcher</a></td>
 </tr>
 </table>
 </div>
@@ -181,26 +206,6 @@ showHideInherited();
 </tr>
 </table>
 </div>
-<a name="destruct()"></a>
-<table cellspacing="0" cellpadding="0" class="detailHeader">
-<tr>
-<td class="detailHeaderName">destruct</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
-</tr>
-</table>
-<div class="detailBody">
-<code>public function destruct(deepDestruct:Boolean = false):void</code><p>
-   
-   Destructs implementing instance of specified properties.
-   <p />
-   <b>Note:</b> You can override this method to remove unused references in your custom class.
-   
-   </p><span class="label">Parameters</span>
-<table border="0" cellspacing="0" cellpadding="0">
-<tr>
-<td width="20px"></td><td><code><span class="label">deepDestruct</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
-</tr>
-</table>
-</div>
 <a name="dispatchEvent()"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>
@@ -221,42 +226,6 @@ showHideInherited();
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td width="20"></td><td><code>Boolean</code></td>
-</tr>
-</table>
-</div>
-<a name="listDestructableProperties()"></a>
-<table cellspacing="0" cellpadding="0" class="detailHeader">
-<tr>
-<td class="detailHeaderName">listDestructableProperties</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
-</tr>
-</table>
-<div class="detailBody">
-<code>public function listDestructableProperties():Array</code><p>
-   
-   Specifies an array of strings representing properties that are to be
-   nullified or reset upon destruction. Applies to public properties <b>only</b>
-   </p><p></p>
-<span class="label">Returns</span>
-<table border="0" cellspacing="0" cellpadding="0">
-<tr>
-<td width="20"></td><td><code>Array</code></td>
-</tr>
-</table>
-</div>
-<a name="toString()"></a>
-<table cellspacing="0" cellpadding="0" class="detailHeader">
-<tr>
-<td class="detailHeaderName">toString</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
-</tr>
-</table>
-<div class="detailBody">
-<code>public override function toString():String</code><p>
-   Returns the string representation of the specified object.
-   </p><p></p>
-<span class="label">Returns</span>
-<table border="0" cellspacing="0" cellpadding="0">
-<tr>
-<td width="20"></td><td><code>String</code></td>
 </tr>
 </table>
 </div>

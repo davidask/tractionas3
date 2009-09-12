@@ -35,14 +35,12 @@ package org.tractionas3.graphics
 	/**
 	 * The Color class represents a color.
 	 */
-
 	public class Color extends CoreObject
 	{
 
 		/**
 		 * Parses and returns hex color in string format (e.g. "0xFF0000" or "#000000").
 		 */
-
 		public static function parseColor(colorStr:String):uint
 		{
 			if (colorStr.substr(0, 2) == "0x") colorStr = colorStr.substr(2);
@@ -65,7 +63,6 @@ package org.tractionas3.graphics
 		/**
 		 * Creates a new Color object with specified color in hexadecimal format.
 		 */
-
 		public function Color(color:uint = 0)
 		{
 			super();
@@ -76,7 +73,6 @@ package org.tractionas3.graphics
 		/**
 		 * Randomizes each channel in the color.
 		 */
-
 		public function randomize():void
 		{
 			alpha = Math.random() * 255;
@@ -91,7 +87,6 @@ package org.tractionas3.graphics
 		/**
 		 * Specifies the color of the Color object in hexadecimal format.
 		 */
-
 		public function get hexColor():uint
 		{
 			return (alpha << 24 | red << 16 | green << 8 | blue);
@@ -111,7 +106,6 @@ package org.tractionas3.graphics
 		/**
 		 * Specifies the amount of red in the Color object, randing between 0 and 255.
 		 */
-
 		public function get red():uint
 		{
 			return _red;
@@ -125,7 +119,6 @@ package org.tractionas3.graphics
 		/**
 		 * Specifies the amount of green in the Color object, randing between 0 and 255.
 		 */
-
 		public function get green():uint
 		{
 			return _green;
@@ -139,7 +132,6 @@ package org.tractionas3.graphics
 		/**
 		 * Specifies the amount of blue in the Color object, randing between 0 and 255.
 		 */
-
 		public function get blue():uint
 		{
 			return _blue;
@@ -153,7 +145,6 @@ package org.tractionas3.graphics
 		/**
 		 * Specifies the alpha in the Color object, randing between 0 and 255.
 		 */
-
 		public function get alpha():uint
 		{
 			return _alpha;

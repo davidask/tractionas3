@@ -40,6 +40,7 @@ package org.tractionas3.net
 	import flash.utils.ByteArray;
 	public class LocalConnectionOutbound extends WeakEventDispatcher implements IDestructable
 	{
+
 		public static var MAX_PACKAGE_SIZE:uint = 40000;
 
 		private var _localConnection:LocalConnection;
@@ -173,7 +174,6 @@ package org.tractionas3.net
 				case StatusEvent.STATUS:
 				
 					/* STATUS */
-
 					break;
 			}
 		}
