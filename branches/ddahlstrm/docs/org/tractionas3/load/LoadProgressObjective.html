@@ -123,7 +123,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#addLoader()">addLoader</a>(target:<a href="CoreLoader.html">CoreLoader</a>, progressGoal:Number = 1):<a href="../load/CoreLoader.html">CoreLoader</a>
+<a class="signatureLink" href="#addLoader()">addLoader</a>(target:<a href="loaders/LoaderCore.html">LoaderCore</a>, progressGoal:Number = 1):<a href="loaders/LoaderCore.html">LoaderCore</a>
 </div>
 <div class="summaryTableDescription">
    Adds a loader reference to the LoadProgressObjective instance.</div>
@@ -149,7 +149,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#hasLoader()">hasLoader</a>(target:<a href="CoreLoader.html">CoreLoader</a>):Boolean</div>
+<a class="signatureLink" href="#hasLoader()">hasLoader</a>(target:<a href="loaders/LoaderCore.html">LoaderCore</a>):Boolean</div>
 <div class="summaryTableDescription">
    Indicates whether the load objective instance has a loader reference.</div>
 </td><td class="summaryTableOwnerCol">LoadProgressObjective</td>
@@ -184,7 +184,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#removeLoader()">removeLoader</a>(target:<a href="CoreLoader.html">CoreLoader</a>):void</div>
+<a class="signatureLink" href="#removeLoader()">removeLoader</a>(target:<a href="loaders/LoaderCore.html">LoaderCore</a>):void</div>
 <div class="summaryTableDescription">
    Removes a loader reference from a LoadProgressObjective instance.</div>
 </td><td class="summaryTableOwnerCol">LoadProgressObjective</td>
@@ -237,9 +237,7 @@ showHideInherited();
 <p>
 <span class="label">See also</span>
 </p>
-<div class="seeAlso">
-<a href="../load/CoreLoader.html#prefetchBytesTotal()" target="">org.tractionas3.load.CoreLoader.prefetchBytesTotal()</a>
-</div>
+<div class="seeAlso">org.tractionas3.load.LoaderCore.prefetchBytesTotal()</div>
 </div>
 <a name="loaders"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
@@ -305,13 +303,13 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function addLoader(target:<a href="CoreLoader.html">CoreLoader</a>, progressGoal:Number = 1):<a href="../load/CoreLoader.html">CoreLoader</a></code><p>
+<code>public function addLoader(target:<a href="loaders/LoaderCore.html">LoaderCore</a>, progressGoal:Number = 1):<a href="loaders/LoaderCore.html">LoaderCore</a></code><p>
    Adds a loader reference to the LoadProgressObjective instance.
    
    </p><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td width="20px"></td><td><code><span class="label">target</span>:<a href="CoreLoader.html">CoreLoader</a></code> &mdash; Loader reference.
+<td width="20px"></td><td><code><span class="label">target</span>:<a href="loaders/LoaderCore.html">LoaderCore</a></code> &mdash; Loader reference.
    </td>
 </tr>
 <tr>
@@ -326,7 +324,7 @@ showHideInherited();
 <span class="label">Returns</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td width="20"></td><td><code><a href="../load/CoreLoader.html">CoreLoader</a></code></td>
+<td width="20"></td><td><code><a href="loaders/LoaderCore.html">LoaderCore</a></code></td>
 </tr>
 </table>
 </div>
@@ -357,12 +355,12 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function hasLoader(target:<a href="CoreLoader.html">CoreLoader</a>):Boolean</code><p>
+<code>public function hasLoader(target:<a href="loaders/LoaderCore.html">LoaderCore</a>):Boolean</code><p>
    Indicates whether the load objective instance has a loader reference.
    </p><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td width="20px"></td><td><code><span class="label">target</span>:<a href="CoreLoader.html">CoreLoader</a></code></td>
+<td width="20px"></td><td><code><span class="label">target</span>:<a href="loaders/LoaderCore.html">LoaderCore</a></code></td>
 </tr>
 </table>
 <p></p>
@@ -380,12 +378,12 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function removeLoader(target:<a href="CoreLoader.html">CoreLoader</a>):void</code><p>
+<code>public function removeLoader(target:<a href="loaders/LoaderCore.html">LoaderCore</a>):void</code><p>
    Removes a loader reference from a LoadProgressObjective instance.
    </p><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td width="20px"></td><td><code><span class="label">target</span>:<a href="CoreLoader.html">CoreLoader</a></code></td>
+<td width="20px"></td><td><code><span class="label">target</span>:<a href="loaders/LoaderCore.html">LoaderCore</a></code></td>
 </tr>
 </table>
 </div>
