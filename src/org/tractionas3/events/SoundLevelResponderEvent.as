@@ -27,14 +27,49 @@
 
 package org.tractionas3.events 
 {
-	import flash.events.IEventDispatcher;
-	public interface IClearableEventDispatcher extends IEventDispatcher 
+	import flash.events.Event;
+
+	/**
+	 * SoundLevelResponderEvent provides a base event for SoundLevelResponder class.
+	 */
+
+	public class SoundLevelResponderEvent extends Event 
 	{
-		
 		/**
-		 * Removes all event listeners from the IClearableEventDispatcher object.
+		 * Defines the value of the type property of a soundLevelResponderResponse event object.
 		 */
 		
-		function removeAllEventListeners():void;
+		public static const RESPONSE:String = "soundLevelResponderResponse";
+		
+		private var _soundLevel:Number;
+		
+		/**
+		 * Creates a new SoundLevelResponderEvent object.
+		 */
+		
+		public function SoundLevelResponderEvent(type:String, soundLevel:Number, bubbles:Boolean = false, cancelable:Boolean = false)
+		{
+			super(type, bubbles, cancelable);
+			
+			_soundLevel = soundLevel;
+		}
+		
+		/**
+		 * Indicates the sound level from the SoundLevelResponder object.
+		 */
+		
+		public function get soundLevel():Number
+		{
+			return _soundLevel;
+		}
+		
+		/**
+		 * @inheritDoc
+		 */
+		
+		override public function clone():Event
+		{
+			return new SoundLevelResponderEvent(type, soundLevel, bubbles, cancelable);
+		}
 	}
 }
