@@ -42,20 +42,6 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
    Cancels an instance operation.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/BytesTotalPrefetcher.html#cancel()">cancel</a>() &mdash; Method in class org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/BytesTotalPrefetcher.html">BytesTotalPrefetcher</a></td>
-</tr>
-<tr>
-<td width="20"></td><td>
-   Cancels the prefetch.</td>
-</tr>
-<tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/DisplayLoader.html#cancel()">cancel</a>() &mdash; Method in class org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/DisplayLoader.html">DisplayLoader</a></td>
-</tr>
-<tr>
-<td width="20"></td><td>
-   Cancels the loading process.</td>
-</tr>
-<tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/LoaderQueue.html#cancel()">cancel</a>() &mdash; Method in class org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/LoaderQueue.html">LoaderQueue</a></td>
 </tr>
 <tr>
@@ -63,21 +49,35 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
    Cancels all loaders currently in progress.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/SoundLoader.html#cancel()">cancel</a>() &mdash; Method in class org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/SoundLoader.html">SoundLoader</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/BytesTotalPrefetcher.html#cancel()">cancel</a>() &mdash; Method in class org.tractionas3.load.loaders.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/BytesTotalPrefetcher.html">BytesTotalPrefetcher</a></td>
+</tr>
+<tr>
+<td width="20"></td><td>
+   Cancels the prefetch.</td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/DisplayLoader.html#cancel()">cancel</a>() &mdash; Method in class org.tractionas3.load.loaders.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/DisplayLoader.html">DisplayLoader</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
    Cancels the loading process.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/URLDataLoader.html#cancel()">cancel</a>() &mdash; Method in class org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/URLDataLoader.html">URLDataLoader</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/SoundLoader.html#cancel()">cancel</a>() &mdash; Method in class org.tractionas3.load.loaders.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/SoundLoader.html">SoundLoader</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
    Cancels the loading process.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/VideoLoader.html#cancel()">cancel</a>() &mdash; Method in class org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/VideoLoader.html">VideoLoader</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/URLDataLoader.html#cancel()">cancel</a>() &mdash; Method in class org.tractionas3.load.loaders.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/URLDataLoader.html">URLDataLoader</a></td>
+</tr>
+<tr>
+<td width="20"></td><td>
+   Cancels the loading process.</td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/VideoLoader.html#cancel()">cancel</a>() &mdash; Method in class org.tractionas3.load.loaders.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/VideoLoader.html">VideoLoader</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
@@ -92,18 +92,18 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
    Defines the value of the type property of a loadCancel event object.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/CoreLoader.html#cancelable">cancelable</a> &mdash; Property in class org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/CoreLoader.html">CoreLoader</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/ILoadable.html#cancelable">cancelable</a> &mdash; Property in interface org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/ILoadable.html">ILoadable</a></td>
+</tr>
+<tr>
+<td width="20"></td><td>
+   Indicates whether the loader is cancelable.</td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/LoaderCore.html#cancelable">cancelable</a> &mdash; Property in class org.tractionas3.load.loaders.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/LoaderCore.html">LoaderCore</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
    
-   Indicates whether the loader is cancelable.</td>
-</tr>
-<tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/Loadable.html#cancelable">cancelable</a> &mdash; Property in interface org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/Loadable.html">Loadable</a></td>
-</tr>
-<tr>
-<td width="20"></td><td>
    Indicates whether the loader is cancelable.</td>
 </tr>
 <tr>
@@ -186,6 +186,12 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
 <td width="20"></td><td></td>
 </tr>
 <tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/media/class-list.html');" href="org/tractionas3/media/SoundLevelResponder.html#CHANNEL_LENGTH">CHANNEL_LENGTH</a> &mdash; Static property in class org.tractionas3.media.<a onclick="javascript:loadClassListFrame('org/tractionas3/media/class-list.html');" href="org/tractionas3/media/SoundLevelResponder.html">SoundLevelResponder</a></td>
+</tr>
+<tr>
+<td width="20"></td><td></td>
+</tr>
+<tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/utils/class-list.html');" href="org/tractionas3/utils/MathUtil.html#clamp()">clamp</a>(value, low, high) &mdash; Static method in class org.tractionas3.utils.<a onclick="javascript:loadClassListFrame('org/tractionas3/utils/class-list.html');" href="org/tractionas3/utils/MathUtil.html">MathUtil</a></td>
 </tr>
 <tr>
@@ -207,6 +213,13 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
    </td>
 </tr>
 <tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/IClearable.html#clear()">clear</a>() &mdash; Method in interface org.tractionas3.core.interfaces.<a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/IClearable.html">IClearable</a></td>
+</tr>
+<tr>
+<td width="20"></td><td>
+   Clears the clearable instance.</td>
+</tr>
+<tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/IDrawable.html#clear()">clear</a>() &mdash; Method in interface org.tractionas3.core.interfaces.<a onclick="javascript:loadClassListFrame('org/tractionas3/core/interfaces/class-list.html');" href="org/tractionas3/core/interfaces/IDrawable.html">IDrawable</a></td>
 </tr>
 <tr>
@@ -222,7 +235,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
    Clears the collection of all items.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/data/collection/class-list.html');" href="org/tractionas3/data/collection/Collection.html#clear()">clear</a>() &mdash; Method in interface org.tractionas3.data.collection.<a onclick="javascript:loadClassListFrame('org/tractionas3/data/collection/class-list.html');" href="org/tractionas3/data/collection/Collection.html">Collection</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/data/collection/class-list.html');" href="org/tractionas3/data/collection/ICollection.html#clear()">clear</a>() &mdash; Method in interface org.tractionas3.data.collection.<a onclick="javascript:loadClassListFrame('org/tractionas3/data/collection/class-list.html');" href="org/tractionas3/data/collection/ICollection.html">ICollection</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
@@ -241,6 +254,21 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
 <tr>
 <td width="20"></td><td>
    Clears the EnterFrame class of all handlers.</td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/events/class-list.html');" href="org/tractionas3/events/ClearableEventDispatcher.html">ClearableEventDispatcher</a> &mdash; Class in package <a onclick="javascript:loadClassListFrame('org/tractionas3/events/class-list.html');" href="org/tractionas3/events/package-detail.html">org.tractionas3.events</a></td>
+</tr>
+<tr>
+<td width="20"></td><td>
+  ClearableEventDispatcher keeps track of what events have been added, giving the posibility to remove all added event listeners via
+  <i>removeEventListeners()</i> method defined in IClearableEventDispatcher interface.</td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/events/class-list.html');" href="org/tractionas3/events/ClearableEventDispatcher.html#ClearableEventDispatcher()">ClearableEventDispatcher</a>(target) &mdash; Constructor in class org.tractionas3.events.<a onclick="javascript:loadClassListFrame('org/tractionas3/events/class-list.html');" href="org/tractionas3/events/ClearableEventDispatcher.html">ClearableEventDispatcher</a></td>
+</tr>
+<tr>
+<td width="20"></td><td>
+   Creates a new ClearableEventDispatcher object.</td>
 </tr>
 <tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/display/effects/class-list.html');" href="org/tractionas3/display/effects/Reflection.html#clearBitmapDataCache()">clearBitmapDataCache</a>() &mdash; Method in class org.tractionas3.display.effects.<a onclick="javascript:loadClassListFrame('org/tractionas3/display/effects/class-list.html');" href="org/tractionas3/display/effects/Reflection.html">Reflection</a></td>
@@ -289,7 +317,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
 <td width="20"></td><td></td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/events/class-list.html');" href="org/tractionas3/events/LoadObjectiveEvent.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.events.<a onclick="javascript:loadClassListFrame('org/tractionas3/events/class-list.html');" href="org/tractionas3/events/LoadObjectiveEvent.html">LoadObjectiveEvent</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/events/class-list.html');" href="org/tractionas3/events/LoadProgressObjectiveEvent.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.events.<a onclick="javascript:loadClassListFrame('org/tractionas3/events/class-list.html');" href="org/tractionas3/events/LoadProgressObjectiveEvent.html">LoadProgressObjectiveEvent</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
@@ -304,6 +332,13 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
 </tr>
 <tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/events/class-list.html');" href="org/tractionas3/events/ServiceEvent.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.events.<a onclick="javascript:loadClassListFrame('org/tractionas3/events/class-list.html');" href="org/tractionas3/events/ServiceEvent.html">ServiceEvent</a></td>
+</tr>
+<tr>
+<td width="20"></td><td>
+   </td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/events/class-list.html');" href="org/tractionas3/events/SoundLevelResponderEvent.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.events.<a onclick="javascript:loadClassListFrame('org/tractionas3/events/class-list.html');" href="org/tractionas3/events/SoundLevelResponderEvent.html">SoundLevelResponderEvent</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
@@ -338,16 +373,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
    Clones the dimension.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/BitmapDataLoader.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/BitmapDataLoader.html">BitmapDataLoader</a></td>
-</tr>
-<tr>
-<td width="20"></td><td>
-   
-   
-   Creates a duplicate of the instance.</td>
-</tr>
-<tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/BitmapLoader.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/BitmapLoader.html">BitmapLoader</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/BitmapDataLoader.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.load.loaders.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/BitmapDataLoader.html">BitmapDataLoader</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
@@ -355,7 +381,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
    Creates a duplicate of the instance.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/CoreLoader.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/CoreLoader.html">CoreLoader</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/BitmapLoader.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.load.loaders.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/BitmapLoader.html">BitmapLoader</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
@@ -363,7 +389,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
    Creates a duplicate of the instance.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/DisplayLoader.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/DisplayLoader.html">DisplayLoader</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/DisplayLoader.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.load.loaders.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/DisplayLoader.html">DisplayLoader</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
@@ -371,7 +397,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
    Creates a duplicate of the instance.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/SoundLoader.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/SoundLoader.html">SoundLoader</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/LoaderCore.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.load.loaders.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/LoaderCore.html">LoaderCore</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
@@ -379,7 +405,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
    Creates a duplicate of the instance.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/URLDataLoader.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/URLDataLoader.html">URLDataLoader</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/SoundLoader.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.load.loaders.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/SoundLoader.html">SoundLoader</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
@@ -387,7 +413,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
    Creates a duplicate of the instance.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/VideoLoader.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/VideoLoader.html">VideoLoader</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/URLDataLoader.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.load.loaders.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/URLDataLoader.html">URLDataLoader</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
@@ -395,7 +421,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
    Creates a duplicate of the instance.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/managers/class-list.html');" href="org/tractionas3/managers/UserInteractivityManager.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.managers.<a onclick="javascript:loadClassListFrame('org/tractionas3/managers/class-list.html');" href="org/tractionas3/managers/UserInteractivityManager.html">UserInteractivityManager</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/VideoLoader.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.load.loaders.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/VideoLoader.html">VideoLoader</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
@@ -411,6 +437,14 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
    Creates a duplicate of the instance.</td>
 </tr>
 <tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/monitor/class-list.html');" href="org/tractionas3/monitor/UserInteractivityMonitor.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.monitor.<a onclick="javascript:loadClassListFrame('org/tractionas3/monitor/class-list.html');" href="org/tractionas3/monitor/UserInteractivityMonitor.html">UserInteractivityMonitor</a></td>
+</tr>
+<tr>
+<td width="20"></td><td>
+   
+   Creates a duplicate of the instance.</td>
+</tr>
+<tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/utils/class-list.html');" href="org/tractionas3/utils/BandwidthTest.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.utils.<a onclick="javascript:loadClassListFrame('org/tractionas3/utils/class-list.html');" href="org/tractionas3/utils/BandwidthTest.html">BandwidthTest</a></td>
 </tr>
 <tr>
@@ -419,12 +453,6 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
 </tr>
 <tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/utils/class-list.html');" href="org/tractionas3/utils/Version.html#clone()">clone</a>() &mdash; Method in class org.tractionas3.utils.<a onclick="javascript:loadClassListFrame('org/tractionas3/utils/class-list.html');" href="org/tractionas3/utils/Version.html">Version</a></td>
-</tr>
-<tr>
-<td width="20"></td><td></td>
-</tr>
-<tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/data/collection/class-list.html');" href="org/tractionas3/data/collection/Collection.html"><i>Collection</i></a> &mdash; Interface in package <a onclick="javascript:loadClassListFrame('org/tractionas3/data/collection/class-list.html');" href="org/tractionas3/data/collection/package-detail.html">org.tractionas3.data.collection</a></td>
 </tr>
 <tr>
 <td width="20"></td><td></td>
@@ -652,19 +680,6 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
    Creates a new Coordinate object.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/display/class-list.html');" href="org/tractionas3/display/CoreBitmap.html">CoreBitmap</a> &mdash; Class in package <a onclick="javascript:loadClassListFrame('org/tractionas3/display/class-list.html');" href="org/tractionas3/display/package-detail.html">org.tractionas3.display</a></td>
-</tr>
-<tr>
-<td width="20"></td><td>
-  CoreBitmap is the core Bitmap class of the TractionAS3 API.</td>
-</tr>
-<tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/display/class-list.html');" href="org/tractionas3/display/CoreBitmap.html#CoreBitmap()">CoreBitmap</a>(bitmapData, pixelSnapping, smoothing) &mdash; Constructor in class org.tractionas3.display.<a onclick="javascript:loadClassListFrame('org/tractionas3/display/class-list.html');" href="org/tractionas3/display/CoreBitmap.html">CoreBitmap</a></td>
-</tr>
-<tr>
-<td width="20"></td><td></td>
-</tr>
-<tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/core/class-list.html');" href="org/tractionas3/core/CoreDynamicObject.html">CoreDynamicObject</a> &mdash; Dynamic class in package <a onclick="javascript:loadClassListFrame('org/tractionas3/core/class-list.html');" href="org/tractionas3/core/package-detail.html">org.tractionas3.core</a></td>
 </tr>
 <tr>
@@ -679,20 +694,6 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
    Creates a new CoreDynamicObject object.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/CoreLoader.html">CoreLoader</a> &mdash; Class in package <a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/package-detail.html">org.tractionas3.load</a></td>
-</tr>
-<tr>
-<td width="20"></td><td>
-  CoreLoader class is the base class of all loader classes.</td>
-</tr>
-<tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/CoreLoader.html#CoreLoader()">CoreLoader</a>(url, loaderName) &mdash; Constructor in class org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/CoreLoader.html">CoreLoader</a></td>
-</tr>
-<tr>
-<td width="20"></td><td>
-   Creates a new CoreLoader object.</td>
-</tr>
-<tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/core/class-list.html');" href="org/tractionas3/core/CoreObject.html">CoreObject</a> &mdash; Class in package <a onclick="javascript:loadClassListFrame('org/tractionas3/core/class-list.html');" href="org/tractionas3/core/package-detail.html">org.tractionas3.core</a></td>
 </tr>
 <tr>
@@ -705,20 +706,6 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
 <tr>
 <td width="20"></td><td>
    Creates a new CoreObject object.</td>
-</tr>
-<tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/display/class-list.html');" href="org/tractionas3/display/CoreShape.html">CoreShape</a> &mdash; Class in package <a onclick="javascript:loadClassListFrame('org/tractionas3/display/class-list.html');" href="org/tractionas3/display/package-detail.html">org.tractionas3.display</a></td>
-</tr>
-<tr>
-<td width="20"></td><td>
-  CoreShape is the core shape class of TractionAS3.</td>
-</tr>
-<tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/display/class-list.html');" href="org/tractionas3/display/CoreShape.html#CoreShape()">CoreShape</a>() &mdash; Constructor in class org.tractionas3.display.<a onclick="javascript:loadClassListFrame('org/tractionas3/display/class-list.html');" href="org/tractionas3/display/CoreShape.html">CoreShape</a></td>
-</tr>
-<tr>
-<td width="20"></td><td>
-   Creates a new CoreShape object.</td>
 </tr>
 <tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/display/class-list.html');" href="org/tractionas3/display/CoreSprite.html">CoreSprite</a> &mdash; Class in package <a onclick="javascript:loadClassListFrame('org/tractionas3/display/class-list.html');" href="org/tractionas3/display/package-detail.html">org.tractionas3.display</a></td>
@@ -743,7 +730,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
    Indicates the number of items in the collection.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/data/collection/class-list.html');" href="org/tractionas3/data/collection/Collection.html#count">count</a> &mdash; Property in interface org.tractionas3.data.collection.<a onclick="javascript:loadClassListFrame('org/tractionas3/data/collection/class-list.html');" href="org/tractionas3/data/collection/Collection.html">Collection</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/data/collection/class-list.html');" href="org/tractionas3/data/collection/ICollection.html#count">count</a> &mdash; Property in interface org.tractionas3.data.collection.<a onclick="javascript:loadClassListFrame('org/tractionas3/data/collection/class-list.html');" href="org/tractionas3/data/collection/ICollection.html">ICollection</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
@@ -786,6 +773,13 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("CÂ
 <tr>
 <td width="20"></td><td>
    Indicates, in bytes, the current usage of memory.</td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/media/class-list.html');" href="org/tractionas3/media/SoundLevelResponder.html#currentSoundLevel">currentSoundLevel</a> &mdash; Property in class org.tractionas3.media.<a onclick="javascript:loadClassListFrame('org/tractionas3/media/class-list.html');" href="org/tractionas3/media/SoundLevelResponder.html">SoundLevelResponder</a></td>
+</tr>
+<tr>
+<td width="20"></td><td>
+   Indicates the current sound level.</td>
 </tr>
 <tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/data/table/class-list.html');" href="org/tractionas3/data/table/Datatable.html#cursor">cursor</a> &mdash; Property in class org.tractionas3.data.table.<a onclick="javascript:loadClassListFrame('org/tractionas3/data/table/class-list.html');" href="org/tractionas3/data/table/Datatable.html">Datatable</a></td>

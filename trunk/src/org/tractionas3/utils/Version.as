@@ -32,6 +32,7 @@ package org.tractionas3.utils
 	import org.tractionas3.reflection.stringify;
 	public class Version extends CoreObject implements ICoreInterface, ICloneable 
 	{
+
 		public var major:uint;
 
 		public var minor:uint;
@@ -74,7 +75,7 @@ package org.tractionas3.utils
 		{	
 			super.destruct(deepDestruct);		}
 
-		public function clone():Object
+		public function clone():ICloneable
 		{			return new Version(major, minor, build, internalBuild);
 		}
 	}}

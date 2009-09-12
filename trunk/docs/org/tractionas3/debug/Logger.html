@@ -84,7 +84,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#addOutput()">addOutput</a>(targetOutput:<a href="output/LoggerOutput.html">LoggerOutput</a>):<a href="output/LoggerOutput.html">LoggerOutput</a>
+<a class="signatureLink" href="#addOutput()">addOutput</a>(targetOutput:<a href="output/ILoggerOutput.html">ILoggerOutput</a>):<a href="output/ILoggerOutput.html">ILoggerOutput</a>
 </div>
 <div class="summaryTableDescription">[static]
    Adds a logger output to the Logger output list.</div>
@@ -101,7 +101,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#hasOutput()">hasOutput</a>(output:<a href="output/LoggerOutput.html">LoggerOutput</a>):Boolean</div>
+<a class="signatureLink" href="#hasOutput()">hasOutput</a>(output:<a href="output/ILoggerOutput.html">ILoggerOutput</a>):Boolean</div>
 <div class="summaryTableDescription">[static]
    Indicates whether Logger has specified output added to it.</div>
 </td><td class="summaryTableOwnerCol">Logger</td>
@@ -117,7 +117,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#removeOutput()">removeOutput</a>(targetOutput:<a href="output/LoggerOutput.html">LoggerOutput</a>):void</div>
+<a class="signatureLink" href="#removeOutput()">removeOutput</a>(targetOutput:<a href="output/ILoggerOutput.html">ILoggerOutput</a>):void</div>
 <div class="summaryTableDescription">[static]
    Removes an added output from logger.</div>
 </td><td class="summaryTableOwnerCol">Logger</td>
@@ -186,28 +186,26 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public static function addOutput(targetOutput:<a href="output/LoggerOutput.html">LoggerOutput</a>):<a href="output/LoggerOutput.html">LoggerOutput</a></code><p>
+<code>public static function addOutput(targetOutput:<a href="output/ILoggerOutput.html">ILoggerOutput</a>):<a href="output/ILoggerOutput.html">ILoggerOutput</a></code><p>
    Adds a logger output to the Logger output list.
    
    </p><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td width="20px"></td><td><code><span class="label">targetOutput</span>:<a href="output/LoggerOutput.html">LoggerOutput</a></code></td>
+<td width="20px"></td><td><code><span class="label">targetOutput</span>:<a href="output/ILoggerOutput.html">ILoggerOutput</a></code></td>
 </tr>
 </table>
 <p></p>
 <span class="label">Returns</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td width="20"></td><td><code><a href="output/LoggerOutput.html">LoggerOutput</a></code></td>
+<td width="20"></td><td><code><a href="output/ILoggerOutput.html">ILoggerOutput</a></code></td>
 </tr>
 </table>
 <p>
 <span class="label">See also</span>
 </p>
-<div class="seeAlso">
-<a href="output/LoggerOutput.html" target="">org.tractionas3.debug.output.LoggerOutput</a>
-</div>
+<div class="seeAlso">org.tractionas3.debug.output.LoggerOutput</div>
 </div>
 <a name="clearOutputs()"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
@@ -234,13 +232,13 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public static function hasOutput(output:<a href="output/LoggerOutput.html">LoggerOutput</a>):Boolean</code><p>
+<code>public static function hasOutput(output:<a href="output/ILoggerOutput.html">ILoggerOutput</a>):Boolean</code><p>
    Indicates whether Logger has specified output added to it.
    
    </p><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td width="20px"></td><td><code><span class="label">output</span>:<a href="output/LoggerOutput.html">LoggerOutput</a></code> &mdash; Specified output.
+<td width="20px"></td><td><code><span class="label">output</span>:<a href="output/ILoggerOutput.html">ILoggerOutput</a></code> &mdash; Specified output.
    </td>
 </tr>
 </table>
@@ -282,12 +280,12 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public static function removeOutput(targetOutput:<a href="output/LoggerOutput.html">LoggerOutput</a>):void</code><p>
+<code>public static function removeOutput(targetOutput:<a href="output/ILoggerOutput.html">ILoggerOutput</a>):void</code><p>
    Removes an added output from logger.
    </p><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td width="20px"></td><td><code><span class="label">targetOutput</span>:<a href="output/LoggerOutput.html">LoggerOutput</a></code></td>
+<td width="20px"></td><td><code><span class="label">targetOutput</span>:<a href="output/ILoggerOutput.html">ILoggerOutput</a></code></td>
 </tr>
 </table>
 </div>

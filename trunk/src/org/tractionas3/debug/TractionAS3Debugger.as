@@ -47,12 +47,12 @@ package org.tractionas3.debug
 	import flash.utils.Timer;
 	import flash.utils.clearTimeout;
 	import flash.utils.setTimeout;
-
 	/**
 	 * TractionAS3Debugger is used to communicate with the TractionAS3 Debugger application.
 	 */	
 	public class TractionAS3Debugger extends WeakEventDispatcher implements IConnectable
 	{
+
 		/**
 		 * Indicates the version of the TractionAS3Debugger class
 		 */
@@ -73,7 +73,6 @@ package org.tractionas3.debug
 		 */
 		public static const ALLOWED_DOMAIN:String = "*";
 
-		
 		private static var _instance:TractionAS3Debugger;
 
 		/**
@@ -81,34 +80,28 @@ package org.tractionas3.debug
 		 */
 		public var enabled:Boolean = true;
 
-		
 		private var _objectInspectMap:Dictionary;
 
 		private var _objectInspectMapKeyNum:uint;
 
 		private var _objectInspectMapKeyPrefix:String = "objectReference_";
 
-		
 		private var _buffer:Array;
 
-		
 		private var _inbound:LocalConnectionInbound;
 
 		private var _outbound:LocalConnectionOutbound;
 
-		
 		private var _fpsProfiler:FPSProfiler;
 
 		private var _memoryProfiler:MemoryProfiler;
 
 		private var _bandwidthProfiler:BandwidthProfiler;
 
-		
 		private var _profilerTimer:Timer;
 
 		private var _profilerTargetStage:Stage;
 
-		
 		private var _connected:Boolean;
 
 		private var _connecting:Boolean;

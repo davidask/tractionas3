@@ -30,6 +30,7 @@ package org.tractionas3.utils
 	import flash.system.Capabilities;
 	public class FlashPlayer 
 	{
+
 		public static function get debugger():Boolean
 		{
 			return Capabilities.isDebugger;

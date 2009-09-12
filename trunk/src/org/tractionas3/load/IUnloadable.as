@@ -27,6 +27,10 @@
 
 package org.tractionas3.load 
 {
+	/**
+	 * IUnloadable interface is implemented by loader classes that are unloadable
+	 */
+	
 	public interface IUnloadable 
 	{
 		/**

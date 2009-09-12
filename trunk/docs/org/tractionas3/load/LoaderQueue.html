@@ -38,7 +38,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <td class="classHeaderTableLabel">Class</td><td class="classSignature">public class LoaderQueue</td>
 </tr>
 <tr>
-<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">LoaderQueue <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="../events/WeakEventDispatcher.html">WeakEventDispatcher</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">LoaderQueue <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="../events/WeakEventDispatcher.html">WeakEventDispatcher</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="../events/ClearableEventDispatcher.html">ClearableEventDispatcher</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
 </tr>
 <tr>
 <td class="classHeaderTableLabel">Implements</td><td><a href="../core/interfaces/ICancelable.html">ICancelable</a>, <a href="../core/interfaces/ICoreInterface.html">ICoreInterface</a>, <a href="../core/interfaces/IRunnable.html">IRunnable</a></td>
@@ -156,7 +156,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#addLoader()">addLoader</a>(target:<a href="CoreLoader.html">CoreLoader</a>):<a href="../load/CoreLoader.html">CoreLoader</a>
+<a class="signatureLink" href="#addLoader()">addLoader</a>(target:<a href="loaders/LoaderCore.html">LoaderCore</a>):<a href="loaders/LoaderCore.html">LoaderCore</a>
 </div>
 <div class="summaryTableDescription">
    Adds a loader to the queue.</div>
@@ -198,12 +198,12 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="hideInheritedMethod">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="../events/WeakEventDispatcher.html#listDestructableProperties()">listDestructableProperties</a>():Array</div>
+<a class="signatureLink" href="../events/ClearableEventDispatcher.html#listDestructableProperties()">listDestructableProperties</a>():Array</div>
 <div class="summaryTableDescription">
    
    Specifies an array of strings representing properties that are to be
    nullified or reset upon destruction.</div>
-</td><td class="summaryTableOwnerCol"><a href="../events/WeakEventDispatcher.html">WeakEventDispatcher</a></td>
+</td><td class="summaryTableOwnerCol"><a href="../events/ClearableEventDispatcher.html">ClearableEventDispatcher</a></td>
 </tr>
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
@@ -213,18 +213,35 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
    Prefetches the filesize of all contained loaders in the queue.</div>
 </td><td class="summaryTableOwnerCol">LoaderQueue</td>
 </tr>
-<tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#removeAndCancelLoader()">removeAndCancelLoader</a>(target:<a href="CoreLoader.html">CoreLoader</a>):void</div>
+<a class="signatureLink" href="../events/ClearableEventDispatcher.html#removeAllEventListeners()">removeAllEventListeners</a>():void</div>
 <div class="summaryTableDescription">
-   Removes a loader from the queue and cancels its loading progress if able.</div>
-</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+   
+   Removes all event listeners from the IClearableEventDispatcher object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../events/ClearableEventDispatcher.html">ClearableEventDispatcher</a></td>
 </tr>
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#removeLoader()">removeLoader</a>(target:<a href="CoreLoader.html">CoreLoader</a>, cancel:Boolean = false):void</div>
+<a class="signatureLink" href="#removeAndCancelLoader()">removeAndCancelLoader</a>(target:<a href="loaders/LoaderCore.html">LoaderCore</a>):void</div>
+<div class="summaryTableDescription">
+   Removes a loader from the queue and cancels its loading progress if able.</div>
+</td><td class="summaryTableOwnerCol">LoaderQueue</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../events/ClearableEventDispatcher.html#removeEventListener()">removeEventListener</a>(type:String, listener:Function, useCapture:Boolean = false):void</div>
+<div class="summaryTableDescription">
+   Removes a listener from the EventDispatcher object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../events/ClearableEventDispatcher.html">ClearableEventDispatcher</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeLoader()">removeLoader</a>(target:<a href="loaders/LoaderCore.html">LoaderCore</a>, cancel:Boolean = false):void</div>
 <div class="summaryTableDescription">
    Removes a loader from the queue.</div>
 </td><td class="summaryTableOwnerCol">LoaderQueue</td>
@@ -248,10 +265,10 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="hideInheritedMethod">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="../events/WeakEventDispatcher.html#toString()">toString</a>():String</div>
+<a class="signatureLink" href="../events/ClearableEventDispatcher.html#toString()">toString</a>():String</div>
 <div class="summaryTableDescription">
    Returns the string representation of the specified object.</div>
-</td><td class="summaryTableOwnerCol"><a href="../events/WeakEventDispatcher.html">WeakEventDispatcher</a></td>
+</td><td class="summaryTableOwnerCol"><a href="../events/ClearableEventDispatcher.html">ClearableEventDispatcher</a></td>
 </tr>
 </table>
 </div>
@@ -465,13 +482,13 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function addLoader(target:<a href="CoreLoader.html">CoreLoader</a>):<a href="../load/CoreLoader.html">CoreLoader</a></code><p>
+<code>public function addLoader(target:<a href="loaders/LoaderCore.html">LoaderCore</a>):<a href="loaders/LoaderCore.html">LoaderCore</a></code><p>
    Adds a loader to the queue.
    
    </p><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td width="20px"></td><td><code><span class="label">target</span>:<a href="CoreLoader.html">CoreLoader</a></code> &mdash; Target loader.
+<td width="20px"></td><td><code><span class="label">target</span>:<a href="loaders/LoaderCore.html">LoaderCore</a></code> &mdash; Target loader.
    
    </td>
 </tr>
@@ -480,7 +497,7 @@ showHideInherited();
 <span class="label">Returns</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td width="20"></td><td><code><a href="../load/CoreLoader.html">CoreLoader</a></code></td>
+<td width="20"></td><td><code><a href="loaders/LoaderCore.html">LoaderCore</a></code></td>
 </tr>
 </table>
 <p>
@@ -543,9 +560,7 @@ showHideInherited();
    </p><p>
 <span class="label">See also</span>
 </p>
-<div class="seeAlso">
-<a href="../load/CoreLoader.html#prefetchBytesTotal()" target="">org.tractionas3.load.CoreLoader.prefetchBytesTotal()</a>
-</div>
+<div class="seeAlso">org.tractionas3.load.LoaderCore.prefetchBytesTotal()</div>
 </div>
 <a name="removeAndCancelLoader()"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
@@ -554,13 +569,13 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function removeAndCancelLoader(target:<a href="CoreLoader.html">CoreLoader</a>):void</code><p>
+<code>public function removeAndCancelLoader(target:<a href="loaders/LoaderCore.html">LoaderCore</a>):void</code><p>
    Removes a loader from the queue and cancels its loading progress if able.
    
    </p><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td width="20px"></td><td><code><span class="label">target</span>:<a href="CoreLoader.html">CoreLoader</a></code> &mdash; Target loader.
+<td width="20px"></td><td><code><span class="label">target</span>:<a href="loaders/LoaderCore.html">LoaderCore</a></code> &mdash; Target loader.
    </td>
 </tr>
 </table>
@@ -572,13 +587,13 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function removeLoader(target:<a href="CoreLoader.html">CoreLoader</a>, cancel:Boolean = false):void</code><p>
+<code>public function removeLoader(target:<a href="loaders/LoaderCore.html">LoaderCore</a>, cancel:Boolean = false):void</code><p>
    Removes a loader from the queue.
    
    </p><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td width="20px"></td><td><code><span class="label">target</span>:<a href="CoreLoader.html">CoreLoader</a></code> &mdash; Target loader.
+<td width="20px"></td><td><code><span class="label">target</span>:<a href="loaders/LoaderCore.html">LoaderCore</a></code> &mdash; Target loader.
    </td>
 </tr>
 <tr>

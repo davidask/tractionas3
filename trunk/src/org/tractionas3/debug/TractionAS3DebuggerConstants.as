@@ -30,14 +30,13 @@ package org.tractionas3.debug
 	/**
 	 * TractionAS3DebuggerConstants holds constants for communication with TractionAS3 Debugger.
 	 */
-	
 	public class TractionAS3DebuggerConstants 
 	{
+
 		public static const INBOUND:String = "_tractionAS3InboundConnection";
 
 		public static const OUTBOUND:String = "_tractionAS3OutboundConnection";
-		
-		
+
 		public static const COMMAND_LOG:String = "command_log";
 
 		public static const COMMAND_CONNECT:String = "command_connect";
@@ -45,22 +44,20 @@ package org.tractionas3.debug
 		public static const COMMAND_PROFILE:String = "command_profile";
 
 		public static const COMMAND_INSPECT:String = "command_inspect";
-		
+
 		public static const COMMAND_INSPECT_UPDATE:String = "command_inspect_update"; //Yet to be implemented
 
 		public static const COMMAND_HELLO:String = "command_hello";
-		
 
 		public static const RESPONSE_CONNECT:String = "response_connect";
 
 		public static const RESPONSE_DISCONNECT:String = "response_disconnect";
 
 		public static const RESPONSE_CHANGE_PROPERTY:String = "response_change_property";
-		
+
 		public static const RESPONSE_REQUEST_INSPECT_UPDATE:String = "response_request_inspect_update"; //Yet to be implemented
 
 		public static const RESPONSE_HELLO_REQUEST:String = "response_hello";
-
 
 		public static const ALIAS_PROPERTY_DESCRIPTOR:String = "org.tractionas3.reflection.PropertyDescriptor";
 
