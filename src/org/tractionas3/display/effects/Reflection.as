@@ -27,6 +27,9 @@
  
 package org.tractionas3.display.effects 
 {
+	import org.tractionas3.reflection.stringify;
+	import org.tractionas3.core.Destructor;
+	import org.tractionas3.core.interfaces.ICoreInterface;
 	import org.tractionas3.core.interfaces.IDrawable;
 
 	import flash.display.Bitmap;
@@ -40,7 +43,7 @@ package org.tractionas3.display.effects
 	/**
 	 * DisplayObjectReflection creates a reflection of a DisplayObject
 	 */
-	public class Reflection extends Bitmap implements IDrawable 
+	public class Reflection extends Bitmap implements IDrawable, ICoreInterface
 	{
 
 		/**
@@ -134,8 +137,30 @@ package org.tractionas3.display.effects
 			
 			_alphaGradientBitap = null;
 			
-			
 			createBitmaps();
+		}
+		
+		public function destruct(deeepDestruct:Boolean = false):void
+		{
+			clearBitmapDataCache();
+			
+			_sourceBitmapData = null;
+			
+			bitmapData = null;
+			
+			_alphaGradientBitap = null;
+			
+			Destructor.destruct(this, deeepDestruct);
+		}
+		
+		public function listDestructableProperties():Array
+		{
+			return ["bitmapData"];
+		}
+		
+		override public function toString():String
+		{
+			return stringify(this);
 		}
 
 		private function createBitmaps():void
