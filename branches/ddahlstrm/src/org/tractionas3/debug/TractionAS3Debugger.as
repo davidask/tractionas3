@@ -204,8 +204,6 @@ package org.tractionas3.debug
 		 */
 		public function TractionAS3Debugger(singletonEnforcer:SingletonEnforcer)
 		{
-			super(this);
-			
 			if(!singletonEnforcer)
 			{
 				throw new Error("TractionAS3Debugger is a singleton and may only be accessed via its accessor getInstance().");
