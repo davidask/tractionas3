@@ -27,10 +27,11 @@
  
 package org.tractionas3.display.effects 
 {
-	import org.tractionas3.reflection.stringify;
 	import org.tractionas3.core.Destructor;
 	import org.tractionas3.core.interfaces.ICoreInterface;
 	import org.tractionas3.core.interfaces.IDrawable;
+	import org.tractionas3.geom.Dimension;
+	import org.tractionas3.reflection.stringify;
 
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
@@ -59,16 +60,19 @@ package org.tractionas3.display.effects
 		private var _sourceBitmapData:BitmapData;
 
 		private var _alphaGradientBitap:BitmapData;
-
+		
+		private var _drawDimension:Dimension;
 		
 		/**
 		 * Creates a new DisplayObjectReflection
 		 */
-		public function Reflection(drawTarget:DisplayObject)
+		public function Reflection(drawTarget:DisplayObject, drawDimension:Dimension = null)
 		{
 			super();
 			
 			target = drawTarget;
+			
+			_drawDimension = drawDimension;
 			
 			createBitmaps();
 			
@@ -82,6 +86,10 @@ package org.tractionas3.display.effects
 		{
 			var rect:Rectangle = new Rectangle(0, 0, target.width, target.height);
 			
+			if(!_sourceBitmapData) createBitmaps();
+			
+			if(!_sourceBitmapData) return;
+				
 			_sourceBitmapData.fillRect(rect, 0x00000000);
 			
 			drawAlphaGradientBitmap();
@@ -113,11 +121,27 @@ package org.tractionas3.display.effects
 		 */
 		public function clear():void
 		{
+			if(!_sourceBitmapData) createBitmaps();
+			
+			if(!_sourceBitmapData) return;
+			
 			bitmapData.fillRect(bitmapData.rect, 0x00000000);
 			
 			_sourceBitmapData.fillRect(_sourceBitmapData.rect, 0x00000000);
 			
 			_alphaGradientBitap.fillRect(_alphaGradientBitap.rect, 0x00000000);
+		}
+		
+		public function get drawDimension():Dimension
+		{
+			return _drawDimension;
+		}
+		
+		public function set drawDimension(newDimension:Dimension):void
+		{
+			_drawDimension = newDimension;
+			
+			clearBitmapDataCache();
 		}
 
 		/**
@@ -125,15 +149,24 @@ package org.tractionas3.display.effects
 		 */
 		public function clearBitmapDataCache():void
 		{
-			_sourceBitmapData.dispose();
+			if(_sourceBitmapData)
+			{
+				_sourceBitmapData.dispose();
+			}
 			
 			_sourceBitmapData = null;
 			
-			bitmapData.dispose();
+			if(bitmapData)
+			{
+				bitmapData.dispose();
+			}
 			
 			bitmapData = null;
 			
-			_alphaGradientBitap.dispose();
+			if(_alphaGradientBitap)
+			{
+				_alphaGradientBitap.dispose();
+			}
 			
 			_alphaGradientBitap = null;
 			
@@ -165,11 +198,17 @@ package org.tractionas3.display.effects
 
 		private function createBitmaps():void
 		{
-			_sourceBitmapData = new BitmapData(target.width, target.height, true, 0x000000);
-				
-			bitmapData = new BitmapData(target.width, target.height, true, 0x000000);
+			if(target.width < 1 || target.height < 1) return;
 			
-			_alphaGradientBitap = new BitmapData(target.width, target.height, true, 0x000000);
+			var w:Number = (_drawDimension != null) ? _drawDimension.width : target.width;
+			
+			var h:Number = (_drawDimension != null) ? _drawDimension.height : target.height;
+			
+			_sourceBitmapData = new BitmapData(w, h, true, 0x000000);
+				
+			bitmapData = new BitmapData(w, h, true, 0x000000);
+			
+			_alphaGradientBitap = new BitmapData(w, h, true, 0x000000);
 		}
 
 		private function drawAlphaGradientBitmap():void
