@@ -17,6 +17,12 @@ package org.tractionas3.display
 		 * Specifies the friction multiplier adding resistance to the ThrowableSprite motion.
 		 */
 		public var frictionMultiplier:Number = 0.9;
+		
+		/**
+		 * Specifies whether throwing is enabled
+		 */
+		
+		public var throwEnabled:Boolean = true;
 
 		private var _currentPosition:Point;
 
@@ -59,6 +65,13 @@ package org.tractionas3.display
 				_throwVelocity.x *= frictionMultiplier;
 				
 				_throwVelocity.y *= frictionMultiplier;
+			}
+			
+			if(!throwEnabled)
+			{
+				_throwVelocity.x = 0;
+				
+				_throwVelocity.y = 0;
 			}
 			
 			super.render();
@@ -121,21 +134,19 @@ package org.tractionas3.display
 			
 			_throwVelocity = null;
 		}
-
+		
 		override protected function handleMouseDown(e:MouseEvent = null):void
 		{
 			applyVelocity = false;
 			
-			_throwVelocity.x = _throwVelocity.y = 0;
-			
 			super.handleMouseDown(e);
 		}
-
+		
 		override protected function handleMouseUp(e:MouseEvent = null):void
 		{
 			applyVelocity = true;
 			
-			super.handleMouseUp(e);	
+			super.handleMouseUp(e);
 		}
 	}
 }
