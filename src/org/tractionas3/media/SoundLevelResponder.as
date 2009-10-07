@@ -27,14 +27,13 @@
 
 package org.tractionas3.media 
 {
-	import org.tractionas3.events.SoundLevelResponderEvent;
 	import org.tractionas3.core.interfaces.IRunnable;
 	import org.tractionas3.events.EnterFrame;
+	import org.tractionas3.events.SoundLevelResponderEvent;
 	import org.tractionas3.events.WeakEventDispatcher;
 
 	import flash.media.SoundMixer;
 	import flash.utils.ByteArray;
-	
 	/**
 	 * SoundLevelResponder uses the <i>SoundMixer.computeSoundSpectrum()</i> method to allow for a response to specified sound level.
 	 */
@@ -140,7 +139,7 @@ package org.tractionas3.media
 			
 			if(_currentSoundLevel && avg && _currentSoundLevel > threshold)
 			{
-				dispatchEvent(new SoundLevelResponderEvent(SoundLevelResponderEvent.RESPONSE, _currentSoundLevel));
+				dispatchEvent(new SoundLevelResponderEvent(SoundLevelResponderEvent.RESPOND, _currentSoundLevel));
 			}
 			
 			if(_sampleLoopCounter > sampleLoops)

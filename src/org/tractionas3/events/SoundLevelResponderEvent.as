@@ -39,7 +39,7 @@ package org.tractionas3.events
 		 * Defines the value of the type property of a soundLevelResponderResponse event object.
 		 */
 		
-		public static const RESPONSE:String = "soundLevelResponderResponse";
+		public static const RESPOND:String = "soundLevelResponderResponse";
 		
 		private var _soundLevel:Number;
 		
