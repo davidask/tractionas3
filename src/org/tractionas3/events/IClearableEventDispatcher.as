@@ -28,6 +28,11 @@
 package org.tractionas3.events 
 {
 	import flash.events.IEventDispatcher;
+	
+	/**
+	 * IClearableEventDispatcher is an interface used for event dispatchers that are clearable.
+	 */
+	
 	public interface IClearableEventDispatcher extends IEventDispatcher 
 	{
 		
