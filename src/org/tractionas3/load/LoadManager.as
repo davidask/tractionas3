@@ -31,6 +31,11 @@ package org.tractionas3.load
 	import org.tractionas3.core.interfaces.IResetable;
 	import org.tractionas3.events.WeakEventDispatcher;
 	import org.tractionas3.load.loaders.LoaderCore;
+	
+	/**
+	 * LoadManager uses a loader queue to orchestrate loading of loader sets, providing a centralized load mechanism for an application.
+	 */
+	
 	public class LoadManager extends WeakEventDispatcher implements ICoreInterface, IResetable 
 	{
 		/**
@@ -158,16 +163,26 @@ package org.tractionas3.load
 			reset();
 		}
 		
+		/**
+		 * Starts loading
+		 */
+		
 		public function startLoading():void
 		{
 			_loaderQueue.start();
 		}
-
-		public function stopLoading():void
+		
+		/**
+		 * Stops loading
+		 */
+		
+		public function stopLoading(cancel:Boolean = false):void
 		{
+			if(cancel) _loaderQueue.cancel();
+			
 			_loaderQueue.stop();
 		}
-		
+
 		/**
 		 * Defines the number of load operations to be allowed at any given time.
 		 */
@@ -182,6 +197,12 @@ package org.tractionas3.load
 			_loaderQueue.slots = value;
 		}
 		
+		/**
+		 * Increases the priority of each loader in specified set, allowing them to load before loaders in other sets.
+		 * @param loaderSet Target loader set
+		 * @param cancelCurrentLoading Specifies whether the any current loaders should be aborted.
+		 */
+		
 		public function prioritizeLoaderSet(loaderSet:LoaderSet, cancelCurrentLoading:Boolean = false):void
 		{
 			var loader:LoaderCore;
@@ -190,7 +211,7 @@ package org.tractionas3.load
 			{
 				loader = loaderSet.loaders[i] as LoaderCore;
 				
-				loader.priority += getNextHighestLoaderPriority();
+				loader.priority = getNextHighestLoaderPriority();
 			}
 			
 			if(cancelCurrentLoading && _loaderQueue.running)
@@ -203,6 +224,8 @@ package org.tractionas3.load
 		
 		/**
 		 * Adds a loader set to the LoadManager
+		 * @param loaderSet Target loader set
+		 * @param prefetchLoaderSetBytesTotal Specifies whether the loaders in target loader set should have their filesize prefetched
 		 */
 		
 		public function addLoaderSet(loaderSet:LoaderSet, prefetchLoaderSetBytesTotal:Boolean = false):LoaderSet
@@ -225,6 +248,8 @@ package org.tractionas3.load
 		
 		/**
 		 * Removes a loader set from the LoadManager
+		 * @param loaderSet Target loader set
+		 * @param cancel Specifies whether the loaders in the set should cancel their loading process.
 		 */
 		
 		public function removeLoaderSet(loaderSet:LoaderSet, cancel:Boolean = false):void
