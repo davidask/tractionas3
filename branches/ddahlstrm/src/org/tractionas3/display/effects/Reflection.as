@@ -42,7 +42,7 @@ package org.tractionas3.display.effects
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	/**
-	 * DisplayObjectReflection creates a reflection of a DisplayObject
+	 * Reflection creates a reflection of a DisplayObject
 	 */
 	public class Reflection extends Bitmap implements IDrawable, ICoreInterface
 	{
