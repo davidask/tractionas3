@@ -4,7 +4,7 @@
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
 <link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
-<meta content="ILoadable,org.tractionas3.load.ILoadable,bytesLoaded,bytesTotal,bytesTotalPrefetcher,cancelable,data,loadTime,loaded,loading,progress,url,getURLRequest,load,prefetchBytesTotal" name="keywords">
+<meta content="ILoadable,org.tractionas3.load.ILoadable,bytesLoaded,bytesTotal,bytesTotalPrefetcher,cancelable,data,loadTime,loaded,loading,name,priority,progress,url,getURLRequest,load,prefetchBytesTotal" name="keywords">
 <title>org.tractionas3.load.ILoadable</title>
 </head>
 <body>
@@ -42,7 +42,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("In
 </tr>
 </table>
 <p></p>
-  ILoader interface is the core interface for all loader classes defining the core loading functionality.
+  ILoadable interface is the core interface for all loader classes defining the core loading functionality.
   <p></p>
 <br>
 <hr>
@@ -93,6 +93,16 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("In
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#loadTime">loadTime</a> : uint<div class="summaryTableDescription">[read-only]
    Indicates, in milliseconds, the time elapsed from loading start to loading completion.</div>
+</td><td class="summaryTableOwnerCol">ILoadable</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#name">name</a> : String<div class="summaryTableDescription">
+   Specifies the name of the loader.</div>
+</td><td class="summaryTableOwnerCol">ILoadable</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#priority">priority</a> : uint<div class="summaryTableDescription">
+   Defines the priority of the loader.</div>
 </td><td class="summaryTableOwnerCol">ILoadable</td>
 </tr>
 <tr class="">
@@ -322,6 +332,50 @@ showHideInherited();
 <br>
 <code>&nbsp;&nbsp;&nbsp;&nbsp;public function get loadTime():uint</code>
 <br>
+</div>
+<a name="name"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">name</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>name:String</code>&nbsp;&nbsp;[read-write]<p>
+   Specifies the name of the loader.
+   A loader name must be unique.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get name():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set name(value:String):void</code>
+<br>
+</div>
+<a name="priority"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">priority</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>priority:uint</code>&nbsp;&nbsp;[read-write]<p>
+   Defines the priority of the loader.
+   Loaders with a high priority value will be loaded before loaders with a higher priority value
+   in a loader queue.
+   
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get priority():uint</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set priority(value:uint):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../load/LoaderQueue.html" target="">org.tractionas3.load.LoaderQueue</a>
+<br>
+<a href="../load/LoadManager.html" target="">org.tractionas3.load.LoadManager</a>
+</div>
 </div>
 <a name="progress"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
