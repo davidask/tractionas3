@@ -4,7 +4,6 @@
 		/**		 * Starts rendering of the RenderableSprite every frame.		 */
 		public function startRender():void		{			if(!EnterFrame.hasEnterFrameHandler(render)) EnterFrame.addEnterFrameHandler(render);		}
 		/**		 * Stops rendering of the RenderableSprite.		 */
-		public function stopRender():void		{			EnterFrame.removeEnterFrameHandler(render);			}
-		/**		 * Renders the RenderableSprite.		 * <p />		 * By default this method is executed every frame if the MotionSprite is currently in the		 * display list. However, if manually stopped using <code>stopRender()</code>, it will not start		 * rendering automatically when added to the display list after being previously removed.		 */		public function render():void		{			return;		}
+		public function stopRender():void		{			EnterFrame.removeEnterFrameHandler(render);			}				/**		 * Indicates whether the renderable sprite is currently rendering.		 */				public function get rendering():Boolean		{			return EnterFrame.hasEnterFrameHandler(render);		}				/**		 * Renders the RenderableSprite.		 * <p />		 * By default this method is executed every frame if the MotionSprite is currently in the		 * display list. However, if manually stopped using <code>stopRender()</code>, it will not start		 * rendering automatically when added to the display list after being previously removed.		 */		public function render():void		{			return;		}
 		/**		 * @inheritDoc		 */
 		override public function destruct(deepDestruct:Boolean = false):void		{			stopRender();						super.destruct(deepDestruct);		}	}}

@@ -29,7 +29,6 @@ package org.tractionas3.debug
 {
 	import org.tractionas3.core.interfaces.IConnectable;
 	import org.tractionas3.events.LocalConnectionDataEvent;
-	import org.tractionas3.events.WeakEventDispatcher;
 	import org.tractionas3.net.LocalConnectionInbound;
 	import org.tractionas3.net.LocalConnectionOutbound;
 	import org.tractionas3.profiler.BandwidthProfiler;
@@ -39,6 +38,7 @@ package org.tractionas3.debug
 	import org.tractionas3.reflection.MethodDescriptor;
 	import org.tractionas3.reflection.ParameterDescriptor;
 	import org.tractionas3.reflection.PropertyDescriptor;
+	import org.tractionas3.utils.FlashPlayer;
 
 	import flash.display.Stage;
 	import flash.events.TimerEvent;
@@ -50,7 +50,7 @@ package org.tractionas3.debug
 	/**
 	 * TractionAS3Debugger is used to communicate with the TractionAS3 Debugger application.
 	 */	
-	public class TractionAS3Debugger extends WeakEventDispatcher implements IConnectable
+	public class TractionAS3Debugger implements IConnectable
 	{
 
 		/**
@@ -116,6 +116,8 @@ package org.tractionas3.debug
 		 */
 		public static function connect():void
 		{
+			if(!FlashPlayer.debugger) return;
+			
 			getInstance().connect();
 		}
 
@@ -124,6 +126,8 @@ package org.tractionas3.debug
 		 */
 		public static function disconnect():void
 		{
+			if(!FlashPlayer.debugger) return;
+			
 			getInstance().disconnect();
 		}
 
@@ -132,6 +136,8 @@ package org.tractionas3.debug
 		 */
 		public static function get connected():Boolean
 		{
+			if(!FlashPlayer.debugger) return false;
+			
 			return getInstance().connected;
 		}
 
@@ -142,6 +148,8 @@ package org.tractionas3.debug
 		 */
 		public static function startProfiler(stage:Stage):void
 		{
+			if(!FlashPlayer.debugger) return;
+			
 			getInstance()._profilerTargetStage = stage;
 			
 			getInstance()._profilerTimer.start();
@@ -154,6 +162,8 @@ package org.tractionas3.debug
 		 */
 		public static function stopProfiler():void
 		{
+			if(!FlashPlayer.debugger) return;
+			
 			getInstance()._profilerTimer.stop();
 			
 			getInstance()._fpsProfiler.stop();
@@ -167,6 +177,8 @@ package org.tractionas3.debug
 		 */
 		public static function inspect(target:Object, label:String):void
 		{
+			if(!FlashPlayer.debugger) return;
+			
 			getInstance().sendInspectMessage(target, label);
 		}
 
@@ -175,6 +187,8 @@ package org.tractionas3.debug
 		 */
 		public static function sendLogMessage(message:String, origin:String, line:int, level:uint):Boolean
 		{
+			if(!FlashPlayer.debugger) return false;
+			
 			return getInstance().sendLogMessage(message, origin, line, level);
 		}
 
@@ -190,8 +204,6 @@ package org.tractionas3.debug
 		 */
 		public function TractionAS3Debugger(singletonEnforcer:SingletonEnforcer)
 		{
-			super(this);
-			
 			if(!singletonEnforcer)
 			{
 				throw new Error("TractionAS3Debugger is a singleton and may only be accessed via its accessor getInstance().");

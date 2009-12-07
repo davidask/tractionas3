@@ -37,9 +37,6 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("In
 <tr>
 <td class="classHeaderTableLabel">Interface</td><td class="classSignature">public interface IExecutable</td>
 </tr>
-<tr>
-<td class="classHeaderTableLabel">Implementors</td><td><a href="../../net/amf/AMFService.html">AMFService</a>, <a href="../../net/Service.html">Service</a></td>
-</tr>
 </table>
 <p></p>
   Core interface for executable classes
@@ -57,7 +54,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("In
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#execute()">execute</a>(... arguments):void</div>
+<a class="signatureLink" href="#execute()">execute</a>(... arguments):Boolean</div>
 <div class="summaryTableDescription">
    Executes the executable instance.</div>
 </td><td class="summaryTableOwnerCol">IExecutable</td>
@@ -78,12 +75,19 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function execute(... arguments):void</code><p>
+<code>public function execute(... arguments):Boolean</code><p>
    Executes the executable instance.
    </p><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td width="20px"></td><td><code>... <span class="label">arguments</span></code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code></td>
 </tr>
 </table>
 </div>

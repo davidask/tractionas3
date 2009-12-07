@@ -126,6 +126,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 </tr>
 <tr class="hideInheritedProperty">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="LoaderCore.html#name">name</a> : String<div class="summaryTableDescription">
+   
    Specifies the name of the loader.</div>
 </td><td class="summaryTableOwnerCol"><a href="LoaderCore.html">LoaderCore</a></td>
 </tr>
@@ -135,8 +136,8 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 </td><td class="summaryTableOwnerCol">VideoLoader</td>
 </tr>
 <tr class="hideInheritedProperty">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="LoaderCore.html#priority">priority</a> : uint = 0<div class="summaryTableDescription">
-   Defines the priority of the loader.</div>
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="LoaderCore.html#priority">priority</a> : uint<div class="summaryTableDescription">
+   </div>
 </td><td class="summaryTableOwnerCol"><a href="LoaderCore.html">LoaderCore</a></td>
 </tr>
 <tr class="hideInheritedProperty">
@@ -198,6 +199,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 </div>
 <div class="summaryTableDescription">
    
+   
    Creates a duplicate of the instance.</div>
 </td><td class="summaryTableOwnerCol">VideoLoader</td>
 </tr>
@@ -233,6 +235,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <a class="signatureLink" href="LoaderCore.html#listDestructableProperties()">listDestructableProperties</a>():Array</div>
 <div class="summaryTableDescription">
    
+   
    Specifies an array of strings representing properties that are to be
    nullified or reset upon destruction.</div>
 </td><td class="summaryTableOwnerCol"><a href="LoaderCore.html">LoaderCore</a></td>
@@ -242,6 +245,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <div class="summarySignature">
 <a class="signatureLink" href="#load()">load</a>(newURL:String = null):void</div>
 <div class="summaryTableDescription">
+   
    
    Initiates the loading process of the loader.</div>
 </td><td class="summaryTableOwnerCol">VideoLoader</td>
@@ -278,16 +282,14 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <a class="signatureLink" href="#reset()">reset</a>():void</div>
 <div class="summaryTableDescription">
    
-   Resets the resetable instance to its construct state.</div>
+   Resets the loader and its properties to what they were upon instantiation.</div>
 </td><td class="summaryTableOwnerCol">VideoLoader</td>
 </tr>
 <tr class="hideInheritedMethod">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
 <a class="signatureLink" href="LoaderCore.html#toString()">toString</a>():String</div>
-<div class="summaryTableDescription">
-   
-   Returns the string representation of the instance.</div>
+<div class="summaryTableDescription"></div>
 </td><td class="summaryTableOwnerCol"><a href="LoaderCore.html">LoaderCore</a></td>
 </tr>
 </table>
@@ -308,6 +310,8 @@ showHideInherited();
 <div class="detailBody">
 <code>data:*</code>&nbsp;&nbsp;[read-only]<p>
    Returns the loaded data as a NetStream object.
+   
+   Returns the loaded data of the LoaderCore.
    
    </p><span class="label">Implementation</span>
 <br>
@@ -412,6 +416,7 @@ showHideInherited();
 <div class="detailBody">
 <code>public override function clone():<a href="../../core/interfaces/ICloneable.html">ICloneable</a></code><p>
    
+   
    Creates a duplicate of the instance.
    </p><p></p>
 <span class="label">Returns</span>
@@ -450,6 +455,7 @@ showHideInherited();
 <div class="detailBody">
 <code>public override function load(newURL:String = null):void</code><p>
    
+   
    Initiates the loading process of the loader. A new URLRequest cannot be defined through this method. 
    </p><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
@@ -467,7 +473,7 @@ showHideInherited();
 <div class="detailBody">
 <code>public override function reset():void</code><p>
    
-   Resets the resetable instance to its construct state.
+   Resets the loader and its properties to what they were upon instantiation.
    </p></div>
 <br>
 <br>

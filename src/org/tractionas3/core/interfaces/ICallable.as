@@ -25,21 +25,14 @@
  *
  */
 
-package org.tractionas3.core 
+package org.tractionas3.core.interfaces 
 {
-	import org.tractionas3.core.CoreObject;
-	/**
-	 * CoreDynamicObject is the core dynamic object class of TractionAS3.
-	 */
-	dynamic public class CoreDynamicObject extends CoreObject 
+	public interface ICallable 
 	{
-
 		/**
-		 * Creates a new CoreDynamicObject object.
+		 * Executes the callable instance.
 		 */
-		public function CoreDynamicObject()
-		{
-			super();
-		}
+		
+		function call(...arguments:Array):Boolean;
 	}
 }
