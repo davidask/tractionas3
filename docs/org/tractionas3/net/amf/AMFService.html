@@ -4,7 +4,7 @@
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen">
 <link rel="stylesheet" href="../../../../print.css" type="text/css" media="print">
-<meta content="AMFService,org.tractionas3.net.amf.AMFService,destruct,execute" name="keywords">
+<meta content="AMFService,org.tractionas3.net.amf.AMFService,call,destruct" name="keywords">
 <title>org.tractionas3.net.amf.AMFService</title>
 </head>
 <body>
@@ -41,7 +41,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">AMFService <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../images/inherit-arrow.gif"> <a href="../Service.html">Service</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../images/inherit-arrow.gif"> <a href="../../events/WeakEventDispatcher.html">WeakEventDispatcher</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../images/inherit-arrow.gif"> <a href="../../events/ClearableEventDispatcher.html">ClearableEventDispatcher</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
 </tr>
 <tr>
-<td class="classHeaderTableLabel">Implements</td><td><a href="../../core/interfaces/ICoreInterface.html">ICoreInterface</a>, <a href="../../core/interfaces/IExecutable.html">IExecutable</a></td>
+<td class="classHeaderTableLabel">Implements</td><td><a href="../../core/interfaces/ICoreInterface.html">ICoreInterface</a></td>
 </tr>
 </table>
 <p></p>
@@ -84,9 +84,17 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#destruct()">destruct</a>(deepDestruct:Boolean = false):void</div>
+<a class="signatureLink" href="#call()">call</a>(... arguments):Boolean</div>
 <div class="summaryTableDescription">
    
+   Executes the service.</div>
+</td><td class="summaryTableOwnerCol">AMFService</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#destruct()">destruct</a>(deepDestruct:Boolean = false):void</div>
+<div class="summaryTableDescription">
    
    Destructs implementing instance of specified properties.</div>
 </td><td class="summaryTableOwnerCol">AMFService</td>
@@ -98,15 +106,6 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <div class="summaryTableDescription">
    Dispatches an event into the event flow, <i>only</i> if event property <code>hasEventListener</code> or <code>bubbles</code> are <code>true</code>.</div>
 </td><td class="summaryTableOwnerCol"><a href="../../events/WeakEventDispatcher.html">WeakEventDispatcher</a></td>
-</tr>
-<tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
-<div class="summarySignature">
-<a class="signatureLink" href="#execute()">execute</a>(... arguments):void</div>
-<div class="summaryTableDescription">
-   
-   Executes the service.</div>
-</td><td class="summaryTableOwnerCol">AMFService</td>
 </tr>
 <tr class="hideInheritedMethod">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
@@ -219,15 +218,38 @@ showHideInherited();
 </div>
 <a name="methodDetail"></a>
 <div class="detailSectionHeader">Method detail</div>
+<a name="call()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">call</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function call(... arguments):Boolean</code><p>
+   
+   Executes the service.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code>... <span class="label">arguments</span></code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code></td>
+</tr>
+</table>
+</div>
 <a name="destruct()"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>
-<td class="detailHeaderName">destruct</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+<td class="detailHeaderName">destruct</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
 </tr>
 </table>
 <div class="detailBody">
 <code>public override function destruct(deepDestruct:Boolean = false):void</code><p>
-   
    
    Destructs implementing instance of specified properties.
    <p />
@@ -237,23 +259,6 @@ showHideInherited();
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td width="20px"></td><td><code><span class="label">deepDestruct</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
-</tr>
-</table>
-</div>
-<a name="execute()"></a>
-<table cellspacing="0" cellpadding="0" class="detailHeader">
-<tr>
-<td class="detailHeaderName">execute</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
-</tr>
-</table>
-<div class="detailBody">
-<code>public override function execute(... arguments):void</code><p>
-   
-   Executes the service.
-   </p><span class="label">Parameters</span>
-<table border="0" cellspacing="0" cellpadding="0">
-<tr>
-<td width="20px"></td><td><code>... <span class="label">arguments</span></code></td>
 </tr>
 </table>
 </div>

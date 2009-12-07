@@ -4,7 +4,7 @@
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen">
 <link rel="stylesheet" href="../../../../print.css" type="text/css" media="print">
-<meta content="Reflection,org.tractionas3.display.effects.Reflection,fallOff,target,clear,clearBitmapDataCache,draw,redraw" name="keywords">
+<meta content="Reflection,org.tractionas3.display.effects.Reflection,fallOff,target,drawDimension,clear,clearBitmapDataCache,destruct,draw,listDestructableProperties,redraw,toString" name="keywords">
 <title>org.tractionas3.display.effects.Reflection</title>
 </head>
 <body>
@@ -41,11 +41,11 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">Reflection <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../images/inherit-arrow.gif"> flash.display.Bitmap</td>
 </tr>
 <tr>
-<td class="classHeaderTableLabel">Implements</td><td><a href="../../core/interfaces/IDrawable.html">IDrawable</a></td>
+<td class="classHeaderTableLabel">Implements</td><td><a href="../../core/interfaces/ICoreInterface.html">ICoreInterface</a>, <a href="../../core/interfaces/IDrawable.html">IDrawable</a></td>
 </tr>
 </table>
 <p></p>
-  DisplayObjectReflection creates a reflection of a DisplayObject
+  Reflection creates a reflection of a DisplayObject
   <p></p>
 <br>
 <hr>
@@ -56,6 +56,11 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
 <tr>
 <th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#drawDimension">drawDimension</a> : <a href="../../geom/Dimension.html">Dimension</a>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">Reflection</td>
 </tr>
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#fallOff">fallOff</a> : Number<div class="summaryTableDescription">
@@ -79,7 +84,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#Reflection()">Reflection</a>(drawTarget:DisplayObject)</div>
+<a class="signatureLink" href="#Reflection()">Reflection</a>(drawTarget:DisplayObject, drawDimension:<a href="../../geom/Dimension.html">Dimension</a> = null)</div>
 <div class="summaryTableDescription">
    Creates a new DisplayObjectReflection
    </div>
@@ -104,6 +109,13 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
+<a class="signatureLink" href="#destruct()">destruct</a>(deeepDestruct:Boolean = false):void</div>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">Reflection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
 <a class="signatureLink" href="#draw()">draw</a>():void</div>
 <div class="summaryTableDescription">
    Draws the reflection.</div>
@@ -112,9 +124,23 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
+<a class="signatureLink" href="#listDestructableProperties()">listDestructableProperties</a>():Array</div>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">Reflection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
 <a class="signatureLink" href="#redraw()">redraw</a>():void</div>
 <div class="summaryTableDescription">
    Redraws the reflection.</div>
+</td><td class="summaryTableOwnerCol">Reflection</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#toString()">toString</a>():String</div>
+<div class="summaryTableDescription"></div>
 </td><td class="summaryTableOwnerCol">Reflection</td>
 </tr>
 </table>
@@ -126,10 +152,24 @@ showHideInherited();
 <div class="MainContent">
 <a name="propertyDetail"></a>
 <div class="detailSectionHeader">Property detail</div>
+<a name="drawDimension"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">drawDimension</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>drawDimension:<a href="../../geom/Dimension.html">Dimension</a></code>&nbsp;&nbsp;[read-write]<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get drawDimension():<a href="../../geom/Dimension.html">Dimension</a></code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set drawDimension(value:<a href="../../geom/Dimension.html">Dimension</a>):void</code>
+<br>
+</div>
 <a name="fallOff"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>
-<td class="detailHeaderName">fallOff</td><td class="detailHeaderType">property</td>
+<td class="detailHeaderName">fallOff</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
 </tr>
 </table>
 <div class="detailBody">
@@ -155,12 +195,18 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function Reflection(drawTarget:DisplayObject)</code><p>
+<code>public function Reflection(drawTarget:DisplayObject, drawDimension:<a href="../../geom/Dimension.html">Dimension</a> = null)</code><p>
    Creates a new DisplayObjectReflection
    </p><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td width="20px"></td><td><code><span class="label">drawTarget</span>:DisplayObject</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">drawDimension</span>:<a href="../../geom/Dimension.html">Dimension</a></code> (default = <code>null</code>)<code></code></td>
 </tr>
 </table>
 </div>
@@ -186,6 +232,20 @@ showHideInherited();
 <code>public function clearBitmapDataCache():void</code><p>
    Clears the bitmap data caches.
    </p></div>
+<a name="destruct()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">destruct</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function destruct(deeepDestruct:Boolean = false):void</code><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">deeepDestruct</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
+</tr>
+</table>
+</div>
 <a name="draw()"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>
@@ -196,6 +256,22 @@ showHideInherited();
 <code>public function draw():void</code><p>
    Draws the reflection.
    </p></div>
+<a name="listDestructableProperties()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">listDestructableProperties</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function listDestructableProperties():Array</code>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Array</code></td>
+</tr>
+</table>
+</div>
 <a name="redraw()"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>
@@ -206,6 +282,22 @@ showHideInherited();
 <code>public function redraw():void</code><p>
    Redraws the reflection.
    </p></div>
+<a name="toString()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">toString</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function toString():String</code>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>String</code></td>
+</tr>
+</table>
+</div>
 <br>
 <br>
 <hr>

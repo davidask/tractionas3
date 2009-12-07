@@ -272,11 +272,25 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("PÂ
 <td width="20"></td><td></td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/LoaderCore.html#priority">priority</a> &mdash; Property in class org.tractionas3.load.loaders.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/LoaderCore.html">LoaderCore</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/LoadManager.html#prioritizeLoaderSet()">prioritizeLoaderSet</a>(loaderSet:<a href="org/tractionas3/load/LoaderSet.html" onclick="javascript:loadClassListFrame('org/tractionas3/load./class-list.html');">org.tractionas3.load:LoaderSet</a>, cancelCurrentLoading) &mdash; Method in class org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/LoadManager.html">LoadManager</a></td>
+</tr>
+<tr>
+<td width="20"></td><td>
+   Increases the priority of each loader in specified set, allowing them to load before loaders in other sets.</td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/ILoadable.html#priority">priority</a> &mdash; Property in interface org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/ILoadable.html">ILoadable</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
    Defines the priority of the loader.</td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/LoaderCore.html#priority">priority</a> &mdash; Property in class org.tractionas3.load.loaders.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/loaders/class-list.html');" href="org/tractionas3/load/loaders/LoaderCore.html">LoaderCore</a></td>
+</tr>
+<tr>
+<td width="20"></td><td>
+   </td>
 </tr>
 <tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/events/class-list.html');" href="org/tractionas3/events/TweenEvent.html#progress">progress</a> &mdash; Property in class org.tractionas3.events.<a onclick="javascript:loadClassListFrame('org/tractionas3/events/class-list.html');" href="org/tractionas3/events/TweenEvent.html">TweenEvent</a></td>
@@ -298,6 +312,14 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("PÂ
 <tr>
 <td width="20"></td><td>
    Indicates the average of all loaders current progress.</td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/LoaderSet.html#progress">progress</a> &mdash; Property in class org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/LoaderSet.html">LoaderSet</a></td>
+</tr>
+<tr>
+<td width="20"></td><td>
+   Indicates the average progress of all the loaders referenced by a LoaderSet instance
+   with regard to each loaders progress goal.</td>
 </tr>
 <tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/LoadProgressObjective.html#progress">progress</a> &mdash; Property in class org.tractionas3.load.<a onclick="javascript:loadClassListFrame('org/tractionas3/load/class-list.html');" href="org/tractionas3/load/LoadProgressObjective.html">LoadProgressObjective</a></td>
@@ -342,6 +364,13 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("PÂ
 <tr>
 <td width="20"></td><td>
    Defines the value of the type property of a loadProgress event object.</td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/events/class-list.html');" href="org/tractionas3/events/LoaderSetEvent.html#PROGRESS">PROGRESS</a> &mdash; Constant static property in class org.tractionas3.events.<a onclick="javascript:loadClassListFrame('org/tractionas3/events/class-list.html');" href="org/tractionas3/events/LoaderSetEvent.html">LoaderSetEvent</a></td>
+</tr>
+<tr>
+<td width="20"></td><td>
+   Defines the value of the type property of a loadSetProgress event object.</td>
 </tr>
 <tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('org/tractionas3/events/class-list.html');" href="org/tractionas3/events/LoadProgressObjectiveEvent.html#PROGRESS">PROGRESS</a> &mdash; Constant static property in class org.tractionas3.events.<a onclick="javascript:loadClassListFrame('org/tractionas3/events/class-list.html');" href="org/tractionas3/events/LoadProgressObjectiveEvent.html">LoadProgressObjectiveEvent</a></td>
