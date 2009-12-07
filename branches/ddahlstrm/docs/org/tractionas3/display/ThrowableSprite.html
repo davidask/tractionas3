@@ -4,7 +4,7 @@
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
 <link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
-<meta content="ThrowableSprite,org.tractionas3.display.ThrowableSprite,frictionMultiplier,velocityX,velocityY,destruct,handleMouseDown,handleMouseUp,render" name="keywords">
+<meta content="ThrowableSprite,org.tractionas3.display.ThrowableSprite,frictionMultiplier,throwEnabled,velocityX,velocityY,destruct,handleMouseDown,handleMouseUp,render" name="keywords">
 <title>org.tractionas3.display.ThrowableSprite</title>
 </head>
 <body>
@@ -68,14 +68,14 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
 </tr>
 <tr class="hideInheritedProperty">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="MotionSprite.html#bounceFrictionMultiplier">bounceFrictionMultiplier</a> : Number = 0.7<div class="summaryTableDescription">
-   Specifies the friction multiplier adding resistance to the throw motion of the ThrowableSprite when bouncing of
-   its drag bounds.</div>
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="MotionSprite.html#bounceEnabled">bounceEnabled</a> : Boolean<div class="summaryTableDescription">
+   Specifies whether the MotionSprite instance should bounce off its motion bounds.</div>
 </td><td class="summaryTableOwnerCol"><a href="MotionSprite.html">MotionSprite</a></td>
 </tr>
 <tr class="hideInheritedProperty">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="MotionSprite.html#bounceOffBounds">bounceOffBounds</a> : Boolean<div class="summaryTableDescription">
-   Specifies whether the MotionSprite instance should bounce off its bounds.</div>
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="MotionSprite.html#bounceFrictionMultiplier">bounceFrictionMultiplier</a> : Number = 0.7<div class="summaryTableDescription">
+   Specifies the friction multiplier adding resistance to the throw motion of the MotionSprite when bouncing of
+   its motion bounds.</div>
 </td><td class="summaryTableOwnerCol"><a href="MotionSprite.html">MotionSprite</a></td>
 </tr>
 <tr class="hideInheritedProperty">
@@ -119,14 +119,14 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 </td><td class="summaryTableOwnerCol"><a href="MotionSprite.html">MotionSprite</a></td>
 </tr>
 <tr class="hideInheritedProperty">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="CoreSprite.html#interactive">interactive</a> : Boolean<div class="summaryTableDescription">
-   Defines whether the CoreSprite instance reacts to mouse.</div>
-</td><td class="summaryTableOwnerCol"><a href="CoreSprite.html">CoreSprite</a></td>
-</tr>
-<tr class="hideInheritedProperty">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="MotionSprite.html#motionBounds">motionBounds</a> : Rectangle<div class="summaryTableDescription">
    Specifies the bounds in wich the MotionSprite is allowed to move.</div>
 </td><td class="summaryTableOwnerCol"><a href="MotionSprite.html">MotionSprite</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="RenderableSprite.html#rendering">rendering</a> : Boolean<div class="summaryTableDescription">
+   Indicates whether the renderable sprite is currently rendering.</div>
+</td><td class="summaryTableOwnerCol"><a href="RenderableSprite.html">RenderableSprite</a></td>
 </tr>
 <tr class="hideInheritedProperty">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="CoreSprite.html#scale">scale</a> : Number<div class="summaryTableDescription">
@@ -138,6 +138,12 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <div class="summaryTableDescription">
    Specifies a snap grid for the DragableSprite instance.</div>
 </td><td class="summaryTableOwnerCol"><a href="DraggableSprite.html">DraggableSprite</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#throwEnabled">throwEnabled</a> : Boolean = true<div class="summaryTableDescription">
+   Specifies whether throwing is enabled
+   </div>
+</td><td class="summaryTableOwnerCol">ThrowableSprite</td>
 </tr>
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#velocityX">velocityX</a> : Number<div class="summaryTableDescription">[read-only]
@@ -301,7 +307,8 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <div class="summaryTableDescription">
    
    
-   Renders the renderable instance.</div>
+   
+   Renders the RenderableSprite.</div>
 </td><td class="summaryTableOwnerCol">ThrowableSprite</td>
 </tr>
 <tr class="hideInheritedMethod">
@@ -401,6 +408,16 @@ showHideInherited();
 <div class="detailBody">
 <code>public var frictionMultiplier:Number = 0.9</code><p>
    Specifies the friction multiplier adding resistance to the ThrowableSprite motion.
+   </p></div>
+<a name="throwEnabled"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">throwEnabled</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var throwEnabled:Boolean = true</code><p>
+   Specifies whether throwing is enabled
    </p></div>
 <a name="velocityX"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
@@ -511,7 +528,12 @@ showHideInherited();
 <code>public final override function render():void</code><p>
    
    
-   Renders the renderable instance.
+   
+   Renders the RenderableSprite.
+   <p />
+   By default this method is executed every frame if the MotionSprite is currently in the
+   display list. However, if manually stopped using <code>stopRender()</code>, it will not start
+   rendering automatically when added to the display list after being previously removed.
    </p></div>
 <br>
 <br>
