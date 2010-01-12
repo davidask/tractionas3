@@ -31,7 +31,6 @@ package org.tractionas3.load
 	import org.tractionas3.core.interfaces.IResetable;
 	import org.tractionas3.events.WeakEventDispatcher;
 	import org.tractionas3.load.loaders.LoaderCore;
-	
 	/**
 	 * LoadManager uses a loader queue to orchestrate loading of loader sets, providing a centralized load mechanism for an application.
 	 */
@@ -287,6 +286,27 @@ package org.tractionas3.load
 			return null;
 		}
 		
+		/**
+		 * Returns a loader in any of the sets registered to LoadManager with specified name
+		 */
+		
+		public function getLoaderByName(name:String):LoaderCore
+		{
+			var loader:LoaderCore;
+			
+			for(var i:int = 0; i < _loaderQueue.numLoaders; ++i)
+			{
+				loader = _loaderQueue.loaders[i] as LoaderCore;
+				
+				if(loader.name == name)
+				{
+					return loader;
+				}
+			}
+			
+			return null;
+		}
+
 		/**
 		 * Returns a loader set by specified index
 		 */
