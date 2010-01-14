@@ -206,11 +206,13 @@ package org.tractionas3.load
 		{
 			var loader:LoaderCore;
 			
+			var highestPriority:uint = getNextHighestLoaderPriority();
+			
 			for(var i:int = 0; i < loaderSet.loaders.length; ++i)
 			{
 				loader = loaderSet.loaders[i] as LoaderCore;
 				
-				loader.priority += getNextHighestLoaderPriority();
+				loader.priority += highestPriority;
 			}
 			
 			if(cancelCurrentLoading && _loaderQueue.running)
