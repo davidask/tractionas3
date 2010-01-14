@@ -210,7 +210,7 @@ package org.tractionas3.load
 			{
 				loader = loaderSet.loaders[i] as LoaderCore;
 				
-				loader.priority = getNextHighestLoaderPriority();
+				loader.priority += getNextHighestLoaderPriority();
 			}
 			
 			if(cancelCurrentLoading && _loaderQueue.running)
