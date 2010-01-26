@@ -32,13 +32,13 @@ package org.tractionas3.media
 	import org.tractionas3.net.VideoStream;
 
 	import flash.media.Video;
-	public class VideoPlayBack extends CoreSprite implements IMediaPlayback 
+	public class VideoPlayback extends CoreSprite implements IMediaPlayback 
 	{
 		private var _stream:VideoStream;
 		
 		private var _video:Video;
 		
-		public function VideoPlayBack(stream:VideoStream, videoWidth:Number = 640, videoHeight:Number = 360)
+		public function VideoPlayback(stream:VideoStream, videoWidth:Number = 640, videoHeight:Number = 360)
 		{
 			_stream = stream;
 			
@@ -46,6 +46,27 @@ package org.tractionas3.media
 			
 			super();
 		}
+		
+		public function get videoWidth():Number
+		{
+			return _video.width;
+		}
+		
+		public function set videoWidth(value:Number):void
+		{
+			updateVideo(value, videoHeight);
+		}
+		
+		public function get videoHeight():Number
+		{
+			return _video.height;
+		}
+		
+		public function set videoHeight(value:Number):void
+		{
+			updateVideo(videoWidth, value);
+		}
+		
 		
 		public function play():void
 		{
@@ -123,6 +144,8 @@ package org.tractionas3.media
 			_video.width = videoWidth;
 			
 			_video.height = videoHeight;
+			
+			_video.smoothing = _video.scaleX + _video.scaleY != 2;
 		}
 
 		private function handleVideoStreamEvent(e:VideoStreamEvent):void
