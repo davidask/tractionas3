@@ -34,16 +34,12 @@ package org.tractionas3.net
 	import org.tractionas3.events.VideoStreamEvent;
 	import org.tractionas3.geom.Dimension;
 
-	import flash.events.Event;
-	import flash.events.EventDispatcher;
 	import flash.media.SoundTransform;
 	import flash.net.NetConnection;
 	import flash.net.NetStream;
 	import flash.utils.getQualifiedClassName;
 	public class VideoStream extends NetStream implements ICoreInterface
 	{
-		private var _eventDispatcher:EventDispatcher;
-
 		private var _metaData:VideoStreamMetaData;
 
 		private var _playing:Boolean = false;
@@ -63,8 +59,6 @@ package org.tractionas3.net
 			super(netConnection);
 			
 			super.client = this;
-			
-			_eventDispatcher = new EventDispatcher(this);
 			
 			_soundTransform = new SoundTransform();
 	
@@ -244,32 +238,7 @@ package org.tractionas3.net
 		{
 			return [];
 		}
-
-		override public function addEventListener(type:String, listener:Function, useCapture:Boolean = false, priority:int = 0, useWeakReference:Boolean = false):void
-		{
-			_eventDispatcher.addEventListener(type, listener, useCapture, priority, useWeakReference);
-		}
-
-		override public function dispatchEvent(event:Event):Boolean
-		{
-			return _eventDispatcher.dispatchEvent(event);
-		}
-
-		override public function hasEventListener(type:String):Boolean
-		{
-			return _eventDispatcher.hasEventListener(type);
-		}
-
-		override public function removeEventListener(type:String, listener:Function, useCapture:Boolean = false):void
-		{
-			_eventDispatcher.removeEventListener(type, listener, useCapture);
-		}
-
-		override public function willTrigger(type:String):Boolean
-		{
-			return _eventDispatcher.willTrigger(type);
-		}
-
+		
 		private function resolveReadyState():void
 		{
 			if(bytesLoaded > 0 && bytesTotal > 0 && _actualSize)
