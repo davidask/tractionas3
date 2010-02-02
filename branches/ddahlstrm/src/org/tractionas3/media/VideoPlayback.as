@@ -110,6 +110,26 @@ package org.tractionas3.media
 			return _stream.playing;
 		}
 		
+		public function get volume():Number
+		{
+			return _stream.volume;
+		}
+		
+		public function set volume(value:Number):void
+		{
+			_stream.volume = value;
+		}
+		
+		public function get pan():Number
+		{
+			return _stream.pan;
+		}
+		
+		public function set pan(value:Number):void
+		{
+			_stream.pan = value;
+		}
+
 		public function reAssignVideoStream():void
 		{
 			_video.attachNetStream(_stream);
