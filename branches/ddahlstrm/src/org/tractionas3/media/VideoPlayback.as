@@ -90,6 +90,16 @@ package org.tractionas3.media
 			_stream.playAt(position);
 		}
 		
+		public function get position():Number
+		{
+			return _stream.time;
+		}
+		
+		public function set position(value:Number):void
+		{
+			seek(value);
+		}
+		
 		public function pause():void
 		{
 			_stream.pause();
