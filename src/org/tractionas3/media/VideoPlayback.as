@@ -38,6 +38,8 @@ package org.tractionas3.media
 		
 		private var _video:Video;
 		
+		private var _smoothing:Boolean;
+		
 		public function VideoPlayback(stream:VideoStream, videoWidth:Number = 640, videoHeight:Number = 360)
 		{
 			_stream = stream;
@@ -144,6 +146,18 @@ package org.tractionas3.media
 		{
 			_video.attachNetStream(_stream);
 		}
+		
+		public function get smoothing():Boolean
+		{
+			return _smoothing;
+		}
+		
+		public function set smoothing(value:Boolean):void
+		{
+			_smoothing = value;
+			
+			if(_video) _video.smoothing = _smoothing;
+		}
 
 		override public function destruct(deepDestruct:Boolean = false):void
 		{
@@ -169,13 +183,13 @@ package org.tractionas3.media
 				_video = addChild(new Video(videoWidth, videoHeight)) as Video;
 				
 				_video.attachNetStream(_stream);
+				
+				_video.smoothing = _smoothing;
 			}
 			
 			_video.width = videoWidth;
 			
 			_video.height = videoHeight;
-			
-			_video.smoothing = _video.scaleX + _video.scaleY != 2;
 		}
 
 		private function handleVideoStreamEvent(e:VideoStreamEvent):void
