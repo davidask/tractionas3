@@ -98,11 +98,15 @@ package org.tractionas3.ui
 		
 		override protected function onAddedToStageInternal(e:Event = null):void
 		{
+			super.onAddedToStageInternal(e);
+			
 			redraw();
 		}
 		
 		override protected function onRemovedFromStageInternal(e:Event = null):void
 		{
+			super.onRemovedFromStageInternal(e);
+			
 			clear();
 		}
 		
