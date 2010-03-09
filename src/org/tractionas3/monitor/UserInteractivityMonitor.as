@@ -45,7 +45,6 @@ package org.tractionas3.monitor
 	 */
 	public class UserInteractivityMonitor extends WeakEventDispatcher implements ICoreInterface, IResetable, ICloneable, IRunnable
 	{	
-
 		/**
 		 * The default timeout of user interactivity.
 		 */
@@ -61,7 +60,6 @@ package org.tractionas3.monitor
 
 		private var _userActive:Boolean = false;		
 
-		
 		/**
 		 * Creates a new UserInteractivityMonitor object.
 		 * 
@@ -173,16 +171,20 @@ package org.tractionas3.monitor
 			switch(e.type)
 			{
 				case MouseEvent.MOUSE_MOVE:
-					userIsActive();
+				
+					onUserActive();
+					
 					break;
 				
 				case KeyboardEvent.KEY_DOWN:
-					userIsActive();
+				
+					onUserActive();
+					
 					break;
 			}
 		}
 
-		private function userIsActive():void
+		private function onUserActive():void
 		{
 			if(!_userActive) dispatchEvent(new UserInteractivityEvent(UserInteractivityEvent.USER_PRESENT));
 						
@@ -191,7 +193,7 @@ package org.tractionas3.monitor
 			_userActive = true;
 		}
 
-		private function userIsIdle():void
+		private function onUserIdle():void
 		{
 			if(_userActive) dispatchEvent(new UserInteractivityEvent(UserInteractivityEvent.USER_IDLE));
 			
@@ -202,7 +204,7 @@ package org.tractionas3.monitor
 		{
 			if(_timeoutID) clearTimeout(_timeoutID);
 			
-			_timeoutID = setTimeout(userIsIdle, timeout);
+			_timeoutID = setTimeout(onUserIdle, timeout);
 		}
 	}
 }

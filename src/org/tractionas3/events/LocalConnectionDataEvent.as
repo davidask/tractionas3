@@ -33,7 +33,6 @@ package org.tractionas3.events
 	 */
 	public class LocalConnectionDataEvent extends Event 
 	{	
-
 		/**
 		 * Defines the value of the type property of a localConnectionDataReceive event object.
 		 */
@@ -49,7 +48,6 @@ package org.tractionas3.events
 		 */
 		public var data:*;
 
-		
 		/**
 		 * Creates a new LocalConnectionDataEvent object,.
 		 */

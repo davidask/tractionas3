@@ -38,7 +38,6 @@ package org.tractionas3.graphics.fill
 	 */
 	public class GradientFill extends Gradient implements ICoreInterface, IFill 
 	{	
-
 		/**
 		 * Specifies the type of the gradient fill.
 		 */
@@ -66,7 +65,6 @@ package org.tractionas3.graphics.fill
 
 		private var _matrix:Matrix;
 
-		
 		/**
 		 * Creates a new GradientFill object.
 		 */

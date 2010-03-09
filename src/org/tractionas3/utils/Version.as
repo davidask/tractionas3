@@ -32,7 +32,6 @@ package org.tractionas3.utils
 	import org.tractionas3.reflection.stringify;
 	public class Version extends CoreObject implements ICoreInterface, ICloneable 
 	{
-
 		public var major:uint;
 
 		public var minor:uint;
@@ -41,7 +40,6 @@ package org.tractionas3.utils
 
 		public var internalBuild:uint;
 
-		
 		public function Version(mav:uint = 0, miv:uint = 0, b:uint = 0, ib:uint = 0)
 		{
 			major = mav;

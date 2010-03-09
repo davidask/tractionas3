@@ -41,7 +41,6 @@ package org.tractionas3.net
 	import flash.utils.ByteArray;
 	public class LocalConnectionInbound extends WeakEventDispatcher implements IDestructable
 	{
-
 		internal static const RECEIVE_METHOD:String = "receiveData";
 
 		private var _connectionName:String;
@@ -50,7 +49,6 @@ package org.tractionas3.net
 
 		private var _buffer:Array;
 
-		
 		public function LocalConnectionInbound(connectionName:String)
 		{
 			super(this);
@@ -156,7 +154,7 @@ package org.tractionas3.net
 			
 			data = new ByteArray();
 			
-			for(var i:int = 0;i < buffer.length; ++i)
+			for(var i:int = 0;i < buffer.length;++i)
 			{
 				packageObject = buffer[i] as Object;
 				

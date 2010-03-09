@@ -40,14 +40,12 @@ package org.tractionas3.net
 	import flash.utils.ByteArray;
 	public class LocalConnectionOutbound extends WeakEventDispatcher implements IDestructable
 	{
-
 		public static var MAX_PACKAGE_SIZE:uint = 40000;
 
 		private var _localConnection:LocalConnection;
 
 		private var _connectionName:String;
 
-		
 		public function LocalConnectionOutbound(connectionName:String)
 		{
 			super(this);
@@ -97,7 +95,7 @@ package org.tractionas3.net
 				
 				var tempData:ByteArray;
 				
-				for(i = 0;i < numPackages; ++i)
+				for(i = 0;i < numPackages;++i)
 				{
 					readLength = (bytesAvailable > MAX_PACKAGE_SIZE) ? MAX_PACKAGE_SIZE : bytesAvailable;
 					
@@ -117,7 +115,7 @@ package org.tractionas3.net
 				dataPackages.push({ data: data, totalPackages: 1, packageIndex: 1 });
 			}
 			
-			for(i = 0;i < dataPackages.length; ++i)
+			for(i = 0;i < dataPackages.length;++i)
 			{
 				try
 				{

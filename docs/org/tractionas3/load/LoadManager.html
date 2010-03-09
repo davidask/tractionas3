@@ -4,7 +4,7 @@
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
 <link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
-<meta content="LoadManager,org.tractionas3.load.LoadManager,supressIOErrors,simultaneousLoadOperationsAllowed,addLoaderSet,getInstance,getLoaderSetByIndex,getLoaderSetByName,getNextHighestLoaderPriority,getNextLoaderName,getNextLoaderSetName,prioritizeLoaderSet,removeLoaderSet,reset,startLoading,stopLoading" name="keywords">
+<meta content="LoadManager,org.tractionas3.load.LoadManager,supressIOErrors,simultaneousLoadOperationsAllowed,addLoaderSet,getInstance,getLoaderByName,getLoaderSetByIndex,getLoaderSetByName,getNextHighestLoaderPriority,getNextLoaderName,getNextLoaderSetName,prioritizeLoaderSet,removeLoaderSet,reset,startLoading,stopLoading" name="keywords">
 <title>org.tractionas3.load.LoadManager</title>
 </head>
 <body>
@@ -125,6 +125,16 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 </div>
 <div class="summaryTableDescription">[static]
    LoadManager accessor
+   </div>
+</td><td class="summaryTableOwnerCol">LoadManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getLoaderByName()">getLoaderByName</a>(name:String):<a href="loaders/LoaderCore.html">LoaderCore</a>
+</div>
+<div class="summaryTableDescription">
+   Returns a loader in any of the sets registered to LoadManager with specified name
    </div>
 </td><td class="summaryTableOwnerCol">LoadManager</td>
 </tr>
@@ -332,6 +342,29 @@ showHideInherited();
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td width="20"></td><td><code><a href="../load/LoadManager.html">LoadManager</a></code></td>
+</tr>
+</table>
+</div>
+<a name="getLoaderByName()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getLoaderByName</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getLoaderByName(name:String):<a href="loaders/LoaderCore.html">LoaderCore</a></code><p>
+   Returns a loader in any of the sets registered to LoadManager with specified name
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">name</span>:String</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="loaders/LoaderCore.html">LoaderCore</a></code></td>
 </tr>
 </table>
 </div>

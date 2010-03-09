@@ -32,7 +32,6 @@ package org.tractionas3.debug
 	 */
 	public class TractionAS3DebuggerConstants 
 	{
-
 		public static const INBOUND:String = "_tractionAS3InboundConnection";
 
 		public static const OUTBOUND:String = "_tractionAS3OutboundConnection";
