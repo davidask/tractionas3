@@ -30,7 +30,6 @@ package org.tractionas3.reflection
 	/**
 	 * trimQualifiedClassName returns a trimmed class name.
 	 */
-	
 	public function trimQualifiedClassName(className:String):String
 	{
 		return (className.indexOf("::") > 0) ? className.split("::")[1] : className;

@@ -40,13 +40,11 @@ package org.tractionas3.events
 	 */
 	public class ClearableEventDispatcher extends EventDispatcher implements IClearableEventDispatcher, ICoreInterface
 	{
-
 		private var _eventReferences:Array;
-		
+
 		/**
 		 * Creates a new ClearableEventDispatcher object.
 		 */
-		
 		public function ClearableEventDispatcher(target:IEventDispatcher = null)
 		{
 			super(target || this);
@@ -73,16 +71,15 @@ package org.tractionas3.events
 			
 			super.removeEventListener(type, listener, useCapture);
 		}
-		
+
 		/**
 		 * @inheritDoc
 		 */
-		
 		public function removeAllEventListeners():void
 		{
 			var eventReference:EventReference;
 			
-			for(var i:int = 0;i < _eventReferences.length; ++i)
+			for(var i:int = 0;i < _eventReferences.length;++i)
 			{
 				eventReference = _eventReferences[i] as EventReference;
 				
@@ -121,16 +118,15 @@ package org.tractionas3.events
 		{
 			return stringify(this);
 		}
-		
+
 		/**
 		 * @private
 		 */
-		
 		protected function removeEventReference(type:String, listener:Function, useCapture:Boolean):void
 		{
 			var eventReference:EventReference;
 			
-			for(var i:int = 0;i < _eventReferences.length; ++i)
+			for(var i:int = 0;i < _eventReferences.length;++i)
 			{
 				eventReference = _eventReferences[i] as EventReference;
 				

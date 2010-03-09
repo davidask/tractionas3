@@ -32,7 +32,6 @@ package org.tractionas3.core.interfaces
 		/**
 		 * Executes the callable instance.
 		 */
-		
 		function call(...arguments:Array):Boolean;
 	}
 }

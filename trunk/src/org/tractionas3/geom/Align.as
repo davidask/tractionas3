@@ -32,7 +32,6 @@ package org.tractionas3.geom
 	 */
 	public class Align 
 	{
-
 		/**
 		 * String reprensentation of a top left alignment
 		 */

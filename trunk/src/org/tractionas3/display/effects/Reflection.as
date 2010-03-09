@@ -46,7 +46,6 @@ package org.tractionas3.display.effects
 	 */
 	public class Reflection extends Bitmap implements IDrawable, ICoreInterface
 	{
-
 		/**
 		 * Specifies the target to be reflected.
 		 */
@@ -60,9 +59,9 @@ package org.tractionas3.display.effects
 		private var _sourceBitmapData:BitmapData;
 
 		private var _alphaGradientBitap:BitmapData;
-		
+
 		private var _drawDimension:Dimension;
-		
+
 		/**
 		 * Creates a new DisplayObjectReflection
 		 */
@@ -131,12 +130,12 @@ package org.tractionas3.display.effects
 			
 			_alphaGradientBitap.fillRect(_alphaGradientBitap.rect, 0x00000000);
 		}
-		
+
 		public function get drawDimension():Dimension
 		{
 			return _drawDimension;
 		}
-		
+
 		public function set drawDimension(newDimension:Dimension):void
 		{
 			_drawDimension = newDimension;
@@ -172,7 +171,7 @@ package org.tractionas3.display.effects
 			
 			createBitmaps();
 		}
-		
+
 		public function destruct(deeepDestruct:Boolean = false):void
 		{
 			clearBitmapDataCache();
@@ -185,12 +184,12 @@ package org.tractionas3.display.effects
 			
 			Destructor.destruct(this, deeepDestruct);
 		}
-		
+
 		public function listDestructableProperties():Array
 		{
 			return ["bitmapData"];
 		}
-		
+
 		override public function toString():String
 		{
 			return stringify(this);
