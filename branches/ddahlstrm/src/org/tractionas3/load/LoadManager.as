@@ -34,39 +34,34 @@ package org.tractionas3.load
 	/**
 	 * LoadManager uses a loader queue to orchestrate loading of loader sets, providing a centralized load mechanism for an application.
 	 */
-	
 	public class LoadManager extends WeakEventDispatcher implements ICoreInterface, IResetable 
 	{
 		/**
 		 * LoadManager accessor
 		 */
-		
 		public static function getInstance():LoadManager
 		{
 			if(!_instance) _instance = new LoadManager(new SingletonEnforcer());
 			
 			return _instance;
 		}
-		
-		
+
 		public static function getNextHighestLoaderPriority():uint
 		{
 			return _highestLoaderPriority++;
 		}
-		
+
 		/**
 		 * @private
 		 */
-		
 		public static function registerPriority(value:uint):void
 		{
 			_highestLoaderPriority = Math.max(_highestLoaderPriority, value);
 		}
-		
+
 		/**
 		 * @private
 		 */
-		
 		public static function registerLoaderName(name:String):Boolean
 		{
 			if(_loaderNames.indexOf(name) == -1)
@@ -78,29 +73,26 @@ package org.tractionas3.load
 			
 			return false;
 		}
-		
+
 		/**
 		 * @private
 		 */
-		
 		public static function unregisterLoaderName(name:String):void
 		{
 			_loaderNames.splice(_loaderNames.indexOf(name), 1);
 		}
-		
+
 		/**
 		 * Returns the next automatic loader name
 		 */
-		
 		public static function getNextLoaderName():String
 		{
 			return "loader_" + _loaderNames.length.toString();
 		}
-		
+
 		/**
 		 * @private
 		 */
-		
 		public static function registerLoaderSetName(name:String):Boolean
 		{
 			if(_loaderSetNames.indexOf(name) == -1)
@@ -112,43 +104,40 @@ package org.tractionas3.load
 			
 			return false;
 		}
-		
+
 		/**
 		 * @private
 		 */
-		
 		public static function unregisterLoaderSetName(name:String):void
 		{
 			_loaderSetNames.splice(_loaderSetNames.indexOf(name), 1);
 		}
-		
+
 		/**
 		 * Returns the next automatic loader set name
 		 */
-		
 		public static function getNextLoaderSetName():String
 		{
 			return "loaderSet_" + _loaderSetNames.length.toString();
 		}
-		
+
 		public static var supressIOErrors:Boolean = false;
 
 		private static var _instance:LoadManager;
-		
+
 		private static var _highestLoaderPriority:uint = 0;
-		
+
 		private static var _loaderNames:Array = [];
-		
+
 		private static var _loaderSetNames:Array = [];
-		
+
 		private var _loaderQueue:LoaderQueue;
-		
+
 		private var _loaderSets:Array;
-		
+
 		/**
 		 * @private
 		 */
-		
 		public function LoadManager(singletonEnforcer:SingletonEnforcer)
 		{
 			super(this);
@@ -161,20 +150,18 @@ package org.tractionas3.load
 			
 			reset();
 		}
-		
+
 		/**
 		 * Starts loading
 		 */
-		
 		public function startLoading():void
 		{
 			_loaderQueue.start();
 		}
-		
+
 		/**
 		 * Stops loading
 		 */
-		
 		public function stopLoading(cancel:Boolean = false):void
 		{
 			if(cancel) _loaderQueue.cancel();
@@ -185,30 +172,28 @@ package org.tractionas3.load
 		/**
 		 * Defines the number of load operations to be allowed at any given time.
 		 */
-		
 		public function get simultaneousLoadOperationsAllowed():uint
 		{
 			return _loaderQueue.slots;
 		}
-		
+
 		public function set simultaneousLoadOperationsAllowed(value:uint):void
 		{
 			_loaderQueue.slots = value;
 		}
-		
+
 		/**
 		 * Increases the priority of each loader in specified set, allowing them to load before loaders in other sets.
 		 * @param loaderSet Target loader set
 		 * @param cancelCurrentLoading Specifies whether the any current loaders should be aborted.
 		 */
-		
 		public function prioritizeLoaderSet(loaderSet:LoaderSet, cancelCurrentLoading:Boolean = false):void
 		{
 			var loader:LoaderCore;
 			
 			var highestPriority:uint = getNextHighestLoaderPriority();
 			
-			for(var i:int = 0; i < loaderSet.loaders.length; ++i)
+			for(var i:int = 0;i < loaderSet.loaders.length;++i)
 			{
 				loader = loaderSet.loaders[i] as LoaderCore;
 				
@@ -222,20 +207,19 @@ package org.tractionas3.load
 				_loaderQueue.start();
 			}
 		}
-		
+
 		/**
 		 * Adds a loader set to the LoadManager
 		 * @param loaderSet Target loader set
 		 * @param prefetchLoaderSetBytesTotal Specifies whether the loaders in target loader set should have their filesize prefetched
 		 */
-		
 		public function addLoaderSet(loaderSet:LoaderSet, prefetchLoaderSetBytesTotal:Boolean = false):LoaderSet
 		{
 			_loaderSets.push(loaderSet);
 			
 			var loader:LoaderCore;
 			
-			for(var i:int = 0; i < loaderSet.loaders.length; ++i)
+			for(var i:int = 0;i < loaderSet.loaders.length;++i)
 			{
 				loader = loaderSet.loaders[i] as LoaderCore;
 				
@@ -246,36 +230,34 @@ package org.tractionas3.load
 			
 			return loaderSet;
 		}
-		
+
 		/**
 		 * Removes a loader set from the LoadManager
 		 * @param loaderSet Target loader set
 		 * @param cancel Specifies whether the loaders in the set should cancel their loading process.
 		 */
-		
 		public function removeLoaderSet(loaderSet:LoaderSet, cancel:Boolean = false):void
 		{
 			_loaderSets.splice(_loaderSets.indexOf(loaderSet), 1);
 			
 			var loader:LoaderCore;
 			
-			for(var i:int = 0; i < loaderSet.loaders.length; ++i)
+			for(var i:int = 0;i < loaderSet.loaders.length;++i)
 			{
 				loader = loaderSet.loaders[i] as LoaderCore;
 				
 				_loaderQueue.removeLoader(loader, cancel);
 			}
 		}
-		
+
 		/**
 		 * Returns a loader set with specified name
 		 */
-		
 		public function getLoaderSetByName(name:String):LoaderSet
 		{
 			var loaderSet:LoaderSet;
 			
-			for(var i:int = 0; i < _loaderSets.length; ++i)
+			for(var i:int = 0;i < _loaderSets.length;++i)
 			{
 				loaderSet = getLoaderSetByIndex(i);
 				
@@ -287,16 +269,15 @@ package org.tractionas3.load
 			
 			return null;
 		}
-		
+
 		/**
 		 * Returns a loader in any of the sets registered to LoadManager with specified name
 		 */
-		
 		public function getLoaderByName(name:String):LoaderCore
 		{
 			var loader:LoaderCore;
 			
-			for(var i:int = 0; i < _loaderQueue.numLoaders; ++i)
+			for(var i:int = 0;i < _loaderQueue.numLoaders;++i)
 			{
 				loader = _loaderQueue.loaders[i] as LoaderCore;
 				
@@ -312,16 +293,14 @@ package org.tractionas3.load
 		/**
 		 * Returns a loader set by specified index
 		 */
-		
 		public function getLoaderSetByIndex(index:uint):LoaderSet
 		{
 			return _loaderSets[index] as LoaderSet;
 		}
-		
+
 		/**
 		 * Resets the LoadManager, clearing it of all sets.
 		 */
-
 		public function reset():void
 		{
 			_loaderSets = [];
@@ -334,4 +313,6 @@ package org.tractionas3.load
 	}
 }
 
-internal class SingletonEnforcer {}
+internal class SingletonEnforcer 
+{
+}

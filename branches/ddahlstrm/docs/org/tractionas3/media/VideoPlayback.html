@@ -4,7 +4,7 @@
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
 <link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
-<meta content="VideoPlayback,org.tractionas3.media.VideoPlayback,bufferLength,bufferTime,duration,loader,pan,time,volume,height,width,autoSize,destruct,listDestructableProperties,pause,play,playAt,seek,stop,toString" name="keywords">
+<meta content="VideoPlayback,org.tractionas3.media.VideoPlayback,pan,playing,position,smoothing,videoHeight,videoWidth,volume,autoSize,destruct,pause,play,playAt,reAssignVideoStream,seek,stop" name="keywords">
 <title>org.tractionas3.media.VideoPlayback</title>
 </head>
 <body>
@@ -38,71 +38,73 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <td class="classHeaderTableLabel">Class</td><td class="classSignature">public class VideoPlayback</td>
 </tr>
 <tr>
-<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">VideoPlayback <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.media.Video</td>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">VideoPlayback <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="../display/CoreSprite.html">CoreSprite</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.display.Sprite</td>
 </tr>
 <tr>
-<td class="classHeaderTableLabel">Implements</td><td><a href="../core/interfaces/ICoreInterface.html">ICoreInterface</a>, <a href="IMediaPlayback.html">IMediaPlayback</a></td>
+<td class="classHeaderTableLabel">Implements</td><td><a href="IMediaPlayback.html">IMediaPlayback</a></td>
 </tr>
 </table>
 <p></p>
-  VideoPlayback provides an API coupled with VideoLoader class and is used for playing back video.
-    <p></p>
-<p>
-<span class="classHeaderTableLabel">See also</span>
-</p>
-<div class="seeAlso">org.tractionas3.load.VideoLoader</div>
+<p></p>
 <br>
 <hr>
 </div>
 <a name="propertySummary"></a>
 <div class="summarySection">
 <div class="summaryTableTitle">Public Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProperty" id="hideInheritedProperty">
+<a onclick="javascript:setInheritedVisible(false,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Properties</a>
+</div>
+<div class="showInheritedProperty" id="showInheritedProperty">
+<a onclick="javascript:setInheritedVisible(true,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Properties</a>
+</div>
+</div>
 <table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
 <tr>
 <th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
 </tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../display/CoreSprite.html#filters">filters</a> : Array<div class="summaryTableDescription">
+   An indexed array that contains each filter object currently associated with the CoreSprite.</div>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../display/CoreSprite.html#hasStage">hasStage</a> : Boolean<div class="summaryTableDescription">
+   Indicates whether the CoreSprite is a child to application stage.</div>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
+</tr>
 <tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bufferLength">bufferLength</a> : Number<div class="summaryTableDescription">[read-only]
-   Returns the buffer length of the video playback.</div>
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#pan">pan</a> : Number<div class="summaryTableDescription"></div>
 </td><td class="summaryTableOwnerCol">VideoPlayback</td>
 </tr>
 <tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bufferTime">bufferTime</a> : Number<div class="summaryTableDescription">
-   Defines the buffer time of the video playback.</div>
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#playing">playing</a> : Boolean<div class="summaryTableDescription">[read-only]</div>
 </td><td class="summaryTableOwnerCol">VideoPlayback</td>
 </tr>
 <tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#duration">duration</a> : Number<div class="summaryTableDescription">[read-only]
-   Indicates the duration of the vide playback.</div>
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#position">position</a> : Number<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">VideoPlayback</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../display/CoreSprite.html#scale">scale</a> : Number<div class="summaryTableDescription">
+   Defines the scale of the CoreSprite instance in aspect ratio 1:1.</div>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#smoothing">smoothing</a> : Boolean<div class="summaryTableDescription"></div>
 </td><td class="summaryTableOwnerCol">VideoPlayback</td>
 </tr>
 <tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#height">height</a> : Number<div class="summaryTableDescription">[write-only]</div>
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#videoHeight">videoHeight</a> : Number<div class="summaryTableDescription"></div>
 </td><td class="summaryTableOwnerCol">VideoPlayback</td>
 </tr>
 <tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#loader">loader</a> : <a href="../load/loaders/VideoLoader.html">VideoLoader</a>
-<div class="summaryTableDescription">[read-only]
-   Returns the VideoLoader instance coupled with the VideoPlayback instance.</div>
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#videoWidth">videoWidth</a> : Number<div class="summaryTableDescription"></div>
 </td><td class="summaryTableOwnerCol">VideoPlayback</td>
 </tr>
 <tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#pan">pan</a> : Number<div class="summaryTableDescription">
-   Defines the audio pan of the video playback.</div>
-</td><td class="summaryTableOwnerCol">VideoPlayback</td>
-</tr>
-<tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#time">time</a> : Number<div class="summaryTableDescription">[read-only]
-   Indicates the position of the playhead, in seconds.</div>
-</td><td class="summaryTableOwnerCol">VideoPlayback</td>
-</tr>
-<tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#volume">volume</a> : Number<div class="summaryTableDescription">
-   Defines the audio volume of the video playback.</div>
-</td><td class="summaryTableOwnerCol">VideoPlayback</td>
-</tr>
-<tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#width">width</a> : Number<div class="summaryTableDescription">[write-only]</div>
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#volume">volume</a> : Number<div class="summaryTableDescription"></div>
 </td><td class="summaryTableOwnerCol">VideoPlayback</td>
 </tr>
 </table>
@@ -110,6 +112,14 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <a name="methodSummary"></a>
 <div class="summarySection">
 <div class="summaryTableTitle">Public Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedMethod" id="hideInheritedMethod">
+<a onclick="javascript:setInheritedVisible(false,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Methods</a>
+</div>
+<div class="showInheritedMethod" id="showInheritedMethod">
+<a onclick="javascript:setInheritedVisible(true,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Methods</a>
+</div>
+</div>
 <table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
 <tr>
 <th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
@@ -117,85 +127,206 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#VideoPlayback()">VideoPlayback</a>(loader:<a href="../load/loaders/VideoLoader.html">VideoLoader</a>, width:int = 320, height:int = 240)</div>
-<div class="summaryTableDescription">
-   Creates a new VideoPlayback object.</div>
+<a class="signatureLink" href="#VideoPlayback()">VideoPlayback</a>(stream:<a href="../net/VideoStream.html">VideoStream</a>, videoWidth:Number = 640, videoHeight:Number = 360)</div>
+<div class="summaryTableDescription"></div>
 </td><td class="summaryTableOwnerCol">VideoPlayback</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../display/CoreSprite.html#addChildren()">addChildren</a>(... children):void</div>
+<div class="summaryTableDescription">
+   Adds multiple chidren to the CoreSprite instance.</div>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../display/CoreSprite.html#addEventListener()">addEventListener</a>(type:String, listener:Function, useCapture:Boolean = false, priority:int = 0, useWeakReference:Boolean = true):void</div>
+<div class="summaryTableDescription">
+   Registers an event listener object with an EventDispatcher object so that the listener receives notification of an event.</div>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../display/CoreSprite.html#addFilter()">addFilter</a>(filter:BitmapFilter):BitmapFilter</div>
+<div class="summaryTableDescription">
+   Adds a new filter to the CoreSprite.</div>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
 </tr>
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
 <a class="signatureLink" href="#autoSize()">autoSize</a>():void</div>
-<div class="summaryTableDescription">
-   Instructs the VideoPlayback to autosize according to the retrieved meta data.</div>
+<div class="summaryTableDescription"></div>
 </td><td class="summaryTableOwnerCol">VideoPlayback</td>
 </tr>
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
 <a class="signatureLink" href="#destruct()">destruct</a>(deepDestruct:Boolean = false):void</div>
-<div class="summaryTableDescription">
-   Destructs of the VideoPlayback instance.</div>
+<div class="summaryTableDescription"></div>
 </td><td class="summaryTableOwnerCol">VideoPlayback</td>
 </tr>
-<tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#listDestructableProperties()">listDestructableProperties</a>():Array</div>
+<a class="signatureLink" href="../display/CoreSprite.html#destructChildren()">destructChildren</a>(deepDestruct:Boolean = false):void</div>
+<div class="summaryTableDescription">
+   Iterates through all the children in the displaylist and calls the <code>destruct()</code> method on them, them removes them from the display list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../display/CoreSprite.html#dispatchEvent()">dispatchEvent</a>(evt:Event):Boolean</div>
+<div class="summaryTableDescription">
+   Dispatches an event into the event flow, <i>only</i> if event property <code>hasEventListener</code> or <code>bubbles</code> are <code>true</code>.</div>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../display/CoreSprite.html#hasFilter()">hasFilter</a>(filter:BitmapFilter):Boolean</div>
+<div class="summaryTableDescription">
+   Indicates whether specified filter is applied to CoreSprite.</div>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../display/CoreSprite.html#listDestructableProperties()">listDestructableProperties</a>():Array</div>
 <div class="summaryTableDescription">
    
    Specifies an array of strings representing properties that are to be
    nullified or reset upon destruction.</div>
-</td><td class="summaryTableOwnerCol">VideoPlayback</td>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
 </tr>
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
 <a class="signatureLink" href="#pause()">pause</a>():void</div>
-<div class="summaryTableDescription">
-   Pauses video playback.</div>
+<div class="summaryTableDescription"></div>
 </td><td class="summaryTableOwnerCol">VideoPlayback</td>
 </tr>
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
 <a class="signatureLink" href="#play()">play</a>():void</div>
-<div class="summaryTableDescription">
-   Starts video playback.</div>
+<div class="summaryTableDescription"></div>
 </td><td class="summaryTableOwnerCol">VideoPlayback</td>
 </tr>
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
 <a class="signatureLink" href="#playAt()">playAt</a>(position:Number):void</div>
-<div class="summaryTableDescription">
-   Starts video playback at specified position.</div>
+<div class="summaryTableDescription"></div>
 </td><td class="summaryTableOwnerCol">VideoPlayback</td>
 </tr>
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#seek()">seek</a>(position:Number):void</div>
+<a class="signatureLink" href="#reAssignVideoStream()">reAssignVideoStream</a>():void</div>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">VideoPlayback</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../display/CoreSprite.html#removeAllEventListeners()">removeAllEventListeners</a>():void</div>
 <div class="summaryTableDescription">
-   Moves the playhead to specified position.</div>
+   
+   Removes all event listeners from the IClearableEventDispatcher object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../display/CoreSprite.html#removeChildren()">removeChildren</a>(... children):void</div>
+<div class="summaryTableDescription">
+   Removes multiple children to the CoreSprite instance.</div>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../display/CoreSprite.html#removeEventListener()">removeEventListener</a>(type:String, listener:Function, useCapture:Boolean = false):void</div>
+<div class="summaryTableDescription">
+   Removes a listener from the EventDispatcher object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../display/CoreSprite.html#removeFilter()">removeFilter</a>(filter:BitmapFilter):void</div>
+<div class="summaryTableDescription">
+   Removes specified filter from CoreSprite
+   </div>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#seek()">seek</a>(position:Number):void</div>
+<div class="summaryTableDescription"></div>
 </td><td class="summaryTableOwnerCol">VideoPlayback</td>
 </tr>
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
 <a class="signatureLink" href="#stop()">stop</a>():void</div>
-<div class="summaryTableDescription">
-   Stops video playback.</div>
+<div class="summaryTableDescription"></div>
 </td><td class="summaryTableOwnerCol">VideoPlayback</td>
 </tr>
-<tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#toString()">toString</a>():String</div>
+<a class="signatureLink" href="../display/CoreSprite.html#toString()">toString</a>():String</div>
 <div class="summaryTableDescription">
-   
-   Returns the string representation of the instance.</div>
-</td><td class="summaryTableOwnerCol">VideoPlayback</td>
+   Returns a string representation of the CoreSprite instance.</div>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../display/CoreSprite.html#updateFilters()">updateFilters</a>():void</div>
+<div class="summaryTableDescription">
+   Reapplies the filters to the CoreSprite.</div>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedProtectedMethod" id="hideInheritedProtectedMethod">
+<a onclick="javascript:setInheritedVisible(false,'ProtectedMethod');" href="#protectedMethodSummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Protected Methods</a>
+</div>
+<div class="showInheritedProtectedMethod" id="showInheritedProtectedMethod">
+<a onclick="javascript:setInheritedVisible(true,'ProtectedMethod');" href="#protectedMethodSummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Protected Methods</a>
+</div>
+</div>
+<table id="summaryTableProtectedMethod" class="summaryTable hideInheritedProtectedMethod" cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../display/CoreSprite.html#onAddedToStage()">onAddedToStage</a>():void</div>
+<div class="summaryTableDescription">
+   Called when the CoreSprite instance is added to stage.</div>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../display/CoreSprite.html#onRemovedFromStage()">onRemovedFromStage</a>():void</div>
+<div class="summaryTableDescription">
+   Called when the CoreSprite instance is removed from stage.</div>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
 </tr>
 </table>
 </div>
@@ -206,104 +337,86 @@ showHideInherited();
 <div class="MainContent">
 <a name="propertyDetail"></a>
 <div class="detailSectionHeader">Property detail</div>
-<a name="bufferLength"></a>
-<table cellspacing="0" cellpadding="0" class="detailHeader">
-<tr>
-<td class="detailHeaderName">bufferLength</td><td class="detailHeaderType">property</td>
-</tr>
-</table>
-<div class="detailBody">
-<code>bufferLength:Number</code>&nbsp;&nbsp;[read-only]<p>
-   Returns the buffer length of the video playback.
-   </p><span class="label">Implementation</span>
-<br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bufferLength():Number</code>
-<br>
-</div>
-<a name="bufferTime"></a>
-<table cellspacing="0" cellpadding="0" class="detailHeader">
-<tr>
-<td class="detailHeaderName">bufferTime</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
-</tr>
-</table>
-<div class="detailBody">
-<code>bufferTime:Number</code>&nbsp;&nbsp;[read-write]<p>
-   Defines the buffer time of the video playback.
-   </p><span class="label">Implementation</span>
-<br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bufferTime():Number</code>
-<br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set bufferTime(value:Number):void</code>
-<br>
-</div>
-<a name="duration"></a>
-<table cellspacing="0" cellpadding="0" class="detailHeader">
-<tr>
-<td class="detailHeaderName">duration</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
-</tr>
-</table>
-<div class="detailBody">
-<code>duration:Number</code>&nbsp;&nbsp;[read-only]<p>
-   Indicates the duration of the vide playback. If metadata isn't yet loaded a qualified guess of the duration will be returned.
-   </p><span class="label">Implementation</span>
-<br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get duration():Number</code>
-<br>
-</div>
-<a name="height"></a>
-<table cellspacing="0" cellpadding="0" class="detailHeader">
-<tr>
-<td class="detailHeaderName">height</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
-</tr>
-</table>
-<div class="detailBody">
-<code>height:Number</code>&nbsp;&nbsp;[write-only]<span class="label">Implementation</span>
-<br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set height(value:Number):void</code>
-<br>
-</div>
-<a name="loader"></a>
-<table cellspacing="0" cellpadding="0" class="detailHeader">
-<tr>
-<td class="detailHeaderName">loader</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
-</tr>
-</table>
-<div class="detailBody">
-<code>loader:<a href="../load/loaders/VideoLoader.html">VideoLoader</a></code>&nbsp;&nbsp;[read-only]<p>
-   Returns the VideoLoader instance coupled with the VideoPlayback instance.
-   </p><span class="label">Implementation</span>
-<br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get loader():<a href="../load/loaders/VideoLoader.html">VideoLoader</a></code>
-<br>
-</div>
 <a name="pan"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>
-<td class="detailHeaderName">pan</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+<td class="detailHeaderName">pan</td><td class="detailHeaderType">property</td>
 </tr>
 </table>
 <div class="detailBody">
-<code>pan:Number</code>&nbsp;&nbsp;[read-write]<p>
-   Defines the audio pan of the video playback.
-   </p><span class="label">Implementation</span>
+<code>pan:Number</code>&nbsp;&nbsp;[read-write]<span class="label">Implementation</span>
 <br>
 <code>&nbsp;&nbsp;&nbsp;&nbsp;public function get pan():Number</code>
 <br>
 <code>&nbsp;&nbsp;&nbsp;&nbsp;public function set pan(value:Number):void</code>
 <br>
 </div>
-<a name="time"></a>
+<a name="playing"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>
-<td class="detailHeaderName">time</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+<td class="detailHeaderName">playing</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
 </tr>
 </table>
 <div class="detailBody">
-<code>time:Number</code>&nbsp;&nbsp;[read-only]<p>
-   Indicates the position of the playhead, in seconds.
-   </p><span class="label">Implementation</span>
+<code>playing:Boolean</code>&nbsp;&nbsp;[read-only]<span class="label">Implementation</span>
 <br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get time():Number</code>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get playing():Boolean</code>
+<br>
+</div>
+<a name="position"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">position</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>position:Number</code>&nbsp;&nbsp;[read-write]<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get position():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set position(value:Number):void</code>
+<br>
+</div>
+<a name="smoothing"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">smoothing</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>smoothing:Boolean</code>&nbsp;&nbsp;[read-write]<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get smoothing():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set smoothing(value:Boolean):void</code>
+<br>
+</div>
+<a name="videoHeight"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">videoHeight</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>videoHeight:Number</code>&nbsp;&nbsp;[read-write]<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get videoHeight():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set videoHeight(value:Number):void</code>
+<br>
+</div>
+<a name="videoWidth"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">videoWidth</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>videoWidth:Number</code>&nbsp;&nbsp;[read-write]<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get videoWidth():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set videoWidth(value:Number):void</code>
 <br>
 </div>
 <a name="volume"></a>
@@ -313,25 +426,11 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>volume:Number</code>&nbsp;&nbsp;[read-write]<p>
-   Defines the audio volume of the video playback.
-   </p><span class="label">Implementation</span>
+<code>volume:Number</code>&nbsp;&nbsp;[read-write]<span class="label">Implementation</span>
 <br>
 <code>&nbsp;&nbsp;&nbsp;&nbsp;public function get volume():Number</code>
 <br>
 <code>&nbsp;&nbsp;&nbsp;&nbsp;public function set volume(value:Number):void</code>
-<br>
-</div>
-<a name="width"></a>
-<table cellspacing="0" cellpadding="0" class="detailHeader">
-<tr>
-<td class="detailHeaderName">width</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
-</tr>
-</table>
-<div class="detailBody">
-<code>width:Number</code>&nbsp;&nbsp;[write-only]<span class="label">Implementation</span>
-<br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set width(value:Number):void</code>
 <br>
 </div>
 <a name="constructorDetail"></a>
@@ -343,31 +442,22 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function VideoPlayback(loader:<a href="../load/loaders/VideoLoader.html">VideoLoader</a>, width:int = 320, height:int = 240)</code><p>
-   Creates a new VideoPlayback object.
-   
-   When creating a VideoPlayback you must assign it a VideoLoader. The VideoLoader and VideoPlayback instance will both have a connection to the
-   required NetStream object. You may change the NetStream propeties, e.g. bufferTime, both via VideoLoader and VideoPlayback.
-   
-   </p><span class="label">Parameters</span>
+<code>public function VideoPlayback(stream:<a href="../net/VideoStream.html">VideoStream</a>, videoWidth:Number = 640, videoHeight:Number = 360)</code><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td width="20px"></td><td><code><span class="label">loader</span>:<a href="../load/loaders/VideoLoader.html">VideoLoader</a></code> &mdash; VideoLoader providing the video data to be played.
-   </td>
+<td width="20px"></td><td><code><span class="label">stream</span>:<a href="../net/VideoStream.html">VideoStream</a></code></td>
 </tr>
 <tr>
 <td class="paramSpacer">&nbsp;</td>
 </tr>
 <tr>
-<td width="20px"></td><td><code><span class="label">width</span>:int</code> (default = <code>320</code>)<code></code> &mdash; Video width.
-   </td>
+<td width="20px"></td><td><code><span class="label">videoWidth</span>:Number</code> (default = <code>640</code>)<code></code></td>
 </tr>
 <tr>
 <td class="paramSpacer">&nbsp;</td>
 </tr>
 <tr>
-<td width="20px"></td><td><code><span class="label">height</span>:int</code> (default = <code>240</code>)<code></code> &mdash; Video height.
-   </td>
+<td width="20px"></td><td><code><span class="label">videoHeight</span>:Number</code> (default = <code>360</code>)<code></code></td>
 </tr>
 </table>
 </div>
@@ -380,11 +470,8 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function autoSize():void</code><p>
-   Instructs the VideoPlayback to autosize according to the retrieved meta data.
-   If meta data has not yet been loaded, the video will be resized when meta data loading is complete.
-   Setting the width or height property after calling <code>autoSize()</code> will disable autosizing.
-   </p></div>
+<code>public function autoSize():void</code>
+</div>
 <a name="destruct()"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>
@@ -392,31 +479,10 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function destruct(deepDestruct:Boolean = false):void</code><p>
-   Destructs of the VideoPlayback instance.
-   </p><span class="label">Parameters</span>
+<code>public override function destruct(deepDestruct:Boolean = false):void</code><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td width="20px"></td><td><code><span class="label">deepDestruct</span>:Boolean</code> (default = <code>false</code>)<code></code></td>
-</tr>
-</table>
-</div>
-<a name="listDestructableProperties()"></a>
-<table cellspacing="0" cellpadding="0" class="detailHeader">
-<tr>
-<td class="detailHeaderName">listDestructableProperties</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
-</tr>
-</table>
-<div class="detailBody">
-<code>public function listDestructableProperties():Array</code><p>
-   
-   Specifies an array of strings representing properties that are to be
-   nullified or reset upon destruction. Applies to public properties <b>only</b>
-   </p><p></p>
-<span class="label">Returns</span>
-<table border="0" cellspacing="0" cellpadding="0">
-<tr>
-<td width="20"></td><td><code>Array</code></td>
 </tr>
 </table>
 </div>
@@ -427,9 +493,8 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function pause():void</code><p>
-   Pauses video playback.
-   </p></div>
+<code>public function pause():void</code>
+</div>
 <a name="play()"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>
@@ -437,9 +502,8 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function play():void</code><p>
-   Starts video playback.
-   </p></div>
+<code>public function play():void</code>
+</div>
 <a name="playAt()"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>
@@ -447,14 +511,21 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function playAt(position:Number):void</code><p>
-   Starts video playback at specified position.
-   </p><span class="label">Parameters</span>
+<code>public function playAt(position:Number):void</code><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td width="20px"></td><td><code><span class="label">position</span>:Number</code></td>
 </tr>
 </table>
+</div>
+<a name="reAssignVideoStream()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">reAssignVideoStream</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function reAssignVideoStream():void</code>
 </div>
 <a name="seek()"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
@@ -463,9 +534,7 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function seek(position:Number):void</code><p>
-   Moves the playhead to specified position.
-   </p><span class="label">Parameters</span>
+<code>public function seek(position:Number):void</code><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td width="20px"></td><td><code><span class="label">position</span>:Number</code></td>
@@ -479,26 +548,7 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function stop():void</code><p>
-   Stops video playback.
-   </p></div>
-<a name="toString()"></a>
-<table cellspacing="0" cellpadding="0" class="detailHeader">
-<tr>
-<td class="detailHeaderName">toString</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
-</tr>
-</table>
-<div class="detailBody">
-<code>public override function toString():String</code><p>
-   
-   Returns the string representation of the instance.
-   </p><p></p>
-<span class="label">Returns</span>
-<table border="0" cellspacing="0" cellpadding="0">
-<tr>
-<td width="20"></td><td><code>String</code></td>
-</tr>
-</table>
+<code>public function stop():void</code>
 </div>
 <br>
 <br>

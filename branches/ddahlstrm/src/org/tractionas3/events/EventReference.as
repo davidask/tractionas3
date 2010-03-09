@@ -31,18 +31,15 @@ package org.tractionas3.events
 	import org.tractionas3.core.interfaces.ICoreInterface;
 	public class EventReference extends CoreObject implements ICoreInterface 
 	{
-
 		private var _type:String;
 
 		private var _listener:Function;
 
 		private var _useCapture:Boolean;
 
-		
 		/**
 		 * EventReference is used to store references to event listeners, in order to keep track of them.
 		 */
-		
 		public function EventReference(type:String,listener:Function, useCapture:Boolean)
 		{
 			super();
@@ -53,38 +50,34 @@ package org.tractionas3.events
 			
 			_useCapture = useCapture;
 		}
-		
+
 		/**
 		 * Indicates the event type.
 		 */
-		
 		public function get type():String
 		{
 			return _type;
 		}
-		
+
 		/**
 		 * Indiciates the listener function.
 		 */
-		
 		public function get listener():Function
 		{
 			return _listener;
 		}
-		
+
 		/**
 		 * Indicates the event useCapture property value.
 		 */
-		
 		public function get useCapture():Boolean
 		{
 			return _useCapture;
 		}
-		
+
 		/**
 		 * @inheritDoc
 		 */
-		
 		override public function destruct(deepDestruct:Boolean = false):void
 		{
 			_type = null;

@@ -38,6 +38,9 @@ package org.tractionas3.net
 	import flash.net.NetConnection;
 	import flash.net.NetStream;
 	import flash.utils.getQualifiedClassName;
+	/**
+	 * VideoStream extends the functinality of NetStream
+	 */
 	public class VideoStream extends NetStream implements ICoreInterface
 	{
 		private var _metaData:VideoStreamMetaData;
@@ -45,11 +48,14 @@ package org.tractionas3.net
 		private var _playing:Boolean = false;
 
 		private var _ready:Boolean;
-		
+
 		private var _soundTransform:SoundTransform;
-		
+
 		private var _actualSize:Dimension;
 
+		/**
+		 * Creates a new VideoStream object
+		 */
 		public function VideoStream()
 		{
 			var netConnection:NetConnection = new NetConnection();
@@ -61,14 +67,19 @@ package org.tractionas3.net
 			super.client = this;
 			
 			_soundTransform = new SoundTransform();
-	
 		}
 
+		/**
+		 * @inheritDoc
+		 */
 		override public function set client(object:Object):void
 		{
 			throw new Error("Property client cannot be changed on ExtendedNetStream.");
 		}
 
+		/**
+		 * @private
+		 */
 		public function onMetaData(data:Object):void
 		{
 			_metaData = new VideoStreamMetaData();
@@ -89,23 +100,35 @@ package org.tractionas3.net
 			
 			dispatchEvent(new VideoStreamEvent(VideoStreamEvent.META_DATA_RECEIVED));
 		}
-		
+
+		/**
+		 * Indicates the actual size of the VideoStream.
+		 */
 		public function get actualSize():Dimension
 		{
 			return _actualSize;
 		}
 
+		/**
+		 * Indicates whether the VideoStream is currently playing.
+		 */
 		public function get playing():Boolean
 		{
 			return _playing;
 		}
-		
+
+		/**
+		 * Seeks the VideoStream and plays it at specified time.
+		 */
 		public function playAt(position:Number):void
 		{
 			seek(position);
 			play();
 		}
 
+		/**
+		 * @inheritDoc
+		 */
 		override public function resume():void
 		{
 			super.resume();
@@ -115,6 +138,9 @@ package org.tractionas3.net
 			dispatchEvent(new VideoStreamEvent(VideoStreamEvent.PLAY));
 		}
 
+		/**
+		 * @inheritDoc
+		 */
 		override public function pause():void
 		{
 			super.pause();
@@ -124,6 +150,9 @@ package org.tractionas3.net
 			dispatchEvent(new VideoStreamEvent(VideoStreamEvent.PAUSE));
 		}
 
+		/**
+		 * @inheritDoc
+		 */
 		override public function togglePause():void
 		{
 			if(_playing)
@@ -136,6 +165,9 @@ package org.tractionas3.net
 			}
 		}
 
+		/**
+		 * @inheritDoc
+		 */
 		override public function play(...args:*):void
 		{
 			super.resume();
@@ -145,6 +177,9 @@ package org.tractionas3.net
 			dispatchEvent(new VideoStreamEvent(VideoStreamEvent.PLAY));
 		}
 
+		/**
+		 * @inheritDoc
+		 */
 		public function stop():void
 		{
 			pause();
@@ -152,7 +187,10 @@ package org.tractionas3.net
 			
 			dispatchEvent(new VideoStreamEvent(VideoStreamEvent.STOP));
 		}
-		
+
+		/**
+		 * Defines the volume of the VideoStream object.
+		 */
 		public function get volume():Number
 		{
 			return _soundTransform.volume;
@@ -165,7 +203,9 @@ package org.tractionas3.net
 			soundTransform = _soundTransform;
 		}
 
-	
+		/**
+		 * Defines the pan of the VideoStream object.
+		 */
 		public function get pan():Number
 		{
 			return _soundTransform.pan;
@@ -177,17 +217,23 @@ package org.tractionas3.net
 			
 			soundTransform = _soundTransform;
 		}
-		
+
+		/**
+		 * @inheritDoc
+		 */
 		override public function get soundTransform():SoundTransform
 		{
 			return _soundTransform;
 		}
-		
+
 		override public function set soundTransform(sndTransform:SoundTransform):void
 		{
 			super.soundTransform = sndTransform;
 		}
 
+		/**
+		 * Specifies whether the VideoStream object is ready for playback.
+		 */
 		public function get streamReady():Boolean
 		{
 			return _ready;
@@ -208,37 +254,58 @@ package org.tractionas3.net
 			EnterFrame.addEnterFrameHandler(resolveReadyState);
 		}
 
+		/**
+		 * Returns the metadata of the VideoStream object, if the meta data has been received.
+		 */
 		public function get metaData():VideoStreamMetaData
 		{
 			return _metaData;
 		}
 
+		/**
+		 * @private
+		 */
 		public function onXMPData(data:Object):void
 		{
 		}
 
+		/**
+		 * @private
+		 */
 		public function onPlayStatus(data:Object):void
 		{
 		}
 
+		/**
+		 * @private
+		 */
 		public function onImageData(data:Object):void
 		{
 		}
 
+		/**
+		 * @private
+		 */
 		public function onCuePoint(data:Object):void
 		{
 		}
 
+		/**
+		 * @inheritDoc
+		 */
 		public function destruct(deepDestruct:Boolean = false):void
 		{
 			_metaData.destruct(deepDestruct);
 		}
 
+		/**
+		 * @inheritDoc
+		 */
 		public function listDestructableProperties():Array
 		{
 			return [];
 		}
-		
+
 		private function resolveReadyState():void
 		{
 			if(bytesLoaded > 0 && bytesTotal > 0 && _actualSize)

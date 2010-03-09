@@ -30,22 +30,22 @@ package org.tractionas3.events
 	public class VideoStreamEvent extends Event 
 	{
 		public static const META_DATA_RECEIVED:String = "videoStreamMetaDataReceived";
-		
+
 		public static const SIZE_RECEIVED:String = "videoStreamSizeReceived";
-		
+
 		public static const READY:String = "videoStreamReady";
-		
+
 		public static const PLAY:String = "videoStreamPlay";
-		
+
 		public static const PAUSE:String = "videoStreamPause";
-		
+
 		public static const STOP:String = "videoStreamStop";
-		
+
 		public function VideoStreamEvent(type:String, bubbles:Boolean = false, cancelable:Boolean = false)
 		{
 			super(type, bubbles, cancelable);
 		}
-		
+
 		override public function clone():Event
 		{
 			return new VideoStreamEvent(type, bubbles, cancelable);
