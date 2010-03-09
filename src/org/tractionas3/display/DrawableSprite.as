@@ -25,42 +25,61 @@
  *
  */
  
-package org.tractionas3.ui 
+package org.tractionas3.display 
 {
 	import flash.display.DisplayObjectContainer;
 	import flash.display.DisplayObject;
+
 	import org.tractionas3.core.interfaces.IDrawable;
-	import org.tractionas3.display.CoreSprite;
 
 	import flash.events.Event;
-	public class UISprite extends CoreSprite implements IDrawable 
+	/**
+	 * DrawableSprite provides a standard implementation of the IDrawable core interface.
+	 */
+	public class DrawableSprite extends CoreSprite implements IDrawable 
 	{
-		public function UISprite()
+		/**
+		 * Creats a new DrawableSprite object.
+		 */
+		public function DrawableSprite()
 		{
 			super();
 		}
-		
+
+		/**
+		 * Draws the DrawableSprite object. Should be overridden for implementation of functionality.
+		 */
 		public function draw():void
 		{
 			return;
 		}
-		
+
+		/**
+		 * Redraws the DrawableSprite object. Cannot be overridden.
+		 */
 		final public function redraw():void
 		{
 			clear();
 			draw();
 		}
-		
+
+		/**
+		 * Clears the DrawableSprite object. Should be overridden for implementation of functionality.
+		 */
 		public function clear():void
 		{
 			return;
 		}
-		
+
+		/**
+		 * Draws the children of the DrawableSprite object if they implement the IDrawable interface.
+		 * @see org.tractionas3.core.interfaces.IDrawable
+		 */
 		public function drawChildren(deepDraw:Boolean = false):void
 		{
 			var child:DisplayObject;
 			
-			for(var i:int = 0; i < numChildren; ++i)
+			for(var i:int = 0;i < numChildren;++i)
 			{
 				child = getChildAt(i);
 				
@@ -72,18 +91,27 @@ package org.tractionas3.ui
 				}
 			}
 		}
-		
+
+		/**
+		 * Redraws the children of the DrawableSprite object if they implement the IDrawable interface.
+		 * Cannot be overridden.
+		 * @see org.tractionas3.core.interfaces.IDrawable
+		 */
 		final public function redrawChildren(deepRedraw:Boolean = false):void
 		{
 			clearChildren(deepRedraw);
 			drawChildren(deepRedraw);
 		}
-		
+
+		/**
+		 * Clears the children of the DrawableSprite object if they implement the IDrawable interface.
+		 * @see org.tractionas3.core.interfaces.IDrawable
+		 */
 		public function clearChildren(deepClear:Boolean = false):void
 		{
 			var child:DisplayObject;
 			
-			for(var i:int = 0; i < numChildren; ++i)
+			for(var i:int = 0;i < numChildren;++i)
 			{
 				child = getChildAt(i);
 				
@@ -95,26 +123,32 @@ package org.tractionas3.ui
 				}
 			}
 		}
-		
+
+		/**
+		 * @private
+		 */
 		override protected function onAddedToStageInternal(e:Event = null):void
 		{
 			super.onAddedToStageInternal(e);
 			
 			redraw();
 		}
-		
+
+		/**
+		 * @private
+		 */
 		override protected function onRemovedFromStageInternal(e:Event = null):void
 		{
 			super.onRemovedFromStageInternal(e);
 			
 			clear();
 		}
-		
+
 		private function deepDrawChild(target:DisplayObjectContainer):void
 		{
 			var child:DisplayObject;
 			
-			for(var i:int = 0; i < target.numChildren; ++i)
+			for(var i:int = 0;i < target.numChildren;++i)
 			{
 				child = target.getChildAt(i);
 				
@@ -126,12 +160,12 @@ package org.tractionas3.ui
 				}
 			}
 		}
-		
+
 		private function deepClearChild(target:DisplayObjectContainer):void
 		{
 			var child:DisplayObject;
 			
-			for(var i:int = 0; i < target.numChildren; ++i)
+			for(var i:int = 0;i < target.numChildren;++i)
 			{
 				child = target.getChildAt(i);
 				

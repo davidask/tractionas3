@@ -33,7 +33,6 @@ package org.tractionas3.graphics
 	 */
 	public class GradientColor extends CoreObject implements ICoreInterface 
 	{
-
 		/**
 		 * Specifies the color of the gradient color.
 		 */
@@ -49,7 +48,6 @@ package org.tractionas3.graphics
 		 */
 		public var ratio:Number;
 
-		
 		/**
 		 * Creates a new GradientColor object.
 		 * 

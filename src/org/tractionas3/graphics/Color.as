@@ -37,7 +37,6 @@ package org.tractionas3.graphics
 	 */
 	public class Color extends CoreObject
 	{
-
 		/**
 		 * Parses and returns hex color in string format (e.g. "0xFF0000" or "#000000").
 		 */
@@ -50,7 +49,6 @@ package org.tractionas3.graphics
 			return parseInt(colorStr, 16);
 		}
 
-		
 		private var _red:uint;
 
 		private var _green:uint;
@@ -59,7 +57,6 @@ package org.tractionas3.graphics
 
 		private var _alpha:uint;
 
-		
 		/**
 		 * Creates a new Color object with specified color in hexadecimal format.
 		 */

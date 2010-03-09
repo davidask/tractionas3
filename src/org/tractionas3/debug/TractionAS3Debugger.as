@@ -52,7 +52,6 @@ package org.tractionas3.debug
 	 */	
 	public class TractionAS3Debugger implements IConnectable
 	{
-
 		/**
 		 * Indicates the version of the TractionAS3Debugger class
 		 */
@@ -110,7 +109,6 @@ package org.tractionas3.debug
 
 		private var _numConnectionAttempts:uint;
 
-		
 		/**
 		 * Attempts to connect to TractionAS3 Debugger.
 		 */
@@ -321,7 +319,7 @@ package org.tractionas3.debug
 			
 			var propertyReadSuccess:Boolean;
 			
-			for(var i:int = 0;i < properties.length; ++i)
+			for(var i:int = 0;i < properties.length;++i)
 			{
 				propertyDescriptor = properties[i] as PropertyDescriptor;
 				
@@ -468,7 +466,7 @@ package org.tractionas3.debug
 					
 					clearTimeout(_connectTimeout);
 					
-					for(var i:int = 0;i < _buffer.length; ++i)
+					for(var i:int = 0;i < _buffer.length;++i)
 					{
 						send(_buffer[i]);
 					}

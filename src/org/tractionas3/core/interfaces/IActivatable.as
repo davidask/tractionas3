@@ -32,19 +32,16 @@ package org.tractionas3.core.interfaces
 		/**
 		 * Activates the activatable instance.
 		 */
-		
 		function activate():void;
-		
+
 		/**
 		 * Deactivates the activatable instance.
 		 */
-		
 		function deactivate():void;
-		
+
 		/**
 		 * Indicates whether the activatable instance is activated.
 		 */
-		
 		function get activated():Boolean;
 	}
 }

@@ -31,14 +31,11 @@ package org.tractionas3.events
 	/**
 	 * IClearableEventDispatcher is an interface used for event dispatchers that are clearable.
 	 */
-	
 	public interface IClearableEventDispatcher extends IEventDispatcher 
 	{
-		
 		/**
 		 * Removes all event listeners from the IClearableEventDispatcher object.
 		 */
-		
 		function removeAllEventListeners():void;
 	}
 }

@@ -35,11 +35,11 @@ package org.tractionas3.media
 	public class VideoPlayback extends CoreSprite implements IMediaPlayback 
 	{
 		private var _stream:VideoStream;
-		
+
 		private var _video:Video;
-		
+
 		private var _smoothing:Boolean;
-		
+
 		public function VideoPlayback(stream:VideoStream, videoWidth:Number = 640, videoHeight:Number = 360)
 		{
 			_stream = stream;
@@ -48,33 +48,32 @@ package org.tractionas3.media
 			
 			super();
 		}
-		
+
 		public function get videoWidth():Number
 		{
 			return _video.width;
 		}
-		
+
 		public function set videoWidth(value:Number):void
 		{
 			updateVideo(value, videoHeight);
 		}
-		
+
 		public function get videoHeight():Number
 		{
 			return _video.height;
 		}
-		
+
 		public function set videoHeight(value:Number):void
 		{
 			updateVideo(videoWidth, value);
 		}
-		
-		
+
 		public function play():void
 		{
 			_stream.play();
 		}
-		
+
 		public function autoSize():void
 		{
 			if(_stream.actualSize)
@@ -86,57 +85,57 @@ package org.tractionas3.media
 				_stream.addEventListener(VideoStreamEvent.SIZE_RECEIVED, handleVideoStreamEvent);
 			}
 		}
-		
+
 		public function playAt(position:Number):void
 		{
 			_stream.playAt(position);
 		}
-		
+
 		public function get position():Number
 		{
 			return _stream.time;
 		}
-		
+
 		public function set position(value:Number):void
 		{
 			seek(value);
 		}
-		
+
 		public function pause():void
 		{
 			_stream.pause();
 		}
-		
+
 		public function stop():void
 		{
 			_stream.stop();
 		}
-		
+
 		public function seek(position:Number):void
 		{
 			_stream.seek(position);
 		}
-		
+
 		public function get playing():Boolean
 		{
 			return _stream.playing;
 		}
-		
+
 		public function get volume():Number
 		{
 			return _stream.volume;
 		}
-		
+
 		public function set volume(value:Number):void
 		{
 			_stream.volume = value;
 		}
-		
+
 		public function get pan():Number
 		{
 			return _stream.pan;
 		}
-		
+
 		public function set pan(value:Number):void
 		{
 			_stream.pan = value;
@@ -146,12 +145,12 @@ package org.tractionas3.media
 		{
 			_video.attachNetStream(_stream);
 		}
-		
+
 		public function get smoothing():Boolean
 		{
 			return _smoothing;
 		}
-		
+
 		public function set smoothing(value:Boolean):void
 		{
 			_smoothing = value;
@@ -202,7 +201,7 @@ package org.tractionas3.media
 					
 					autoSize();
 					
-				break;
+					break;
 			}
 		}
 	}

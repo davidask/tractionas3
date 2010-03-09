@@ -32,7 +32,6 @@ package org.tractionas3.core.interfaces
 	 */
 	public interface IUpdatable 
 	{
-
 		/**
 		 * Updates the updatable instance.
 		 */

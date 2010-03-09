@@ -12,23 +12,20 @@ package org.tractionas3.display
 	 */
 	public class ThrowableSprite extends DraggableSprite 
 	{
-
 		/**
 		 * Specifies the friction multiplier adding resistance to the ThrowableSprite motion.
 		 */
 		public var frictionMultiplier:Number = 0.9;
-		
+
 		/**
 		 * Specifies whether throwing is enabled
 		 */
-		
 		public var throwEnabled:Boolean = true;
 
 		private var _currentPosition:Point;
 
 		private var _throwVelocity:Point;
 
-		
 		/**
 		 * Creates a new ThrowableSprite object.
 		 */
@@ -134,14 +131,14 @@ package org.tractionas3.display
 			
 			_throwVelocity = null;
 		}
-		
+
 		override protected function handleMouseDown(e:MouseEvent = null):void
 		{
 			applyVelocity = false;
 			
 			super.handleMouseDown(e);
 		}
-		
+
 		override protected function handleMouseUp(e:MouseEvent = null):void
 		{
 			applyVelocity = true;

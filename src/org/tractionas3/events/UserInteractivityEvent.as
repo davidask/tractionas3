@@ -32,7 +32,6 @@ package org.tractionas3.events
 	 */
 	public class UserInteractivityEvent extends Event 
 	{
-
 		/**
 		 * Defines the value of the type property of a userIdle event object.
 		 */
@@ -43,7 +42,6 @@ package org.tractionas3.events
 		 */
 		public static const USER_PRESENT:String = "userActive";
 
-		
 		/**
 		 * Creates a new UserInteractivityEvent object.
 		 */

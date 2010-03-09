@@ -14,7 +14,6 @@ package org.tractionas3.debug.output
 	 */
 	public class TractionAS3DebuggerOutput extends CoreObject implements ILoggerOutput 
 	{
-
 		/**
 		 * Creates a new TractionAS3DebuggerOutput object.
 		 */
