@@ -27,11 +27,10 @@
  
 package org.tractionas3.display 
 {
-	import flash.display.DisplayObjectContainer;
-	import flash.display.DisplayObject;
-
 	import org.tractionas3.core.interfaces.IDrawable;
 
+	import flash.display.DisplayObject;
+	import flash.display.DisplayObjectContainer;
 	import flash.events.Event;
 	/**
 	 * DrawableSprite provides a standard implementation of the IDrawable core interface.
@@ -69,6 +68,21 @@ package org.tractionas3.display
 		public function clear():void
 		{
 			return;
+		}
+		
+		public function redrawParents():void
+		{
+			if(!parent) return;
+			
+			if(parent is IDrawable)
+			{
+				IDrawable(parent).redraw();
+				
+				if(parent is DrawableSprite)
+				{
+					DrawableSprite(parent).redrawParents();
+				}
+			}
 		}
 
 		/**
@@ -122,6 +136,24 @@ package org.tractionas3.display
 					IDrawable(child).clear();
 				}
 			}
+		}
+		
+		override public function addChild(child:DisplayObject):DisplayObject
+		{
+			super.addChild(child);
+			
+			redraw();
+			
+			return child;
+		}
+		
+		override public function removeChild(child:DisplayObject):DisplayObject
+		{
+			super.removeChild(child);
+			
+			redraw();
+			
+			return child;
 		}
 
 		/**
