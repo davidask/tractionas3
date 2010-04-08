@@ -85,9 +85,9 @@ package org.tractionas3.display
 				
 				if(child is IDrawable)
 				{
-					IDrawable(child).draw();
-					
 					if(deepDraw && child is DisplayObjectContainer) deepDrawChild(DisplayObjectContainer(child));
+					
+					IDrawable(child).draw();
 				}
 			}
 		}
@@ -117,9 +117,9 @@ package org.tractionas3.display
 				
 				if(child is IDrawable)
 				{
-					IDrawable(child).clear();
-					
 					if(deepClear && child is DisplayObjectContainer) deepClearChild(DisplayObjectContainer(child));
+					
+					IDrawable(child).clear();
 				}
 			}
 		}
@@ -154,9 +154,9 @@ package org.tractionas3.display
 				
 				if(child is IDrawable)
 				{
-					IDrawable(child).draw();
-					
 					if(child is DisplayObjectContainer) deepDrawChild(DisplayObjectContainer(child));
+					
+					IDrawable(child).draw();
 				}
 			}
 		}
@@ -171,9 +171,9 @@ package org.tractionas3.display
 				
 				if(child is IDrawable)
 				{
-					IDrawable(child).clear();
-					
 					if(child is DisplayObjectContainer) deepClearChild(DisplayObjectContainer(child));
+					
+					IDrawable(child).clear();
 				}
 			}
 		}
