@@ -138,23 +138,7 @@ package org.tractionas3.display
 			}
 		}
 		
-		override public function addChild(child:DisplayObject):DisplayObject
-		{
-			super.addChild(child);
-			
-			redraw();
-			
-			return child;
-		}
-		
-		override public function removeChild(child:DisplayObject):DisplayObject
-		{
-			super.removeChild(child);
-			
-			redraw();
-			
-			return child;
-		}
+	
 
 		/**
 		 * @private
