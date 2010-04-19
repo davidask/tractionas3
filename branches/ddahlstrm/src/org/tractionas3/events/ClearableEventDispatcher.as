@@ -96,6 +96,36 @@ package org.tractionas3.events
 		/**
 		 * @inheritDoc
 		 */
+		public function removeEventListenersOfType(type:String):void
+		{
+			var eventReference:EventReference;
+			
+			for(var i:int = 0;i < _eventReferences.length;++i)
+			{
+				eventReference = _eventReferences[i] as EventReference;
+				
+				if(eventReference.type == type)
+				{
+					_eventReferences.splice(i, 1);
+					
+					super.removeEventListener(eventReference.type, eventReference.listener, eventReference.useCapture);
+					
+					eventReference.destruct();
+				}
+			}
+		}
+
+		/**
+		 * @inheritDoc
+		 */
+		public function get numEventListeners():uint
+		{
+			return _eventReferences.length;
+		}
+
+		/**
+		 * @inheritDoc
+		 */
 		public function destruct(deepDestruct:Boolean = false):void
 		{
 			removeAllEventListeners();
