@@ -37,5 +37,17 @@ package org.tractionas3.events
 		 * Removes all event listeners from the IClearableEventDispatcher object.
 		 */
 		function removeAllEventListeners():void;
+		
+		/**
+		 * Removes all event listenres from the IClearableEventDispatcher with specified type.
+		 */
+		
+		function removeEventListenersOfType(type:String):void;
+		
+		/**
+		 * Indicates the number of total event listerers added to the IClearableEventDispatcher object.
+		 */
+		
+		function get numEventListeners():uint;
 	}
 }

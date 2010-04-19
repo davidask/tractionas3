@@ -27,25 +27,24 @@
 
 package org.tractionas3.media 
 {
-	import flash.net.URLRequest;
-
-	import org.tractionas3.load.loaders.BitmapDataLoader;
-	import org.tractionas3.load.loaders.BitmapLoader;
-	import org.tractionas3.graphics.fill.IFill;
-	import org.tractionas3.utils.DisplayObjectUtil;
 	import org.tractionas3.display.DrawableSprite;
 	import org.tractionas3.events.LoaderEvent;
 	import org.tractionas3.geom.Align;
 	import org.tractionas3.geom.Dimension;
+	import org.tractionas3.graphics.fill.IFill;
+	import org.tractionas3.load.loaders.BitmapDataLoader;
+	import org.tractionas3.load.loaders.BitmapLoader;
 	import org.tractionas3.load.loaders.DisplayLoader;
-	import org.tractionas3.utils.StageUtil;
+	import org.tractionas3.utils.DisplayObjectUtil;
 
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
 	import flash.display.DisplayObject;
+	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
+	import flash.net.URLRequest;
 	import flash.utils.clearInterval;
 	import flash.utils.setInterval;
 	public class Image extends DrawableSprite 
@@ -55,6 +54,9 @@ package org.tractionas3.media
 
 		/** @private */
 		protected var imageData:DisplayObject;
+		
+		/** @private */
+		protected var imageDataContainer:Sprite;
 
 		private var _imageDimension:Dimension;
 
@@ -129,6 +131,8 @@ package org.tractionas3.media
 			
 			_scaleFill = true;
 			
+			imageDataContainer = addChild(new Sprite()) as Sprite;
+			
 			if(_loadMethod == ImageLoadMethod.INSTANT)
 			{
 				load();
@@ -145,7 +149,13 @@ package org.tractionas3.media
 			
 			if(!imageLoader.loading || imageLoader.loaded)
 			{
+				imageLoader.addEventListener(LoaderEvent.START, handleLoaderEvent);
+				
+				imageLoader.addEventListener(LoaderEvent.PROGRESS, handleLoaderEvent);
+				
 				imageLoader.addEventListener(LoaderEvent.COMPLETE, handleLoaderEvent);
+				
+				imageLoader.addEventListener(LoaderEvent.IO_ERROR, handleLoaderEvent);
 				
 				imageLoader.load();
 			}
@@ -284,7 +294,7 @@ package org.tractionas3.media
 		/**
 		 * @private
 		 */
-		final override public function draw():void
+		override public function draw():void
 		{
 			scrollRect = new Rectangle(0, 0, imageWidth, imageHeight);
 			
@@ -320,7 +330,7 @@ package org.tractionas3.media
 		/**
 		 * @private
 		 */
-		final override public function clear():void
+		override public function clear():void
 		{
 			graphics.clear();
 		}
@@ -353,6 +363,26 @@ package org.tractionas3.media
 			
 			clearInterval(_lazyLoadInterval);
 		}
+		
+		protected function onLoadComplete():void
+		{
+			return;
+		}
+		
+		protected function onLoadProgress():void
+		{
+			return;
+		}
+		
+		protected function onLoadStart():void
+		{
+			return;
+		}
+		
+		protected function onLoadError():void
+		{
+			return;
+		}
 
 		private function lazyLoad():void 
 		{
@@ -369,7 +399,9 @@ package org.tractionas3.media
 			
 			var lr:Rectangle = new Rectangle(lp.x, lp.y, imageWidth, imageHeight);
 			
-			if(StageUtil.getRect(stage).intersects(lr))
+			var sr:Rectangle = new Rectangle(0, 0, stage.stageWidth, stage.stageHeight);
+			
+			if(sr.intersects(lr))
 			{
 				clearInterval(_lazyLoadInterval);
 				
@@ -388,7 +420,7 @@ package org.tractionas3.media
 				imageData = data;
 			}
 			
-			addChild(imageData);
+			imageDataContainer.addChild(imageData);
 			
 			redraw();
 		}
@@ -397,6 +429,25 @@ package org.tractionas3.media
 		{
 			switch(e.type)
 			{
+				case LoaderEvent.START:
+					
+					onLoadStart();
+					
+				break;
+				
+				case LoaderEvent.PROGRESS:
+					
+					onLoadProgress();
+					
+				break;
+				
+				case LoaderEvent.IO_ERROR:
+				case LoaderEvent.SECURITY_ERROR:
+					
+					onLoadError();
+					
+				break;
+								
 				case LoaderEvent.COMPLETE:
 					
 					setImage(imageLoader.data);
@@ -404,6 +455,8 @@ package org.tractionas3.media
 					imageLoader.removeEventListener(LoaderEvent.COMPLETE, handleLoaderEvent);
 					
 					imageLoader = null;
+					
+					onLoadComplete();
 					
 					break;
 			}
