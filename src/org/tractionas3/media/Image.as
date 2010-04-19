@@ -27,11 +27,13 @@
 
 package org.tractionas3.media 
 {
+	import org.tractionas3.debug.log;
 	import org.tractionas3.display.DrawableSprite;
 	import org.tractionas3.events.LoaderEvent;
 	import org.tractionas3.geom.Align;
 	import org.tractionas3.geom.Dimension;
 	import org.tractionas3.graphics.fill.IFill;
+	import org.tractionas3.graphics.fill.SolidFill;
 	import org.tractionas3.load.loaders.BitmapDataLoader;
 	import org.tractionas3.load.loaders.BitmapLoader;
 	import org.tractionas3.load.loaders.DisplayLoader;
@@ -118,7 +120,7 @@ package org.tractionas3.media
 				
 				default:
 					
-					throw new Error("Image source parameter must be one of the following types: String, URLRequest, DisplayLoader, BitmapLoader or BitmapDataLoader");
+					throw new ArgumentError("Image source parameter must be one of the following types: String, URLRequest, DisplayLoader, BitmapLoader or BitmapDataLoader");
 					
 					return;
 					
@@ -381,7 +383,9 @@ package org.tractionas3.media
 		
 		protected function onLoadError():void
 		{
-			return;
+			log("Image was not found, or a security error occured.");
+			
+			backgroundFill = new SolidFill(0xff0000);
 		}
 
 		private function lazyLoad():void 
