@@ -75,9 +75,11 @@ package org.tractionas3.events
 		/**
 		 * @inheritDoc
 		 */
-		public function removeAllEventListeners():void
+		public function removeAllEventListeners():uint
 		{
 			var eventReference:EventReference;
+			
+			var n:uint = 0;
 			
 			for(var i:int = 0;i < _eventReferences.length;++i)
 			{
@@ -88,9 +90,78 @@ package org.tractionas3.events
 				eventReference.destruct();
 				
 				eventReference = null;
+				
+				n++;
 			}
 			
 			_eventReferences = [];
+			
+			return n;
+		}
+
+		/**
+		 * @inheritDoc
+		 */
+		public function removeEventListenersWithType(type:String):uint
+		{
+			var eventReference:EventReference;
+			
+			var n:uint = 0;
+			
+			for(var i:int = 0;i < _eventReferences.length;++i)
+			{
+				eventReference = _eventReferences[i] as EventReference;
+				
+				if(eventReference.type == type)
+				{
+					_eventReferences.splice(i, 1);
+					
+					super.removeEventListener(eventReference.type, eventReference.listener, eventReference.useCapture);
+					
+					eventReference.destruct();
+					
+					n++;
+				}
+			}
+			
+			return n;
+		}
+		
+		/**
+		 * @inheritDoc
+		 */
+		
+		public function removeEventListenersOf(listener:Function):uint
+		{
+			var eventReference:EventReference;
+			
+			var n:uint = 0;
+			
+			for(var i:int = 0;i < _eventReferences.length;++i)
+			{
+				eventReference = _eventReferences[i] as EventReference;
+				
+				if(eventReference.listener == listener)
+				{
+					_eventReferences.splice(i, 1);
+					
+					super.removeEventListener(eventReference.type, eventReference.listener, eventReference.useCapture);
+					
+					eventReference.destruct();
+					
+					n++;
+				}
+			}
+			
+			return n;
+		}
+
+		/**
+		 * @inheritDoc
+		 */
+		public function get numEventListeners():uint
+		{
+			return _eventReferences.length;
 		}
 
 		/**

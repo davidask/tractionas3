@@ -27,11 +27,10 @@
  
 package org.tractionas3.display 
 {
-	import flash.display.DisplayObjectContainer;
-	import flash.display.DisplayObject;
-
 	import org.tractionas3.core.interfaces.IDrawable;
 
+	import flash.display.DisplayObject;
+	import flash.display.DisplayObjectContainer;
 	import flash.events.Event;
 	/**
 	 * DrawableSprite provides a standard implementation of the IDrawable core interface.
@@ -70,6 +69,21 @@ package org.tractionas3.display
 		{
 			return;
 		}
+		
+		public function redrawParents():void
+		{
+			if(!parent) return;
+			
+			if(parent is IDrawable)
+			{
+				IDrawable(parent).redraw();
+				
+				if(parent is DrawableSprite)
+				{
+					DrawableSprite(parent).redrawParents();
+				}
+			}
+		}
 
 		/**
 		 * Draws the children of the DrawableSprite object if they implement the IDrawable interface.
@@ -85,9 +99,9 @@ package org.tractionas3.display
 				
 				if(child is IDrawable)
 				{
-					IDrawable(child).draw();
-					
 					if(deepDraw && child is DisplayObjectContainer) deepDrawChild(DisplayObjectContainer(child));
+					
+					IDrawable(child).draw();
 				}
 			}
 		}
@@ -117,12 +131,14 @@ package org.tractionas3.display
 				
 				if(child is IDrawable)
 				{
-					IDrawable(child).clear();
-					
 					if(deepClear && child is DisplayObjectContainer) deepClearChild(DisplayObjectContainer(child));
+					
+					IDrawable(child).clear();
 				}
 			}
 		}
+		
+	
 
 		/**
 		 * @private
@@ -154,9 +170,9 @@ package org.tractionas3.display
 				
 				if(child is IDrawable)
 				{
-					IDrawable(child).draw();
-					
 					if(child is DisplayObjectContainer) deepDrawChild(DisplayObjectContainer(child));
+					
+					IDrawable(child).draw();
 				}
 			}
 		}
@@ -171,9 +187,9 @@ package org.tractionas3.display
 				
 				if(child is IDrawable)
 				{
-					IDrawable(child).clear();
-					
 					if(child is DisplayObjectContainer) deepClearChild(DisplayObjectContainer(child));
+					
+					IDrawable(child).clear();
 				}
 			}
 		}
