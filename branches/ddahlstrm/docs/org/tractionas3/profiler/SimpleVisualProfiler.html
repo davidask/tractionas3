@@ -113,6 +113,12 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 </td><td class="summaryTableOwnerCol"><a href="../display/MotionSprite.html">MotionSprite</a></td>
 </tr>
 <tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../display/CoreSprite.html#numEventListeners">numEventListeners</a> : uint<div class="summaryTableDescription">
+   
+   Indicates the number of total event listerers added to the IClearableEventDispatcher object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedProperty">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../display/RenderableSprite.html#rendering">rendering</a> : Boolean<div class="summaryTableDescription">
    Indicates whether the renderable sprite is currently rendering.</div>
 </td><td class="summaryTableOwnerCol"><a href="../display/RenderableSprite.html">RenderableSprite</a></td>
@@ -264,7 +270,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="hideInheritedMethod">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="../display/CoreSprite.html#removeAllEventListeners()">removeAllEventListeners</a>():void</div>
+<a class="signatureLink" href="../display/CoreSprite.html#removeAllEventListeners()">removeAllEventListeners</a>():uint</div>
 <div class="summaryTableDescription">
    
    Removes all event listeners from the IClearableEventDispatcher object.</div>
@@ -284,6 +290,24 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <a class="signatureLink" href="../display/CoreSprite.html#removeEventListener()">removeEventListener</a>(type:String, listener:Function, useCapture:Boolean = false):void</div>
 <div class="summaryTableDescription">
    Removes a listener from the EventDispatcher object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../display/CoreSprite.html#removeEventListenersOf()">removeEventListenersOf</a>(listener:Function):uint</div>
+<div class="summaryTableDescription">
+   
+   Removes all event listenres from the IClearableEventDispatcher with specified listener.</div>
+</td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../display/CoreSprite.html#removeEventListenersWithType()">removeEventListenersWithType</a>(type:String):uint</div>
+<div class="summaryTableDescription">
+   
+   Removes all event listenres from the IClearableEventDispatcher with specified type.</div>
 </td><td class="summaryTableOwnerCol"><a href="../display/CoreSprite.html">CoreSprite</a></td>
 </tr>
 <tr class="hideInheritedMethod">
