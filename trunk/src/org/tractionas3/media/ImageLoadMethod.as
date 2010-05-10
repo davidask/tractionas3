@@ -3,7 +3,7 @@
  * @author David Dahlstroem | daviddahlstroem.com
  * 
  * 
- * Copyright (c) 2009 David Dahlstroem | daviddahlstroem.com
+ * Copyright (c) 2010 David Dahlstroem | daviddahlstroem.com
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,36 +24,17 @@
  * THE SOFTWARE.
  *
  */
-
-package org.tractionas3.events 
+ 
+package org.tractionas3.media 
 {
-	import flash.events.IEventDispatcher;
-	/**
-	 * IClearableEventDispatcher is an interface used for event dispatchers that are clearable.
-	 */
-	public interface IClearableEventDispatcher extends IEventDispatcher 
+	public class ImageLoadMethod 
 	{
-		/**
-		 * Removes all event listeners from the IClearableEventDispatcher object.
-		 */
-		function removeAllEventListeners():uint;
+		public static const LAZY:uint = 0;
 		
-		/**
-		 * Removes all event listenres from the IClearableEventDispatcher with specified type.
-		 */
+		public static const ADDED_TO_STAGE:uint = 1;
 		
-		function removeEventListenersWithType(type:String):uint;
+		public static const MANUAL:uint = 2;
 		
-		/**
-		 * Removes all event listenres from the IClearableEventDispatcher with specified listener.
-		 */
-		
-		function removeEventListenersOf(listener:Function):uint;
-		
-		/**
-		 * Indicates the number of total event listerers added to the IClearableEventDispatcher object.
-		 */
-		
-		function get numEventListeners():uint;
+		public static const INSTANT:uint = 3;
 	}
 }
