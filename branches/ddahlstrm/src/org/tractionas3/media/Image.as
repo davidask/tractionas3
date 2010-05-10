@@ -56,7 +56,7 @@ package org.tractionas3.media
 
 		/** @private */
 		protected var imageData:DisplayObject;
-		
+
 		/** @private */
 		protected var imageDataContainer:Sprite;
 
@@ -98,34 +98,7 @@ package org.tractionas3.media
 			
 			_loadMethod = loadMethod;
 			
-			switch(true)
-			{
-				case source is DisplayLoader || source is BitmapLoader || source is BitmapDataLoader:
-					
-					imageLoader = source as DisplayLoader;
-					
-					break;
-				
-				case source is String:
-					
-					imageLoader = new BitmapLoader(source as String);
-					
-					break;
-				
-				case source is URLRequest:
-				
-					imageLoader = new BitmapLoader(URLRequest(source).url);
-					
-					break;
-				
-				default:
-					
-					throw new ArgumentError("Image source parameter must be one of the following types: String, URLRequest, DisplayLoader, BitmapLoader or BitmapDataLoader");
-					
-					return;
-					
-					break;
-			}
+			imageLoader = getDisplayLoader(source);
 			
 			_scaleImage = false;
 			
@@ -205,12 +178,11 @@ package org.tractionas3.media
 			
 			Bitmap(imageData).smoothing = value;
 		}
-		
+
 		/*
 		 * Specifies the image load method.
 		 * @see org.tractionas3.media.ImageLoadMethod
 		 */
-		
 		public function get loadMethod():uint
 		{
 			return _loadMethod;
@@ -365,22 +337,22 @@ package org.tractionas3.media
 			
 			clearInterval(_lazyLoadInterval);
 		}
-		
+
 		protected function onLoadComplete():void
 		{
 			return;
 		}
-		
+
 		protected function onLoadProgress():void
 		{
 			return;
 		}
-		
+
 		protected function onLoadStart():void
 		{
 			return;
 		}
-		
+
 		protected function onLoadError():void
 		{
 			log("Image was not found, or a security error occured.");
@@ -429,6 +401,40 @@ package org.tractionas3.media
 			redraw();
 		}
 
+		private function getDisplayLoader(source:*):DisplayLoader
+		{
+			switch(true)
+			{
+				case source is DisplayLoader:
+				case source is BitmapLoader:
+				case source is BitmapDataLoader:
+					
+					return source as DisplayLoader;
+					
+					break;
+				
+				case source is String:
+					
+					return new BitmapLoader(source as String);
+					
+					break;
+				
+				case source is URLRequest:
+				
+					return new BitmapLoader(URLRequest(source).url);
+					
+					break;
+				
+				default:
+					
+					throw new ArgumentError("Image source parameter must be one of the following types: String, URLRequest, DisplayLoader, BitmapLoader or BitmapDataLoader");
+					
+					return null;
+					
+					break;
+			}
+		}
+
 		private function handleLoaderEvent(e:LoaderEvent):void 
 		{
 			switch(e.type)
@@ -437,26 +443,26 @@ package org.tractionas3.media
 					
 					onLoadStart();
 					
-				break;
+					break;
 				
 				case LoaderEvent.PROGRESS:
 					
 					onLoadProgress();
 					
-				break;
+					break;
 				
 				case LoaderEvent.IO_ERROR:
 				case LoaderEvent.SECURITY_ERROR:
 					
 					onLoadError();
 					
-				break;
+					break;
 								
 				case LoaderEvent.COMPLETE:
 					
 					setImage(imageLoader.data);
 					
-					imageLoader.removeEventListener(LoaderEvent.COMPLETE, handleLoaderEvent);
+					imageLoader.removeAllEventListeners();
 					
 					imageLoader = null;
 					
