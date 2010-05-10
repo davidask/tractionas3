@@ -52,6 +52,14 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <a name="propertySummary"></a>
 <div class="summarySection">
 <div class="summaryTableTitle">Public Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProperty" id="hideInheritedProperty">
+<a onclick="javascript:setInheritedVisible(false,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Properties</a>
+</div>
+<div class="showInheritedProperty" id="showInheritedProperty">
+<a onclick="javascript:setInheritedVisible(true,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Properties</a>
+</div>
+</div>
 <table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
 <tr>
 <th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
@@ -59,6 +67,12 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#connectionName">connectionName</a> : String<div class="summaryTableDescription">[read-only]</div>
 </td><td class="summaryTableOwnerCol">LocalConnectionInbound</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../events/ClearableEventDispatcher.html#numEventListeners">numEventListeners</a> : uint<div class="summaryTableDescription">
+   
+   Indicates the number of total event listerers added to the IClearableEventDispatcher object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../events/ClearableEventDispatcher.html">ClearableEventDispatcher</a></td>
 </tr>
 </table>
 </div>
@@ -148,7 +162,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="hideInheritedMethod">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="../events/ClearableEventDispatcher.html#removeAllEventListeners()">removeAllEventListeners</a>():void</div>
+<a class="signatureLink" href="../events/ClearableEventDispatcher.html#removeAllEventListeners()">removeAllEventListeners</a>():uint</div>
 <div class="summaryTableDescription">
    
    Removes all event listeners from the IClearableEventDispatcher object.</div>
@@ -160,6 +174,24 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <a class="signatureLink" href="../events/ClearableEventDispatcher.html#removeEventListener()">removeEventListener</a>(type:String, listener:Function, useCapture:Boolean = false):void</div>
 <div class="summaryTableDescription">
    Removes a listener from the EventDispatcher object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../events/ClearableEventDispatcher.html">ClearableEventDispatcher</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../events/ClearableEventDispatcher.html#removeEventListenersOf()">removeEventListenersOf</a>(listener:Function):uint</div>
+<div class="summaryTableDescription">
+   
+   Removes all event listenres from the IClearableEventDispatcher with specified listener.</div>
+</td><td class="summaryTableOwnerCol"><a href="../events/ClearableEventDispatcher.html">ClearableEventDispatcher</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../events/ClearableEventDispatcher.html#removeEventListenersWithType()">removeEventListenersWithType</a>(type:String):uint</div>
+<div class="summaryTableDescription">
+   
+   Removes all event listenres from the IClearableEventDispatcher with specified type.</div>
 </td><td class="summaryTableOwnerCol"><a href="../events/ClearableEventDispatcher.html">ClearableEventDispatcher</a></td>
 </tr>
 <tr class="hideInheritedMethod">
