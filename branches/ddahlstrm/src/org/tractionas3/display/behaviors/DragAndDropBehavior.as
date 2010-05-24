@@ -74,6 +74,11 @@ package org.tractionas3.display.behaviors
 		{
 			return _dragging;
 		}
+		
+		public function draggingObject(target:DisplayObject):Boolean
+		{
+			return currentTarget == target;
+		}
 
 		/** @private */
 		protected function handleMouseDown():void
