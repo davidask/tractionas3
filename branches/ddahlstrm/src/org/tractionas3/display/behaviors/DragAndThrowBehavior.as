@@ -139,6 +139,13 @@ package org.tractionas3.display.behaviors
 		{
 			EnterFrame.removeEnterFrameHandler(render);
 		}
+		
+		override public function destruct(deepDestruct:Boolean = false):void
+		{
+			super.destruct(deepDestruct);
+			
+			stopRender();
+		}
 	}
 }
 
