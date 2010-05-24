@@ -1,4 +1,4 @@
-package org.tractionas3.behaviours 
+package org.tractionas3.display.behaviors
 {
 	import flash.display.DisplayObject;
 	import flash.display.Stage;

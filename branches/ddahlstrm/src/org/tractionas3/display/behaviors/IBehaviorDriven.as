@@ -1,4 +1,4 @@
-package org.tractionas3.core.interfaces 
+package org.tractionas3.display.behaviors
 {
 	public interface IBehaviorDriven 
 	{
