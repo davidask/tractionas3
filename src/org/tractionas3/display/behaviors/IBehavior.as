@@ -27,9 +27,10 @@
  
 package org.tractionas3.display.behaviors
 {
+	import org.tractionas3.core.interfaces.IDestructable;
 	import flash.display.DisplayObject;
 
-	public interface IBehavior 
+	public interface IBehavior extends IDestructable
 	{
 		function apply(target:DisplayObject):void;
 		
