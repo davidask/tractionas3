@@ -1,7 +1,7 @@
-package org.tractionas3.behaviours 
+package org.tractionas3.display.behaviors 
 {
 	import org.tractionas3.core.CoreObject;
-	import org.tractionas3.core.interfaces.IBehavior;
+	
 
 	import flash.display.DisplayObject;
 
