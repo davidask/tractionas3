@@ -35,17 +35,13 @@ package org.tractionas3.display.behaviors
 	import flash.geom.Rectangle;
 	public class DragAndDropBehavior extends MotionBehavior 
 	{
-		/** @private */
-		protected var currentTarget:DisplayObject;
+		
 
 		/** @private */
 		protected var currentStage:Stage;
 
 		/** @private */
-		protected var dragLimitsRect:Rectangle;
-
-		/** @private */
-		protected var dragLimitsScope:DisplayObject;
+		protected var currentTarget:DisplayObject;
 
 		private var _offset:Point;
 
@@ -56,8 +52,6 @@ package org.tractionas3.display.behaviors
 			super();
 			
 			_offset = new Point();
-			
-			stopRender();
 		}
 
 		override public function apply(target:DisplayObject):void
@@ -76,13 +70,6 @@ package org.tractionas3.display.behaviors
 			currentTarget = null;
 		}
 
-		public function setDragLimits(limits:Rectangle, scope:DisplayObject):void
-		{
-			dragLimitsRect = limits;
-			
-			dragLimitsScope = scope;
-		}
-
 		public function get dragging():Boolean
 		{
 			return _dragging;
@@ -95,7 +82,7 @@ package org.tractionas3.display.behaviors
 
 		override public function destruct(deepDestruct:Boolean = false):void
 		{
-			dragLimitsScope = null;
+			motionLimitsScope = null;
 			
 			super.destruct(deepDestruct);
 		}
@@ -129,14 +116,13 @@ package org.tractionas3.display.behaviors
 			if(changePosition)
 			{
 				var p:Point = target.localToGlobal(new Point(target.mouseX, target.mouseY));
-			
 					
 				target.x = p.x - _offset.x;
 					
 				target.y = p.y - _offset.y;
 			}
 			
-			if(dragLimitsRect && dragLimitsScope)
+			if(motionLimitsRect && motionLimitsScope)
 			{
 				var rect:Rectangle = getDragLimitsRectForTarget(target);
 				
@@ -162,27 +148,7 @@ package org.tractionas3.display.behaviors
 			_dragging = false;
 		}
 
-		/** @private */
-		protected function getDragLimitsRectForTarget(target:DisplayObject):Rectangle
-		{
-			var scopeGlobalPosition:Point = dragLimitsScope.localToGlobal(new Point());
-				
-				
-			var globalRect:Rectangle = dragLimitsRect.clone();
-				
-			globalRect.offsetPoint(scopeGlobalPosition);
-				
-				
-			var targetParentLocalPosition:Point = target.parent.globalToLocal(new Point(globalRect.x, globalRect.y));
-				
-				
-			var localRect:Rectangle = dragLimitsRect.clone();
-				
-			localRect.offsetPoint(targetParentLocalPosition);
-				
-				
-			return localRect;
-		}
+		
 
 		private function setEventListeners(target:DisplayObject, add:Boolean):void 
 		{
