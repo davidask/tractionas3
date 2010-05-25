@@ -89,34 +89,34 @@ package org.tractionas3.display.behaviors
 				throwVelocity.y *= frictionMultiplier;
 				
 				
-				if(dragBounds)
+				if(dragLimitsRect)
 				{
-					if(!dragBounds.containsPoint(new Point(target.x, target.y)))
+					if(!dragLimitsRect.containsPoint(new Point(target.x, target.y)))
 					{
-						if(target.x <= dragBounds.left)
+						if(target.x <= dragLimitsRect.left)
 						{
-							target.x = dragBounds.left;
+							target.x = dragLimitsRect.left;
 							
 							throwVelocity.x *= -1;
 						}
 					
-						else if(target.x >= dragBounds.right)
+						else if(target.x >= dragLimitsRect.right)
 						{
-							target.x = dragBounds.right;
+							target.x = dragLimitsRect.right;
 							
 							throwVelocity.x *= -1;
 						}
 				
-						if(target.y <= dragBounds.top)
+						if(target.y <= dragLimitsRect.top)
 						{
-							target.y = dragBounds.top;
+							target.y = dragLimitsRect.top;
 							
 							throwVelocity.y *= -1;
 						}
 					
-						else if(target.y >= dragBounds.bottom)
+						else if(target.y >= dragLimitsRect.bottom)
 						{
-							target.y = dragBounds.bottom;
+							target.y = dragLimitsRect.bottom;
 							
 							throwVelocity.y *= -1;
 						}
@@ -142,9 +142,9 @@ package org.tractionas3.display.behaviors
 		
 		override public function destruct(deepDestruct:Boolean = false):void
 		{
-			super.destruct(deepDestruct);
-			
 			stopRender();
+			
+			super.destruct(deepDestruct);
 		}
 	}
 }

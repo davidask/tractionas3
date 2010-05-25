@@ -27,24 +27,28 @@
  
 package org.tractionas3.display.behaviors
 {
-	import flash.geom.Rectangle;
 	import flash.display.DisplayObject;
 	import flash.display.Stage;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
+	import flash.geom.Rectangle;
 	public class DragAndDropBehavior extends Behavior 
 	{
-		public var dragBounds:Rectangle;
-		
 		/** @private */
 		protected var currentTarget:DisplayObject;
-		
+
 		/** @private */
 		protected var currentStage:Stage;
-		
+
+		/** @private */
+		protected var dragLimitsRect:Rectangle;
+
+		/** @private */
+		protected var dragLimitsScope:DisplayObject;
+
 		private var _offset:Point;
-		
+
 		private var _dragging:Boolean;
 
 		public function DragAndDropBehavior()
@@ -69,15 +73,29 @@ package org.tractionas3.display.behaviors
 			
 			currentTarget = null;
 		}
-		
+
+		public function setDragLimits(limits:Rectangle, scope:DisplayObject):void
+		{
+			dragLimitsRect = limits;
+			
+			dragLimitsScope = scope;
+		}
+
 		public function get dragging():Boolean
 		{
 			return _dragging;
 		}
-		
-		public function draggingObject(target:DisplayObject):Boolean
+
+		public function isDraggingObject(target:DisplayObject):Boolean
 		{
 			return currentTarget == target;
+		}
+
+		override public function destruct(deepDestruct:Boolean = false):void
+		{
+			dragLimitsScope = null;
+			
+			super.destruct(deepDestruct);
 		}
 
 		/** @private */
@@ -107,19 +125,14 @@ package org.tractionas3.display.behaviors
 					
 			currentTarget.y = p.y - _offset.y;
 			
-			if(dragBounds)
+			if(dragLimitsRect && dragLimitsScope)
 			{
-				if(currentTarget.x >= dragBounds.right) currentTarget.x = dragBounds.right;
-			
-				if(currentTarget.x <= dragBounds.left) currentTarget.x = dragBounds.left;
-			
-				if(currentTarget.y >= dragBounds.bottom) currentTarget.y = dragBounds.bottom;
-			
-				if(currentTarget.y <= dragBounds.top) currentTarget.y = dragBounds.top;
+				
+				//TODO Implement new scope functionality
+                        
 			}
 		}
-		
-		
+
 		/** @private */
 		protected function handleMouseUp():void
 		{
