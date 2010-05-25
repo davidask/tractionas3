@@ -1,18 +1,12 @@
 package org.tractionas3.display.behaviors 
 {
-	import flash.display.DisplayObject;
-	import flash.utils.Dictionary;
-
 	import org.tractionas3.core.interfaces.IRenderable;
-	import org.tractionas3.events.EnterFrame;
 
+	import flash.display.DisplayObject;
 	import flash.geom.Point;
+	import flash.geom.Rectangle;
 	public class DragAndThrowBehavior extends DragAndDropBehavior implements IRenderable
 	{
-		public var  frictionMultiplier:Number = 0.95;
-
-		private var _references:Dictionary;
-
 		private var _lastPosition:Point;
 
 		private var _currentPosition:Point;
@@ -29,29 +23,21 @@ package org.tractionas3.display.behaviors
 			
 			_lastPosition = new Point();
 			
-			_references = new Dictionary(true);
-			
 			startRender();
-		}
-
-		override protected function handleMouseMove():void
-		{
-			super.handleMouseMove();
-		}
-
-		override protected function handleMouseDown():void
-		{
-			super.handleMouseDown();
 		}
 
 		override protected function handleMouseUp():void
 		{
-			_references[currentTarget] = _throwVelocity.clone();
+			var reference:Point = velocityReferences[currentTarget] as Point;
+			
+			reference.x += _throwVelocity.x;
+			
+			reference.y += _throwVelocity.y;
 			
 			super.handleMouseUp();
 		}
 
-		public function render():void
+		override public function render():void
 		{
 			if(dragging)
 			{
@@ -67,84 +53,53 @@ package org.tractionas3.display.behaviors
 				
 				_throwVelocity.y = _currentPosition.y - _lastPosition.y;
 			}
-		
+			
 			var target:DisplayObject;
 			
-			var throwVelocity:Point;
-		
-			for(var key:Object in _references)
+			var velocity:Point;
+			
+			for(var i:int = 0; i < targets.length; i++)
 			{
-				target = key as DisplayObject;
+				target = targets[i] as DisplayObject;
 				
-				throwVelocity = _references[key] as Point;
+				velocity = velocityReferences[target];
 				
-				
-				target.x += throwVelocity.x;
-				
-				target.y += throwVelocity.y;
-				
-				
-				throwVelocity.x *= frictionMultiplier;
-				
-				throwVelocity.y *= frictionMultiplier;
-				
-				
-				if(dragLimitsRect)
+				if(dragLimitsRect && velocity)
 				{
-					if(!dragLimitsRect.containsPoint(new Point(target.x, target.y)))
+					var rect:Rectangle = getDragLimitsRectForTarget(target);
+					
+					if(target.x <= rect.left)
 					{
-						if(target.x <= dragLimitsRect.left)
-						{
-							target.x = dragLimitsRect.left;
-							
-							throwVelocity.x *= -1;
-						}
-					
-						else if(target.x >= dragLimitsRect.right)
-						{
-							target.x = dragLimitsRect.right;
-							
-							throwVelocity.x *= -1;
-						}
+						target.x = rect.left;
+						
+						velocity.x *= -1;
+					}
 				
-						if(target.y <= dragLimitsRect.top)
-						{
-							target.y = dragLimitsRect.top;
-							
-							throwVelocity.y *= -1;
-						}
-					
-						else if(target.y >= dragLimitsRect.bottom)
-						{
-							target.y = dragLimitsRect.bottom;
-							
-							throwVelocity.y *= -1;
-						}
+					else if(target.x >= rect.right)
+					{
+						target.x = rect.right;
+						
+						velocity.x *= -1;
+					}
+			
+					if(target.y <= rect.top)
+					{
+						target.y = rect.top;
+						
+						velocity.y *= -1;
+					}
+				
+					else if(target.y >= rect.bottom)
+					{
+						target.y = rect.bottom;
+						
+						velocity.y *= -1;
 					}
 				}
+					
 			}
-		}
-
-		public function get rendering():Boolean
-		{
-			return EnterFrame.hasEnterFrameHandler(render);
-		}
-
-		public function startRender():void
-		{
-			EnterFrame.addEnterFrameHandler(render);
-		}
-
-		public function stopRender():void
-		{
-			EnterFrame.removeEnterFrameHandler(render);
-		}
-		
-		override public function destruct(deepDestruct:Boolean = false):void
-		{
-			stopRender();
 			
-			super.destruct(deepDestruct);
+			super.render();
 		}
 	}
 }

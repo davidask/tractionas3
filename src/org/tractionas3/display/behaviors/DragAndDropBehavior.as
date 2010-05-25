@@ -33,7 +33,7 @@ package org.tractionas3.display.behaviors
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
-	public class DragAndDropBehavior extends Behavior 
+	public class DragAndDropBehavior extends MotionBehavior 
 	{
 		/** @private */
 		protected var currentTarget:DisplayObject;
@@ -56,6 +56,8 @@ package org.tractionas3.display.behaviors
 			super();
 			
 			_offset = new Point();
+			
+			stopRender();
 		}
 
 		override public function apply(target:DisplayObject):void
@@ -117,19 +119,34 @@ package org.tractionas3.display.behaviors
 		}
 
 		/** @private */
-		protected function handleMouseMove():void
+		protected function handleMouseMove(target:DisplayObject = null, changePosition:Boolean = true):void
 		{
-			var p:Point = currentTarget.localToGlobal(new Point(currentTarget.mouseX, currentTarget.mouseY));
+			if(!target)
+			{
+				target = currentTarget;
+			}
+			
+			if(changePosition)
+			{
+				var p:Point = target.localToGlobal(new Point(target.mouseX, target.mouseY));
+			
 					
-			currentTarget.x = p.x - _offset.x;
+				target.x = p.x - _offset.x;
 					
-			currentTarget.y = p.y - _offset.y;
+				target.y = p.y - _offset.y;
+			}
 			
 			if(dragLimitsRect && dragLimitsScope)
 			{
+				var rect:Rectangle = getDragLimitsRectForTarget(target);
 				
-				//TODO Implement new scope functionality
-                        
+				if(target.x <= rect.left) target.x = rect.left;
+				
+				if(target.x >= rect.right) target.x = rect.right;
+				
+				if(target.y <= rect.top) target.y = rect.top;
+				
+				if(target.y >= rect.bottom) target.y = rect.bottom;
 			}
 		}
 
@@ -143,6 +160,28 @@ package org.tractionas3.display.behaviors
 			currentStage.removeEventListener(MouseEvent.MOUSE_UP, handleTargetEvent);
 			
 			_dragging = false;
+		}
+
+		/** @private */
+		protected function getDragLimitsRectForTarget(target:DisplayObject):Rectangle
+		{
+			var scopeGlobalPosition:Point = dragLimitsScope.localToGlobal(new Point());
+				
+				
+			var globalRect:Rectangle = dragLimitsRect.clone();
+				
+			globalRect.offsetPoint(scopeGlobalPosition);
+				
+				
+			var targetParentLocalPosition:Point = target.parent.globalToLocal(new Point(globalRect.x, globalRect.y));
+				
+				
+			var localRect:Rectangle = dragLimitsRect.clone();
+				
+			localRect.offsetPoint(targetParentLocalPosition);
+				
+				
+			return localRect;
 		}
 
 		private function setEventListeners(target:DisplayObject, add:Boolean):void 
@@ -175,16 +214,32 @@ package org.tractionas3.display.behaviors
 					{
 						removeStageEventListeners();
 					}
+
 					
+					if(currentTarget)
+					{
+						return;
+					}
+									
 					currentTarget = target;
 					
 					handleMouseDown();
-					
+			
 					break;
 				
 				case MouseEvent.MOUSE_MOVE:
 					
-					handleMouseMove();
+					handleMouseMove(currentTarget, true);
+					
+					for(var i:int = 0;i < targets.length;i++)
+					{
+						target = targets[i] as DisplayObject;
+						
+						if(target != currentTarget)
+						{
+							handleMouseMove(target, false);
+						}
+					}
 					
 					break;
 				
