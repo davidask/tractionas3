@@ -40,9 +40,6 @@ package org.tractionas3.display.behaviors
 		/** @private */
 		protected var currentStage:Stage;
 
-		/** @private */
-		protected var currentTarget:DisplayObject;
-
 		private var _offset:Point;
 
 		private var _dragging:Boolean;
@@ -147,8 +144,6 @@ package org.tractionas3.display.behaviors
 			
 			_dragging = false;
 		}
-
-		
 
 		private function setEventListeners(target:DisplayObject, add:Boolean):void 
 		{
