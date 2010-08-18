@@ -14,6 +14,9 @@ package org.tractionas3.display.behaviors
 		public var bounceOffMotionLimits:Boolean = true;
 
 		public var bounceFriction:Number = 0.6;
+		
+		/** @private */
+		protected var currentTarget:DisplayObject;
 
 		/** @private */
 		protected var velocityReferences:Dictionary;
@@ -68,12 +71,16 @@ package org.tractionas3.display.behaviors
 			{
 				target = targets[i] as DisplayObject;
 				
+				if(target == currentTarget)
+				{
+					continue;
+				}
 				
 				if(!velocityReferences[target])
 				{
 					velocityReferences[target] = new Point();
 				}
-	
+				
 				velocity = velocityReferences[target] as Point;
 				
 				target.x += velocity.x;

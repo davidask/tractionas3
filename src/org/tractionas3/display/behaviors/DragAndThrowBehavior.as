@@ -34,6 +34,7 @@ package org.tractionas3.display.behaviors
 			
 				reference.y += _throwVelocity.y;
 			}
+			
 			super.handleMouseUp();
 		}
 
