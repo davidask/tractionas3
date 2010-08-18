@@ -2,7 +2,7 @@ package org.tractionas3.core
 {
 	import org.tractionas3.display.DrawableSprite;
 
-	public class ApplicationLayer extends DrawableSprite 
+	internal class ApplicationLayer extends DrawableSprite 
 	{
 		private var _layerName:String;
 		
