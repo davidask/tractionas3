@@ -32,6 +32,7 @@ package org.tractionas3.media
 	import org.tractionas3.net.VideoStream;
 
 	import flash.media.Video;
+
 	public class VideoPlayback extends CoreSprite implements IMediaPlayback 
 	{
 		private var _stream:VideoStream;
@@ -160,11 +161,20 @@ package org.tractionas3.media
 
 		override public function destruct(deepDestruct:Boolean = false):void
 		{
-			removeChild(_video);
+			if(_video)
+			{
+				if(contains(_video))
+				{
+					removeChild(_video);
+				}
+			}
 			
 			_video = null;
 			
-			_stream.removeEventListener(VideoStreamEvent.SIZE_RECEIVED, handleVideoStreamEvent);
+			if(_stream)
+			{
+				_stream.removeEventListener(VideoStreamEvent.SIZE_RECEIVED, handleVideoStreamEvent);
+			}
 			
 			_stream = null;
 			

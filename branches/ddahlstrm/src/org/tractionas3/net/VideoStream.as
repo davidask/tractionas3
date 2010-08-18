@@ -295,7 +295,7 @@ package org.tractionas3.net
 		 */
 		public function destruct(deepDestruct:Boolean = false):void
 		{
-			_metaData.destruct(deepDestruct);
+			if(_metaData) _metaData.destruct(deepDestruct);
 		}
 
 		/**
