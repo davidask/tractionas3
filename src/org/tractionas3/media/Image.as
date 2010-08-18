@@ -230,7 +230,7 @@ package org.tractionas3.media
 
 		public function set scaleAlign(value:String):void
 		{
-			scaleAlign = value;
+			_scaleAlign = value;
 			
 			redraw();
 		}
@@ -377,7 +377,7 @@ package org.tractionas3.media
 			
 			var sr:Rectangle = new Rectangle(0, 0, stage.stageWidth, stage.stageHeight);
 			
-			if(sr.intersects(lr))
+			if(sr.intersects(lr) || sr.containsRect(lr))
 			{
 				clearInterval(_lazyLoadInterval);
 				

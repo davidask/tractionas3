@@ -20,10 +20,10 @@ package org.tractionas3.load
 		
 		var loaderClass:Class = mimeType.loaderClass;
 		
-		var loader:LoaderCore = new loaderClass as LoaderCore;
+		var loader:LoaderCore = new loaderClass() as LoaderCore;
 		
 		loader.url = url;
 		
-		return  loader;
+		return loader;
 	}
 }

@@ -87,7 +87,9 @@ package org.tractionas3.load
 		 */
 		public static function getNextLoaderName():String
 		{
-			return "loader_" + _loaderNames.length.toString();
+			_loaderNameIncrement++;
+			
+			return "loader_" + _loaderNameIncrement.toString();
 		}
 
 		/**
@@ -117,8 +119,10 @@ package org.tractionas3.load
 		 * Returns the next automatic loader set name
 		 */
 		public static function getNextLoaderSetName():String
-		{
-			return "loaderSet_" + _loaderSetNames.length.toString();
+		{	
+			_loaderSetNameIncrement++;
+			
+			return "loaderSet_" + _loaderSetNameIncrement.toString();
 		}
 
 		public static var supressIOErrors:Boolean = false;
@@ -128,8 +132,12 @@ package org.tractionas3.load
 		private static var _highestLoaderPriority:uint = 0;
 
 		private static var _loaderNames:Array = [];
+		
+		private static var _loaderNameIncrement:uint = 0;
 
 		private static var _loaderSetNames:Array = [];
+		
+		private static var _loaderSetNameIncrement:uint = 0;
 
 		private var _loaderQueue:LoaderQueue;
 
