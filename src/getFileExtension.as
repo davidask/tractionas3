@@ -3,7 +3,7 @@
  * @author David A
  * 
  * 
- * Copyright (c) 2010 David A
+ * Copyright (c) 2009 David A
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,58 +24,13 @@
  * THE SOFTWARE.
  *
  */
- 
-package org.tractionas3.display.behaviors 
+
+package 
 {
-	import org.tractionas3.core.CoreObject;
-
-	import flash.display.DisplayObject;
-
-	public class Behavior extends CoreObject implements IBehavior 
+	public function getFileExtension(value:String):String 
 	{
-		/** @private */
-		protected var targets:Array;
+		value =  value.indexOf('?') == -1 ? value : value.substring(0, value.indexOf('?'));
 		
-		public function Behavior()
-		{
-			super();
-			
-			targets = [];
-		}
-		
-		public function apply(target:DisplayObject):void
-		{
-			targets.push(target);
-		}
-		
-		public function isAppliedTo(target:DisplayObject):Boolean
-		{
-			return targets.indexOf(target) > -1;
-		}
-		
-		public function release(target:DisplayObject):void
-		{
-			if(!isAppliedTo(target)) return;
-			
-			targets.splice(targets.indexOf(target), 1);
-		}
-		
-		final public function releaseAll():void
-		{
-			if(targets.length == 0) return;
-			
-			release(targets[0]);
-			
-			releaseAll();
-		}
-		
-		override public function destruct(deepDestruct:Boolean = false):void
-		{
-			super.destruct(deepDestruct);
-			
-			releaseAll();
-			
-			targets = null;
-		}
+		return value.substr(value.lastIndexOf('.') + 1).toLowerCase();
 	}
 }

@@ -1,9 +1,9 @@
 /**
  * @version 1.0
- * @author David Dahlstroem | daviddahlstroem.com
+ * @author David A
  * 
  * 
- * Copyright (c) 2009 David Dahlstroem | daviddahlstroem.com
+ * Copyright (c) 2009 David A
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -40,6 +40,7 @@ package org.tractionas3.monitor
 	import flash.events.MouseEvent;
 	import flash.utils.clearTimeout;
 	import flash.utils.setTimeout;
+
 	/**
 	 * UserInteractivityMonitor is used to monitor user interactivity.
 	 */

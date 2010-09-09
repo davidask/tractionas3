@@ -1,9 +1,9 @@
 /**
  * @version 1.0
- * @author David Dahlstroem | daviddahlstroem.com
+ * @author David A
  * 
  * 
- * Copyright (c) 2009 David Dahlstroem | daviddahlstroem.com
+ * Copyright (c) 2009 David A
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,16 +24,14 @@
  * THE SOFTWARE.
  *
  */
-
 package org.tractionas3.events 
 {
 	import org.tractionas3.core.Destructor;
 	import org.tractionas3.core.interfaces.ICoreInterface;
-	import org.tractionas3.events.IClearableEventDispatcher;
-	import org.tractionas3.reflection.stringify;
 
 	import flash.events.EventDispatcher;
 	import flash.events.IEventDispatcher;
+
 	/**
 	 * ClearableEventDispatcher keeps track of what events have been added, giving the posibility to remove all added event listeners via
 	 * <i>removeEventListeners()</i> method defined in IClearableEventDispatcher interface.

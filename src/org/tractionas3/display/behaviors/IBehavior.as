@@ -1,9 +1,9 @@
 /**
  * @version 1.0
- * @author David Dahlstroem | daviddahlstroem.com
+ * @author David A
  * 
  * 
- * Copyright (c) 2010 David Dahlstroem | daviddahlstroem.com
+ * Copyright (c) 2010 David A
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,6 +28,7 @@
 package org.tractionas3.display.behaviors
 {
 	import org.tractionas3.core.interfaces.IDestructable;
+
 	import flash.display.DisplayObject;
 
 	public interface IBehavior extends IDestructable

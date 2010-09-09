@@ -1,9 +1,9 @@
 /**
- * @version 2.0
- * @author David Dahlstroem | daviddahlstroem.com
+ * @version 2.1
+ * @author David A
  * 
  * 
- * Copyright (c) 2010 David Dahlstroem | daviddahlstroem.com
+ * Copyright (c) 2009 David A
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -27,7 +27,8 @@
  
 package org.tractionas3.display 
 {
-	import org.tractionas3.display.behaviors.DragAndThrowBehavior;
+	import org.tractionas3.display.behaviors.MouseThrowBehavior;
+
 	/**
 	 * ThrowableSprite is a DraggableSprite with throwing functionality.
 	 * 
@@ -42,7 +43,7 @@ package org.tractionas3.display
 			
 			behavior.destruct();
 			
-			behavior = new DragAndThrowBehavior();
+			behavior = new MouseThrowBehavior();
 			
 			addBehavior(behavior);
 		}

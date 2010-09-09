@@ -1,9 +1,9 @@
 /**
  * @version 1.0
- * @author David Dahlstroem | daviddahlstroem.com
+ * @author David A
  * 
  * 
- * Copyright (c) 2010 David Dahlstroem | daviddahlstroem.com
+ * Copyright (c) 2010 David A
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,6 @@ package org.tractionas3.net
 {
 	import org.tractionas3.core.interfaces.ICoreInterface;
 	import org.tractionas3.debug.LogLevel;
-	import org.tractionas3.debug.log;
 	import org.tractionas3.events.EnterFrame;
 	import org.tractionas3.events.VideoStreamEvent;
 	import org.tractionas3.geom.Dimension;
@@ -38,6 +37,7 @@ package org.tractionas3.net
 	import flash.net.NetConnection;
 	import flash.net.NetStream;
 	import flash.utils.getQualifiedClassName;
+
 	/**
 	 * VideoStream extends the functinality of NetStream
 	 */

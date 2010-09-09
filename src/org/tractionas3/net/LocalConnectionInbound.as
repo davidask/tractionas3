@@ -1,9 +1,9 @@
 /**
  * @version 1.0
- * @author David Dahlstroem | daviddahlstroem.com
+ * @author David A
  * 
  * 
- * Copyright (c) 2009 David Dahlstroem | daviddahlstroem.com
+ * Copyright (c) 2009 David A
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,6 @@ package org.tractionas3.net
 {
 	import org.tractionas3.core.interfaces.IDestructable;
 	import org.tractionas3.debug.LogLevel;
-	import org.tractionas3.debug.log;
 	import org.tractionas3.events.LocalConnectionDataEvent;
 	import org.tractionas3.events.WeakEventDispatcher;
 
@@ -39,6 +38,7 @@ package org.tractionas3.net
 	import flash.events.StatusEvent;
 	import flash.net.LocalConnection;
 	import flash.utils.ByteArray;
+
 	public class LocalConnectionInbound extends WeakEventDispatcher implements IDestructable
 	{
 		internal static const RECEIVE_METHOD:String = "receiveData";

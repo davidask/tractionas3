@@ -24,58 +24,68 @@
  * THE SOFTWARE.
  *
  */
- 
+
 package org.tractionas3.display.behaviors 
 {
-	import org.tractionas3.core.CoreObject;
+	import org.tractionas3.core.interfaces.IRenderable;
 
-	import flash.display.DisplayObject;
+	import flash.geom.Point;
 
-	public class Behavior extends CoreObject implements IBehavior 
+	public class MouseThrowBehavior extends MouseDragBehavior implements IRenderable
 	{
-		/** @private */
-		protected var targets:Array;
-		
-		public function Behavior()
+		private var _lastPosition:Point;
+
+		private var _currentPosition:Point;
+
+		private var _throwVelocity:Point;
+
+		public function MouseThrowBehavior()
 		{
 			super();
 			
-			targets = [];
-		}
-		
-		public function apply(target:DisplayObject):void
-		{
-			targets.push(target);
-		}
-		
-		public function isAppliedTo(target:DisplayObject):Boolean
-		{
-			return targets.indexOf(target) > -1;
-		}
-		
-		public function release(target:DisplayObject):void
-		{
-			if(!isAppliedTo(target)) return;
+			_currentPosition = new Point();
 			
-			targets.splice(targets.indexOf(target), 1);
+			_throwVelocity = new Point();
+			
+			_lastPosition = new Point();
+			
+			startRender();
 		}
-		
-		final public function releaseAll():void
+
+		override protected function handleMouseUp():void
 		{
-			if(targets.length == 0) return;
+			var reference:Point = velocityReferences[currentTarget] as Point;
 			
-			release(targets[0]);
+			if(reference)
+			{
+				reference.x += _throwVelocity.x;
 			
-			releaseAll();
+				reference.y += _throwVelocity.y;
+			}
+			
+			super.handleMouseUp();
 		}
-		
-		override public function destruct(deepDestruct:Boolean = false):void
+
+		override public function render():void
 		{
-			super.destruct(deepDestruct);
+			if(dragging)
+			{
+				_lastPosition.x = _currentPosition.x;
+				
+				_lastPosition.y = _currentPosition.y;
+				
+				_currentPosition.x = currentTarget.x;
+				
+				_currentPosition.y = currentTarget.y;
+				
+				_throwVelocity.x = _currentPosition.x - _lastPosition.x;
+				
+				_throwVelocity.y = _currentPosition.y - _lastPosition.y;
+			}
 			
-			releaseAll();
-			
-			targets = null;
+			super.render();
 		}
 	}
 }
+
+
