@@ -1,9 +1,9 @@
 /**
  * @version 1.0
- * @author David Dahlstroem | daviddahlstroem.com
+ * @author David A
  * 
  * 
- * Copyright (c) 2010 David Dahlstroem | daviddahlstroem.com
+ * Copyright (c) 2010 David A
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -33,22 +33,28 @@ package org.tractionas3.display.behaviors
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
-	public class DragAndDropBehavior extends MotionBehavior 
-	{
-		
 
+	public class MouseDragBehavior extends MotionBehavior 
+	{
+
+		
 		/** @private */
 		protected var currentStage:Stage;
+
+		/** @private */
+		protected var targetDragPosition:Point;
 
 		private var _offset:Point;
 
 		private var _dragging:Boolean;
 
-		public function DragAndDropBehavior()
+		public function MouseDragBehavior()
 		{
 			super();
 			
 			_offset = new Point();
+			
+			targetDragPosition = new Point();
 		}
 
 		override public function apply(target:DisplayObject):void
@@ -110,13 +116,17 @@ package org.tractionas3.display.behaviors
 				target = currentTarget;
 			}
 			
+			var p:Point = target.localToGlobal(new Point(target.mouseX, target.mouseY));
+				
+			targetDragPosition.x = p.x - _offset.x;
+				
+			targetDragPosition.y = p.y - _offset.y;
+			
 			if(changePosition)
-			{
-				var p:Point = target.localToGlobal(new Point(target.mouseX, target.mouseY));
+			{				
+				target.x = targetDragPosition.x;
 					
-				target.x = p.x - _offset.x;
-					
-				target.y = p.y - _offset.y;
+				target.y = targetDragPosition.y;
 			}
 			
 			if(motionLimitsRect && motionLimitsScope)

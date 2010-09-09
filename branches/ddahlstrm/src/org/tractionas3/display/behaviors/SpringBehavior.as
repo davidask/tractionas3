@@ -1,9 +1,9 @@
 /**
  * @version 1.0
- * @author David Dahlstroem | daviddahlstroem.com
+ * @author David A
  * 
  * 
- * Copyright (c) 2009 David Dahlstroem | daviddahlstroem.com
+ * Copyright (c) 2010 David A
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,14 +24,58 @@
  * THE SOFTWARE.
  *
  */
- 
-package org.tractionas3.reflection 
+
+package org.tractionas3.display.behaviors 
 {
-	/**
-	 * trimQualifiedClassName returns a trimmed class name.
-	 */
-	public function trimQualifiedClassName(className:String):String
+	import flash.display.DisplayObject;
+	import flash.geom.Point;
+
+	public class SpringBehavior extends MotionBehavior 
 	{
-		return (className.indexOf("::") > 0) ? className.split("::")[1] : className;
+		public var spring:Number = 0.01;
+		
+		public var destination:Point;
+		
+		public function SpringBehavior()
+		{
+			super();
+			
+			destination = new Point(200, 200);
+			
+			startRender();
+		}
+		
+		override public function render():void
+		{
+			super.render();
+			
+			var target:DisplayObject;
+			
+			var velocity:Point;
+			
+			var dx:Number;
+			
+			var dy:Number;
+			
+			for(var i:int = 0;i < targets.length;i++)
+			{
+				target = targets[i] as DisplayObject;
+				
+				if(target == currentTarget)
+				{
+					continue;
+				}
+				
+				dx = (destination.x - target.x) * spring;
+			
+				dy = (destination.y - target.y) * spring;
+				
+				velocity = getVelcityReferenceForTarget(target);
+				
+				velocity.x += dx;
+				
+				velocity.y += dy;
+			}
+		}
 	}
 }
