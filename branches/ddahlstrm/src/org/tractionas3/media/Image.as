@@ -75,6 +75,8 @@ package org.tractionas3.media
 		private var _lazyLoadInterval:uint;
 
 		private var _backgroundFill:IFill;
+		
+		private var _progress:Number;
 
 		/**
 		 * Image Constructor.
@@ -93,6 +95,8 @@ package org.tractionas3.media
 		public function Image(source:*, imgWidth:Number, imgHeight:Number, loadMethod:uint)
 		{
 			super();
+			
+			_progress = 0;
 			
 			_imageDimension = new Dimension(imgWidth, imgHeight);
 			
@@ -132,8 +136,28 @@ package org.tractionas3.media
 				
 				imageLoader.addEventListener(LoaderEvent.IO_ERROR, handleLoaderEvent);
 				
+				_progress = 0;
+				
 				imageLoader.load();
 			}
+		}
+		
+		/**
+		 * Indicates whether the image is loaded
+		 */
+		
+		public function get loaded():Boolean
+		{
+			return progress == 1;
+		}
+		
+		/*
+		 * Indicates the progress of the image loading process
+		 */
+		
+		public function get progress():Number
+		{
+			return _progress;
 		}
 
 		/**
@@ -443,11 +467,17 @@ package org.tractionas3.media
 					
 					onLoadStart();
 					
+					_progress = 0;
+					
 					break;
 				
 				case LoaderEvent.PROGRESS:
 					
 					onLoadProgress();
+					
+					_progress = imageLoader.progress;
+					
+					dispatchEvent(new LoaderEvent(LoaderEvent.PROGRESS));
 					
 					break;
 				
@@ -455,6 +485,8 @@ package org.tractionas3.media
 				case LoaderEvent.SECURITY_ERROR:
 					
 					onLoadError();
+					
+					_progress = 0;
 					
 					break;
 								
@@ -466,7 +498,11 @@ package org.tractionas3.media
 					
 					imageLoader = null;
 					
+					_progress = 1;
+					
 					onLoadComplete();
+					
+					dispatchEvent(new LoaderEvent(LoaderEvent.COMPLETE));
 					
 					break;
 			}
