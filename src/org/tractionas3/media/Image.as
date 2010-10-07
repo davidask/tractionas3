@@ -75,7 +75,7 @@ package org.tractionas3.media
 		private var _lazyLoadInterval:uint;
 
 		private var _backgroundFill:IFill;
-		
+
 		private var _progress:Number;
 
 		/**
@@ -92,7 +92,7 @@ package org.tractionas3.media
 		 * @param loadMethod The load method of the image.
 		 * @see org.tractionas3.media.ImageLoadMethod
 		 */
-		public function Image(source:*, imgWidth:Number, imgHeight:Number, loadMethod:uint)
+		public function Image(source:*, loadMethod:uint = 3, imgWidth:Number = 0, imgHeight:Number = 0)
 		{
 			super();
 			
@@ -141,20 +141,20 @@ package org.tractionas3.media
 				imageLoader.load();
 			}
 		}
-		
+
 		/**
 		 * Indicates whether the image is loaded
 		 */
-		
+
 		public function get loaded():Boolean
 		{
 			return progress == 1;
 		}
-		
+
 		/*
 		 * Indicates the progress of the image loading process
 		 */
-		
+
 		public function get progress():Number
 		{
 			return _progress;
@@ -294,7 +294,14 @@ package org.tractionas3.media
 		 */
 		override public function draw():void
 		{
-			scrollRect = new Rectangle(0, 0, imageWidth, imageHeight);
+			if(_imageDimension.width > 0 && _imageDimension.height > 0)
+			{
+				scrollRect = new Rectangle(0, 0, imageWidth, imageHeight);
+			}
+			else
+			{
+				scrollRect = null;
+			}
 			
 			if(!stage) return;
 
@@ -311,7 +318,10 @@ package org.tractionas3.media
 				
 				if(_scaleImage)
 				{
-					DisplayObjectUtil.fitWithinRectangle(imageData, new Rectangle(0, 0, imageWidth, imageHeight), _scaleFill, _scaleAlign);
+					if(_imageDimension.width > 0 && _imageDimension.height > 0)
+					{
+						DisplayObjectUtil.fitWithinRectangle(imageData, new Rectangle(0, 0, imageWidth, imageHeight), _scaleFill, _scaleAlign);
+					}
 				}
 			}
 			
