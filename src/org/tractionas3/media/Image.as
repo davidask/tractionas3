@@ -51,6 +51,7 @@ package org.tractionas3.media
 
 	public class Image extends DrawableSprite 
 	{
+		
 		/** @private */
 		protected var imageLoader:DisplayLoader;
 
