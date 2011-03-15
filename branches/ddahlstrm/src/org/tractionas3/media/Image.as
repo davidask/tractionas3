@@ -61,7 +61,8 @@ package org.tractionas3.media
 		/** @private */
 		protected var imageDataContainer:Sprite;
 
-		private var _imageDimension:Dimension;
+		/** @private */
+		protected var imageSize:Dimension;
 
 		private var _loadMethod:uint;
 
@@ -99,7 +100,7 @@ package org.tractionas3.media
 			
 			_progress = 0;
 			
-			_imageDimension = new Dimension(imgWidth, imgHeight);
+			imageSize = new Dimension(imgWidth, imgHeight);
 			
 			_loadMethod = loadMethod;
 			
@@ -265,12 +266,12 @@ package org.tractionas3.media
 		 */
 		public function get imageWidth():Number
 		{
-			return _imageDimension.width;
+			return imageSize.width;
 		}
 
 		public function set imageWidth(value:Number):void
 		{
-			_imageDimension.width = value;
+			imageSize.width = value;
 			
 			redraw();
 		}
@@ -280,12 +281,12 @@ package org.tractionas3.media
 		 */
 		public function get imageHeight():Number
 		{
-			return _imageDimension.height;
+			return imageSize.height;
 		}
 
 		public function set imageHeight(value:Number):void
 		{
-			_imageDimension.height = value;
+			imageSize.height = value;
 			
 			redraw();
 		}
@@ -295,7 +296,7 @@ package org.tractionas3.media
 		 */
 		override public function draw():void
 		{
-			if(_imageDimension.width > 0 && _imageDimension.height > 0)
+			if(imageSize.width > 0 && imageSize.height > 0)
 			{
 				scrollRect = new Rectangle(0, 0, imageWidth, imageHeight);
 			}
@@ -319,7 +320,7 @@ package org.tractionas3.media
 				
 				if(_scaleImage)
 				{
-					if(_imageDimension.width > 0 && _imageDimension.height > 0)
+					if(imageSize.width > 0 && imageSize.height > 0)
 					{
 						DisplayObjectUtil.fitWithinRectangle(imageData, new Rectangle(0, 0, imageWidth, imageHeight), _scaleFill, _scaleAlign);
 					}
