@@ -24,15 +24,22 @@
  * THE SOFTWARE.
  *
  */
-
 package 
 {
-	public function toBoolean(value:*):Boolean
-		{
-			if(value == "true" || value == "1" || value == "yes" || value == "on") return true;
+	import flash.display.DisplayObject;
+	import flash.display.Sprite;
+	import flash.display.Stage;
+	public function getDocument(stage:Stage):Sprite 
+	{
+		var child:DisplayObject;
 			
-			if(value == "false" || value == "0" || value == "no" || value == "off" || value == null || value == undefined || value == "null" || value == "undefined" || value == "nil") return false;
+			for(var i:int = 0;i < stage.numChildren;++i)
+			{
+				child = stage.getChildAt(i);
+				
+				if(child.root == child) return child as Sprite;
+			}
 			
-			return false;
-		}
+			return null;
+	}
 }
