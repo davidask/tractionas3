@@ -24,15 +24,37 @@
  * THE SOFTWARE.
  *
  */
-
 package 
 {
-	public function toBoolean(value:*):Boolean
+	import flash.display.DisplayObject;
+	import flash.display.Stage;
+	import flash.geom.Point;
+	public function getCenter(target:DisplayObject, snapToPixels:Boolean = false):Point 
+	{
+		var p:Point;
+		
+		switch(true)
 		{
-			if(value == "true" || value == "1" || value == "yes" || value == "on") return true;
+			case target is Stage:
+				
+				p = new Point(Stage(target).stageWidth * 0.5, Stage(target).stageHeight * 0.5);
+				
+				break;
 			
-			if(value == "false" || value == "0" || value == "no" || value == "off" || value == null || value == undefined || value == "null" || value == "undefined" || value == "nil") return false;
+			default:
 			
-			return false;
+				p = new Point(target.width * 0.5, target.height * 0.5);
+			
+				break;
 		}
+		
+		if(snapToPixels)
+		{
+			p.x = Math.round(p.x);
+					
+			p.y = Math.round(p.y);
+		}
+		
+		return p;
+	}
 }
