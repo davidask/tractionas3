@@ -28,7 +28,6 @@
 package org.tractionas3.net 
 {
 	import org.tractionas3.core.interfaces.ICoreInterface;
-	import org.tractionas3.debug.LogLevel;
 	import org.tractionas3.events.EnterFrame;
 	import org.tractionas3.events.VideoStreamEvent;
 	import org.tractionas3.geom.Dimension;
@@ -86,7 +85,7 @@ package org.tractionas3.net
 			
 			for(var property:String in data)
 			{
-				if(!_metaData.hasOwnProperty(property)) log("Property " + property + "(" + getQualifiedClassName(data[property]) + ") is not defined in VideoMetaData. Adding dynamic property.", LogLevel.TRACTIONAS3);
+				if(!_metaData.hasOwnProperty(property)) trace("Property " + property + "(" + getQualifiedClassName(data[property]) + ") is not defined in VideoMetaData. Adding dynamic property.");
 				
 				_metaData[property] = data[property];
 			}

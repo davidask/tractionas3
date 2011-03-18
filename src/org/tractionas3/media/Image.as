@@ -391,7 +391,7 @@ package org.tractionas3.media
 
 		protected function onLoadError():void
 		{
-			log("Image was not found, or a security error occured.");
+			trace("Image was not found, or a security error occured.");
 			
 			backgroundFill = new SolidFill(0xff0000);
 		}

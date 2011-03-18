@@ -28,7 +28,6 @@
 package org.tractionas3.net 
 {
 	import org.tractionas3.core.interfaces.IDestructable;
-	import org.tractionas3.debug.LogLevel;
 	import org.tractionas3.events.WeakEventDispatcher;
 
 	import flash.events.AsyncErrorEvent;
@@ -123,7 +122,7 @@ package org.tractionas3.net
 				}
 				catch(e:Error)
 				{
-					trace(e.toString());
+					trace(e.message);
 					
 					break;
 					return false;
@@ -159,13 +158,13 @@ package org.tractionas3.net
 			{
 				case AsyncErrorEvent.ASYNC_ERROR:
 					
-					log(connection + " Async Error", LogLevel.TRACTIONAS3);
+					trace(connection + " Async Error");
 					
 					break;
 				
 				case SecurityErrorEvent.SECURITY_ERROR:
 					
-					log(connection + " Security Error", LogLevel.TRACTIONAS3);
+					trace(connection + " Security Error");
 					
 					break;
 				
