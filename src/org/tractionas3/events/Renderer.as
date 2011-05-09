@@ -52,11 +52,11 @@ package org.tractionas3.events
 		
 		override public function destruct(deepDestruct:Boolean = false):void
 		{
-			super.destruct(deepDestruct);
-			
 			stopRender();
 			
 			_callback = undefined;
+			
+			super.destruct(deepDestruct);
 		}
 	}
 }
