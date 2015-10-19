@@ -1,0 +1,137 @@
+![http://www.tractionas3.org/debugger/screenshots/ApplicationIcon.png](http://www.tractionas3.org/debugger/screenshots/ApplicationIcon.png)
+
+## TractionAS3 Debugger ##
+TractionAS3 Debugger is an application built on Adobe AIR technology (and the TractionAS3 API) created to provide a stylish and useful debugger that you can use when creating web applications using the TractionAS3 API.
+
+It can be used as an external log console, a performance monitor and a live property editor.
+
+# _The application is still in development._ #
+You may still download the application under the downloads tab. **Please note that there are a lot of changes to be made until a 1.0 version will be released.** Bugs and unexpected behavior may occur. _If you encounter an issue please add it to the tracker or post in the [discussion group](http://groups.google.com/group/TractionAS3)._
+
+### Upcoming changes (among others) ###
+
+  * General application stability
+  * Method calling from the inspector
+  * Property updating in the inspector
+  * User interface updates (both in functionality and appearance)
+
+### Requirements ###
+To use the TractionAS3 Debugger you need to use the TractionAS3 API. To retrieve the TractionAS3 API source code please check out using the SVN repository link under the Source tab.
+
+### Downloading the application ###
+Please see the Downloads tab.
+
+### Navigating the Application ###
+When you first launch the TractionAS3 Debugger, the log console window will open.
+To open other windows, use the application menu in OSX, and the system tray icon menu in windows.
+You can also toggle through windows via ctrl/cmd + 1, 2 and 3.
+ctrl/cmd + W closes an open window in focus.
+
+You can toggle windows to be always in front, using the icon next to the close icon in the window bar or via the window menu. You can also toggle between perspectives using the window menu.
+
+### Connecting to TractionAS3 Debugger ###
+
+```
+package  
+{
+	import org.tractionas3.core.Application;
+	import org.tractionas3.debug.TractionAS3Debugger;
+	public class MyDocumentClass extends Application 
+	{
+		public function MyDocumentClass()
+		{
+			super();
+			
+			TractionAS3Debugger.connect(); //Attempts to connect to the application.
+		}
+	}
+}
+```
+
+If the application is not running, further connection attempts will be performed, defined by `TractionAS3Debugger.CONNECTION_ATTEMPTS` and `TractionAS3Debugger.CONNECTION_TIMEOUT`. Until the connection attempt limit has been reached all log messages, profiling data, and inspect data are stored in a buffer.
+
+### Logging with TractionAS3 Debugger ###
+
+```
+package  
+{
+	import org.tractionas3.debug.LogLevel;
+	import org.tractionas3.core.Application;
+	import org.tractionas3.debug.Logger;
+	import org.tractionas3.debug.TractionAS3Debugger;
+	import org.tractionas3.debug.log;
+	import org.tractionas3.debug.output.TractionAS3DebuggerOutput;
+	public class MyDocumentClass extends Application 
+	{
+		public function MyDocumentClass()
+		{
+			super();
+			
+			TractionAS3Debugger.connect();
+			
+			Logger.addOutput(new TractionAS3DebuggerOutput());
+			
+			log("Message to TractionAS3 Debugger: I like you!", LogLevel.INFO);
+		}
+	}
+}
+
+```
+
+Logging with TractionAS3 follows the TractionAS3 API logging structure. Simply add a new instance of the `TractionAS3DebuggerOutput` class to the `org.tractionas3.debug.Logger` class output list.
+
+![http://www.tractionas3.org/debugger/screenshots/TractionAS3DebuggerLogConsole.png](http://www.tractionas3.org/debugger/screenshots/TractionAS3DebuggerLogConsole.png)
+
+### Monitoring performance with TractionAS3 Debugger ###
+
+**Method calling from the inspector**
+
+```
+package  
+{
+	import org.tractionas3.core.Application;
+	import org.tractionas3.debug.TractionAS3Debugger;
+	public class MyDocumentClass extends Application 
+	{
+		public function MyDocumentClass()
+		{
+			super();
+			
+			TractionAS3Debugger.connect();
+			
+			TractionAS3Debugger.startProfiler(stage);
+		}
+	}
+}
+```
+
+TractionAS3 Debugger has a performance monitor that monitors frame rate, memory and bandwidth. Note that bandwidth monitoring only works if you use the TractionAS3 API load package for loading external data.
+
+Simply pass the stage to the `TractionAS3Debugger.startProfiler()` method. You can use the `TractionAS3Debugger.stopProfiler()` to halt the performance monitoring.
+
+![http://www.tractionas3.org/debugger/screenshots/TractionAS3DebuggerPerformanceMonitor.png](http://www.tractionas3.org/debugger/screenshots/TractionAS3DebuggerPerformanceMonitor.png)
+
+### Inspecting objects and live editing with TractionAS3 Debugger ###
+
+```
+package  
+{
+	import org.tractionas3.core.Application;
+	import org.tractionas3.debug.TractionAS3Debugger;
+	public class MyDocumentClass extends Application 
+	{
+		public function MyDocumentClass()
+		{
+			super();
+			
+			TractionAS3Debugger.connect();
+			
+			TractionAS3Debugger.inspect(stage, "The stage");
+		}
+	}
+}
+```
+
+With TractionAS3 Debugger you can inspect objects and change their properties (if writable). Rather than going through all public properties of your application TractionAS3 requires you to specify and name the objects you want. This way you can also inspect private properties, and the need to browse through a huge list every time you compile is avoided.
+
+![http://www.tractionas3.org/debugger/screenshots/TractionAS3DebuggerInspector.png](http://www.tractionas3.org/debugger/screenshots/TractionAS3DebuggerInspector.png)
